@@ -8221,3 +8221,22 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/* tour virtual */
+.tour-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px; /* 🎯 Esquinas redondeadas */
+  height: 450px;        /* Ajusta la altura visible */
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tour-wrapper iframe {
+  position: absolute;
+  top: -40px;          /* 🔽 Mueve el contenido hacia arriba (recorta parte superior) */
+  left: 0;
+  width: 100%;
+  height: 530px;       /* 🔼 Más alto para permitir ese recorte sin scroll */
+  border: none;
+}
