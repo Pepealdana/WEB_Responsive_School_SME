@@ -11,9 +11,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-font: "Exo",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Roboto",  sans-serif;
+  --nav-font: "Exo",  sans-serif;
 }
 
 /* Colores Globales - Las siguientes variables de color se utilizan en todo el sitio web. Al actualizarlas aquí, se cambia el esquema de color de todo el sitio */
@@ -143,7 +143,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  --background-color: #ffdd57;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -158,12 +158,12 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 32px;
-  margin-right: 8px;
+  max-height: 60px;
+  margin-right: 30px;
 }
 
 .header .logo i {
-  font-size: 24px;
+  font-size: 18px;
   margin-right: 6px;
 }
 
@@ -171,7 +171,7 @@ h6 {
   font-size: 28px;
   margin: 0;
   font-weight: 600;
-  color: var(--heading-color);
+  color: #000000;
 }
 
 .scrolled .header {
@@ -181,7 +181,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(0, 0, 0, 0.8);
+  --background-color: #55C9F4;
 }
 
 /*--------------------------------------------------------------
@@ -207,7 +207,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
+    color: #000000;
     padding: 18px 15px;
     font-size: 16px;
     font-family: var(--nav-font);
@@ -234,7 +234,7 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    color: #ffffff;
   }
 
   .navmenu .dropdown ul {
@@ -250,7 +250,7 @@ h6 {
     transition: 0.3s;
     border-radius: 4px;
     z-index: 99;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 30px rgba(59, 15, 15, 0.1);
   }
 
   .navmenu .dropdown ul li {
@@ -425,15 +425,15 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: #000000;
+  background-color: #55C9F4;
   font-size: 14px;
   position: relative;
 }
 
 .footer .footer-top {
   padding-top: 50px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid color-mix(in srgb, #000000, transparent 90%);
 }
 
 .footer .footer-about .logo {
@@ -447,7 +447,7 @@ h6 {
 }
 
 .footer .footer-about .logo span {
-  color: var(--heading-color);
+  color: #000000;
   font-family: var(--heading-font);
   font-size: 26px;
   font-weight: 700;
@@ -466,16 +466,16 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+  border: 1px solid color-mix(in srgb, #000000, transparent 50%);
   font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, #000000, transparent 20%);
   margin-right: 10px;
   transition: 0.3s;
 }
 
 .footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 .footer h4 {
@@ -483,6 +483,7 @@ h6 {
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
+  color: #000000;
 }
 
 .footer .footer-links {
@@ -512,13 +513,13 @@ h6 {
 }
 
 .footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, #000000, transparent 30%);
   display: inline-block;
   line-height: 1;
 }
 
 .footer .footer-links ul a:hover {
-  color: var(--accent-color);
+  color: #ffffff;
 }
 
 .footer .footer-contact p {
@@ -527,7 +528,7 @@ h6 {
 
 .footer .copyright {
   padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid color-mix(in srgb, #000000, transparent 90%);
 }
 
 .footer .copyright p {
@@ -584,7 +585,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: #ffffff;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -593,13 +594,13 @@ h6 {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  color: #070707;
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
+  background-color: color-mix(in srgb, #ffdd57, transparent 20%);
+  color: #070707;
 }
 
 .scroll-top.active {
