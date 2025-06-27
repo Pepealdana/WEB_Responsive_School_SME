@@ -538,7 +538,20 @@ h6 {
 .footer .credits {
   margin-top: 8px;
   font-size: 13px;
+  color: #000000; /* Color normal (puedes usar otro código) */
+  transition: color 0.3s ease;
 }
+
+.footer .credits a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer .credits a:hover {
+  color: #ffffff;
+}
+
+
 
 /*--------------------------------------------------------------
 # Preloader
@@ -8350,5 +8363,52 @@ section,
   from {transform: scale(0.8);}
   to {transform: scale(1);}
 }
+
+/* imagenes de la derecha del index */
+.image-stack {
+  position: relative;
+  height: 800px; /* aumenta para permitir bajar la tercera imagen */
+}
+
+.image-stack-item {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  transition: transform 0.3s ease;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes específicos */
+.image-stack-item-top {
+  top: -30px;       /* Más arriba */
+  z-index: 3;
+}
+
+.image-stack-item-middle {
+  top: -220px;
+  z-index: 2;
+}
+
+.image-stack-item-bottom {
+  top: 280px;       /* Más abajo */
+  z-index: 1;
+}
+
+/* Versión responsive para móviles */
+@media (max-width: 768px) {
+  .image-stack {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .image-stack-item {
+    position: static;
+    width: 100%;
+  }
+}
+
 
 
