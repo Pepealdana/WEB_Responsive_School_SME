@@ -8240,3 +8240,60 @@ section,
   height: 530px;       /* 🔼 Más alto para permitir ese recorte sin scroll */
   border: none;
 }
+
+/*--------------------------------------------------------------
+# stats cards
+--------------------------------------------------------------*/
+.achievement-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  height: 220px;
+  transition: transform 0.3s ease;
+}
+
+.achievement-item:hover {
+  transform: scale(1.02);
+}
+
+.achievement-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.achievement-item:hover img {
+  transform: scale(1.05);
+}
+
+.achievement-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.achievement-content h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.achievement-content p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .achievement-item {
+    height: 200px;
+  }
+}
+
