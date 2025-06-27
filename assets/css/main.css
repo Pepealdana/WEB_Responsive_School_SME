@@ -8297,3 +8297,57 @@ section,
   }
 }
 
+/* datos sme */
+
+.datos-sme-section {
+  background-color: #fff9e000; /* ligeramente diferente al amarillo base */
+}
+
+.post-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.post-box:hover {
+  transform: translateY(-5px);
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* Fondo oscuro y modal */
+.zoom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.zoom-modal img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* Animación de entrada */
+.zoom-modal img {
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
+}
+
+
