@@ -8413,3 +8413,33 @@ section,
     z-index: auto;
   }
 }
+@media (max-width: 767.98px) {
+  .about .image-stack {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .image-stack-item {
+    position: static !important;
+    width: 100% !important;
+    margin-bottom: 0.75rem;
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Ajuste de z-index para que no tapen otras secciones */
+  .image-stack-item-top,
+  .image-stack-item-middle,
+  .image-stack-item-bottom {
+    z-index: auto !important;
+  }
+
+  /* Asegura que la firma y misión-visión queden por encima */
+  .signature-block, .mission-vision-row {
+    position: relative;
+    z-index: 1;
+  }
+}
