@@ -709,6 +709,11 @@ section,
   }
 }
 
+.sitename {
+  font-family: 'Exo', sans-serif;
+}
+
+
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
@@ -8452,4 +8457,13 @@ section,
     position: relative;
     z-index: 1;
   }
+}
+
+/* Estilos solo para evitar cambios de color al pasar el cursor en la sección history */
+#about #history h2:hover,
+#about #history h3:hover,
+#about #history h4:hover,
+#about #history p:hover {
+  color: inherit !important;
+  text-decoration: none !important;
 }
