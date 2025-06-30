@@ -8459,11 +8459,42 @@ section,
   }
 }
 
-/* Estilos solo para evitar cambios de color al pasar el cursor en la sección history */
-#about #history h2:hover,
-#about #history h3:hover,
-#about #history h4:hover,
-#about #history p:hover {
-  color: inherit !important;
-  text-decoration: none !important;
+/* Galeria about al final */
+.img-hover-container {
+  position: relative;
+  overflow: hidden;
 }
+
+.img-hover-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.img-hover-container:hover img {
+  transform: scale(1.05);
+}
+
+.hover-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(12, 46, 77, 0.115); /* MÁS CLARO que antes */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+  padding: 15px;
+}
+
+.img-hover-container:hover .hover-text {
+  opacity: 1;
+}
+
+
