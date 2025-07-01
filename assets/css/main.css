@@ -8498,3 +8498,210 @@ section,
 }
 
 
+
+  /*--------------------------------------------------------------
+# direccionamiento  
+--------------------------------------------------------------*/  
+.transition-hover {
+  transition: all 0.3s ease;
+}
+.transition-hover:hover {
+  background-color: #b1e8fd;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.card-hover-light:hover {
+  transform: translateY(-5px);
+  border-left: 4px solid #55C9F4;
+  background-color: #f9f9ff;
+  transition: all 0.3s ease;
+}
+
+.card-creencia:hover {
+  background-color: #fff8e1;
+  transform: translateY(-3px);
+  transition: all 0.3s ease-in-out;
+}
+.card-creencia:hover i {
+  animation: vibrar 0.2s ease-in-out 2;
+}
+
+@keyframes vibrar {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.card-valor:hover {
+  background-color: #3887fe;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.card-valor:hover i {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.card-creencia {
+  transition: all 0.3s ease;
+}
+.card-creencia:hover {
+  background-color: #f9fbfd;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+.card-creencia.vibrate:hover {
+  animation: vibrate-1 0.3s linear;
+}
+
+@keyframes vibrate-1 {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.card i {
+  color: #55C9F4 !important;
+  transition: all 0.3s ease;
+}
+
+.card:hover i {
+  background-color: #55C9F4;
+  color: #fff !important;
+  transform: scale(1.1);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+  /* Efectos para íconos y cards */
+  .card i,
+  .card-hover-light i {
+    font-size: 1.8rem;
+    color: #55C9F4 !important;
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 3rem;
+    min-height: 3rem;
+  }
+
+  .card:hover i,
+  .card-hover-light:hover i {
+    background-color: #55C9F4;
+    color: white !important;
+    transform: scale(1.1);
+  }
+.card i {
+  font-size: 2rem;
+  color: #55C9F4;
+  background-color: transparent;
+  padding: 0.6rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover i {
+  background-color: #55C9F4;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.card-hover-light i {
+  font-size: 2rem;
+  color: #55C9F4;
+  padding: 0.6rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.card-hover-light:hover i {
+  background-color: #55C9F4;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+.value-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+.value-card:hover {
+  background-color: #e6f9ff; /* cambio sutil */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: #55C9F4;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover .card-icon {
+  background-color: #55C9F4;
+  color: white;
+  border-radius: 50%;
+  padding: 12px;
+  transform: scale(1.2);
+}
+.value-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+/* Elevación al hacer hover */
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  background-color: #e6f9ff;
+}
+
+/* Ícono normal */
+.card-icon {
+  font-size: 2.5rem;
+  color: #55C9F4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* Ícono en hover — sin agrandar exageradamente */
+.value-card:hover .card-icon {
+  background-color: #55C9F4;
+  color: white;
+  transform: scale(1.05); /* más discreto */
+}
