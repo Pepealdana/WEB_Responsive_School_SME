@@ -8705,3 +8705,21 @@ section,
   color: white;
   transform: scale(1.05); /* más discreto */
 }
+
+/* para el comité de excelencia */
+.text-primary {
+  color: #55C9F4; /* o el azul institucional que estás usando */
+}
+.fw-bold {
+  font-weight: 700;
+}
+
+/* aviso director o codirector en nuestro equipo */
+.text-highlight {
+  color: #55C9F4; /* azul institucional */
+  font-weight: bold;
+  background-color: #55caf452; /* Amarillo claro sutil */
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
