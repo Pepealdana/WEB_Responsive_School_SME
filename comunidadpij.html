@@ -112,17 +112,31 @@
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Sección 1: Quiénes somos -->
+<!-- Sección 1: Quiénes somos -->
 <section class="section py-5" style="background-color: #ffec7a;">
   <div class="container">
     <div class="row align-items-center">
+
+      <!-- Columna de texto + firma -->
       <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-        <h2 class="fw-bold mb-3">Hermanas del Niño Jesús Pobre</h2>
+        <h2 class="fw-bold mb-3" style="color:#213b52;">Hermanas del Niño Jesús Pobre</h2>
         <p class="lead">
           Una congregación religiosa fundada por la Beata Clara Fey con la misión de educar, cuidar y guiar especialmente a los niños y jóvenes más necesitados. Con presencia en Colombia y otras partes del mundo, su labor es silenciosa pero profundamente transformadora.
         </p>
-        
+
+        <!-- Firma -->
+         <a href="https://www.pijcolombia.org" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+          <div class="d-flex align-items-center mt-4">
+            <img src="assets/img/misc/signature-1.webp" alt="Firma PIJ" class="me-3" style="width: 60px; height: auto;">
+            <div>
+              <p class="mb-0 fw-bold" style="color:#213b52;">Hermanas del Niño Jesús Pobre</p>
+              <small class="text-muted fst-italic">“Evangelizar educando con ternura y verdad”</small>
+            </div>
+          </div>
+        </a>
       </div>
+
+      <!-- Columna de imagen -->
       <div class="col-lg-6 text-center" data-aos="fade-left">
         <img src="assets/img/education/hermanas.webp" alt="Hermanas PIJ" class="img-fluid rounded shadow">
       </div>
@@ -165,7 +179,7 @@
 </section>
 
 <!-- Sección 3: Galería de la vida en comunidad -->
-<section class="section py-5" style="background-color: #fff3cd;">
+<section class="section py-5" style="background-color: #ffdd57;">
   <div class="container">
     <div class="text-center mb-4">
       <h2 class="fw-bold">Nuestra Vida y Misión</h2>
@@ -215,7 +229,7 @@
 
   </main>
   
-<footer id="footer" class="footer position-relative dark-background">
+ <footer id="footer" class="footer position-relative dark-background">
 
     <div class="container footer-top">
       <div class="row gy-4">
@@ -248,7 +262,7 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Nosotros</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Inicio</a></li>
             <li><a href="about.html">A cerca de nosotros</a></li>
             <li><a href="comunidadpij.html">Comunidad PIJ</a></li>
             <li><a href="direccion.html">Direccionamiento</a></li>
@@ -274,6 +288,7 @@
             <li><a href="estudiantes.html">Estudiantes</a></li>
             <li><a href="exalumnos.html">Exalumnos</a></li>
             <li><a href="obrasocial.html">Procasita</a></li>
+            <li><a href="https://www.pijcolombia.org">PIJ Colombia</a></li>
           </ul>
         </div>
 
@@ -319,35 +334,8 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- JS años desde 1988, en frase -->
-<script>
-  function animateCounter(id, start, end, duration) {
-    const element = document.getElementById(id);
-    let startTime = null;
-
-    function step(timestamp) {
-      if (!startTime) startTime = timestamp;
-      const progress = timestamp - startTime;
-      const current = Math.min(Math.floor(progress / duration * (end - start) + start), end);
-      element.textContent = current;
-      if (current < end) {
-        window.requestAnimationFrame(step);
-      }
-    }
-
-    window.requestAnimationFrame(step);
-  }
-
-  const currentYear = new Date().getFullYear();
-  const yearFounded = 1988;
-  const colegioAge = currentYear - yearFounded;
-
-  animateCounter("anios-sme", 0, colegioAge, 1000); // 1000 ms = 1 segundo
-</script>
-
-  <!-- para galeria inferior -->
-<script>
-  const lightbox = GLightbox({ selector: '.glightbox' });
+  <script>
+  document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
 
 
