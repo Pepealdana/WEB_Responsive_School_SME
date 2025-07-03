@@ -8813,9 +8813,7 @@ section,
 .dim-text-5 { color: #3d34dd; }
 .dim-text-6 { color: #c00000; }
 
-/*--------------------------------------------------------------
-# adicionales 
---------------------------------------------------------------*/
+
 /* Card animada */
 .dev-card {
   background-color: #f8fbff;
@@ -8867,3 +8865,21 @@ section,
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   }
+
+
+
+/*--------------------------------------------------------------
+# Cronograma
+--------------------------------------------------------------*/
+
+.zoom-card img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .zoom-card:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .row.flex-nowrap {
+      scrollbar-width: thin;
+    }
