@@ -8774,3 +8774,96 @@ section,
   transition: background-color 0.3s ease, transform 0.3s ease;
   transform: translateY(-4px);
 }
+
+/*--------------------------------------------------------------
+# Modelo pedagpogico                                                     
+--------------------------------------------------------------*/
+
+/* colores dimensiones */
+
+.dim-card {
+  background-color: #ffffff;
+  transition: 0.3s ease;
+}
+.dim-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* Colores de fondo por dimensión */
+.dim-1 { background-color: #dff7fa; } /* Espiritual */
+.dim-2 { background-color: #dfd8f4; } /* Cognitiva */
+.dim-3 { background-color: #f6dae6; } /* Afectiva */
+.dim-4 { background-color: #ebf8d3; } /* Interpersonal */
+.dim-5 { background-color: #ccf1ff; } /* Estética */
+.dim-6 { background-color: #fce4d6; } /* Física Corporal */
+
+/* Colores de texto y título personalizados */
+.dim-title-1 { color: #00817e; }
+.dim-title-2 { color: #800080; }
+.dim-title-3 { color: #e105aa; }
+.dim-title-4 { color: #029020; }
+.dim-title-5 { color: #3d34dd; }
+.dim-title-6 { color: #c00000; }
+
+.dim-text-1 { color: #00817e; }
+.dim-text-2 { color: #800080; }
+.dim-text-3 { color: #e105aa; }
+.dim-text-4 { color: #029020; }
+.dim-text-5 { color: #3d34dd; }
+.dim-text-6 { color: #c00000; }
+
+/*--------------------------------------------------------------
+# adicionales 
+--------------------------------------------------------------*/
+/* Card animada */
+.dev-card {
+  background-color: #f8fbff;
+  transition: all 0.3s ease;
+}
+.dev-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Círculo del ícono */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #e0f0ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.dev-card:hover .icon-circle {
+  background-color: #91d2f4;
+  color: white;
+}
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #d8ecf7;
+    color: #213b52;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    transition: 0.3s ease;
+  }
+  .hover-card:hover .icon-circle {
+    background-color: #91d2f4;
+    color: #fff;
+  }
+  .hover-card {
+    transition: all 0.3s ease;
+  }
+  .hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
