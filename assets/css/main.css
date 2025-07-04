@@ -8883,3 +8883,14 @@ section,
     .row.flex-nowrap {
       scrollbar-width: thin;
     }
+
+    /* Evita el scroll automático horizontal al cargar */
+html {
+  scroll-behavior: smooth;
+}
+.row.flex-nowrap.overflow-auto {
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+

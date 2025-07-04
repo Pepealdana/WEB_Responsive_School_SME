@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+          <!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -35,6 +35,27 @@
   * Licencia: https://bootstrapmade.com/license/
   * Editado por: Peters A.G. para Colsme.edu.co
   ======================================================== -->
+
+  <style>
+    .zoom-card img {
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .zoom-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .scroll-container {
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .scroll-item {
+      scroll-snap-align: start;
+    }
+  </style>
 
 </head>
 
@@ -100,155 +121,135 @@
   <main class="main">
 
     <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url(assets/img/education/showcase-3.webp);background-position: center 80%;">
+      <div class="container position-relative">
+        <h1>Cronograma Institucional</h1>
+        <p>Conoce el cronograma de actividades institucionales que organiza y acompaña el desarrollo académico, formativo y pastoral de nuestra comunidad educativa.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="current">Cronograma Institucional</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    
 <!-- Sección Cronograma -->
 <section class="section py-5 bg-light" id="cronograma">
   <div class="container">
     <div class="text-center mb-5">
       <h2 class="fw-bold" style="color:#213b52;">Cronograma Escolar 2025</h2>
-      <p class="text-muted">Consulta el cronograma académico mes a mes. Haz clic en la imagen para ampliarla y descargarla.</p>
+      <p class="text-muted">Consulta el cronograma académico mes a mes. Haz clic en la imagen para ampliarla.</p>
     </div>
 
     <!-- Carrusel horizontal -->
-    <div class="row flex-nowrap overflow-auto g-3 px-2" style="scroll-snap-type: x mandatory;">
-      <!-- Generador de tarjetas -->
-      <!-- Usa el mismo patrón cambiando solo el mes -->
-      <!-- Lista de meses -->
-      <!-- Cards con imágenes -->
-      <!-- Cada imagen debe tener su respectivo modal abajo -->
-
-      <!-- Generación automática -->
-      <!-- HTML generado con mes y modal relacionados -->
-      <!-- Lista de meses en minúscula para path y capitalizada para título -->
-      <!-- Enero a Diciembre -->
-      <!-- Repite para cada mes -->
-      <!-- Tarjetas -->
-      <!-- Inicio tarjetas -->
-      <script>
-        // JavaScript para evitar errores si no hay JS desactivado
-      </script>
-      
-      <!-- Meses -->
-      <!-- Reemplazar ruta imagen si usas carpeta distinta -->
-      <!-- Cards -->
-      <!-- Generado 12 veces -->
-      <!-- ↓↓↓ Copiar los bloques según convenga ↓↓↓ -->
-      
-      <!-- enero -->
-      <div class="col-6 col-md-4 col-lg-2 text-center" style="scroll-snap-align: start;">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/enero.webp" alt="Enero" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalEnero">
-          <p class="fw-bold mt-2 mb-0">Enero</p>
-        </div>
-      </div>
-      <!-- Repite para cada mes -->
-      <!-- febrero -->
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/febrero.webp" alt="Febrero" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalFebrero">
-          <p class="fw-bold mt-2 mb-0">Febrero</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/marzo.webp" alt="Marzo" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalMarzo">
-          <p class="fw-bold mt-2 mb-0">Marzo</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/abril.webp" alt="Abril" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalAbril">
-          <p class="fw-bold mt-2 mb-0">Abril</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/mayo.webp" alt="Mayo" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalMayo">
-          <p class="fw-bold mt-2 mb-0">Mayo</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/junio.webp" alt="Junio" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalJunio">
-          <p class="fw-bold mt-2 mb-0">Junio</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/julio.webp" alt="Julio" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalJulio">
-          <p class="fw-bold mt-2 mb-0">Julio</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/agosto.webp" alt="Agosto" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalAgosto">
-          <p class="fw-bold mt-2 mb-0">Agosto</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/septiembre.webp" alt="Septiembre" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalSeptiembre">
-          <p class="fw-bold mt-2 mb-0">Septiembre</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/octubre.webp" alt="Octubre" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalOctubre">
-          <p class="fw-bold mt-2 mb-0">Octubre</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/noviembre.webp" alt="Noviembre" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalNoviembre">
-          <p class="fw-bold mt-2 mb-0">Noviembre</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-2 text-center">
-        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
-          <img src="assets/img/cronograma/diciembre.webp" alt="Diciembre" class="img-fluid rounded"
-               data-bs-toggle="modal" data-bs-target="#modalDiciembre">
-          <p class="fw-bold mt-2 mb-0">Diciembre</p>
-        </div>
-      </div>
+     <div class="row flex-nowrap overflow-auto g-3 px-2" id="fila-cronograma" style="scroll-snap-type: x mandatory; scroll-padding-left: 1rem; -webkit-overflow-scrolling: touch;"><!-- Aquí se insertan dinámicamente las tarjetas -->
     </div>
   </div>
 </section>
 
-<!-- Modales por cada mes (ejemplo enero) -->
-<!-- Repite para cada mes -->
-<div class="modal fade" id="modalEnero" tabindex="-1" aria-labelledby="modalEneroLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
-    <div class="modal-content">
-      <div class="modal-body p-0">
-        <img src="assets/img/cronograma/enero.webp" alt="Cronograma Enero" class="img-fluid w-100 rounded">
-      </div>
-      <div class="modal-footer justify-content-between bg-light">
-        <small class="text-muted">Cronograma Enero 2025</small>
-        <a href="assets/img/cronograma/enero.webp" download class="btn btn-sm btn-outline-primary">
-          <i class="bi bi-download"></i> Descargar
-        </a>
-        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Repite este bloque cambiando mes, id, imagen -->
+<!-- Contenedor de modales -->
+<div id="modales-cronograma"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script para generar tarjetas y modales -->
+<script>
+  const meses = [
+    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+  ];
 
+  // Generar tarjetas horizontalmente
+  document.addEventListener("DOMContentLoaded", () => {
+    const fila = document.getElementById("fila-cronograma");
+    const modalContainer = document.getElementById("modales-cronograma");
 
+    meses.forEach((mes, i) => {
+      const id = mes.toLowerCase();
 
+      // Crear tarjeta
+      const col = document.createElement("div");
+      col.className = "col-6 col-md-4 col-lg-2 text-center";
+      col.style.scrollSnapAlign = "start";
+      col.innerHTML = `
+        <div class="zoom-card shadow-sm rounded-3 bg-white p-2 h-100">
+          <img src="assets/img/cronograma/${id}.webp" alt="${mes}" class="img-fluid rounded"
+               data-bs-toggle="modal" data-bs-target="#modal${mes}">
+          <p class="fw-bold mt-2 mb-0">${mes}</p>
+        </div>
+      `;
+      fila.appendChild(col);
 
+      // Crear modal
+      const modal = document.createElement("div");
+      modal.className = "modal fade";
+      modal.id = `modal${mes}`;
+      modal.tabIndex = -1;
+      modal.dataset.index = i;
+      modal.setAttribute("aria-labelledby", `modal${mes}Label`);
+      modal.setAttribute("aria-hidden", "true");
+      modal.innerHTML = `
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-body p-0 d-flex justify-content-center align-items-center" style="max-height:80vh; overflow:hidden;">
+              <img src="assets/img/cronograma/${id}.webp" alt="Cronograma ${mes}" class="img-fluid rounded" style="max-height: 100%; width: auto;">
+            </div>
+            <div class="modal-footer justify-content-between bg-light flex-wrap gap-2">
+              <button type="button" class="btn btn-outline-primary btn-sm prev-month">&larr; Anterior</button>
+              <small class="text-muted">Cronograma ${mes} 2025</small>
+              <button type="button" class="btn btn-outline-primary btn-sm next-month">Siguiente &rarr;</button>
+              <button type="button" class="btn btn-sm btn-secondary ms-auto" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      `;
+      modalContainer.appendChild(modal);
+    });
+
+    // Control de botones para pasar de un mes a otro
+    setTimeout(() => {
+      const showModal = index => {
+        const open = bootstrap.Modal.getInstance(document.querySelector('.modal.show'));
+        if (open) open.hide();
+        const next = new bootstrap.Modal(document.querySelector(`#modal${meses[index]}`));
+        next.show();
+      };
+
+      document.querySelectorAll('.next-month').forEach(btn => {
+        btn.addEventListener('click', e => {
+          const modal = e.target.closest('.modal');
+          const currentIndex = parseInt(modal.dataset.index);
+          const nextIndex = (currentIndex + 1) % meses.length;
+          showModal(nextIndex);
+        });
+      });
+
+      document.querySelectorAll('.prev-month').forEach(btn => {
+        btn.addEventListener('click', e => {
+          const modal = e.target.closest('.modal');
+          const currentIndex = parseInt(modal.dataset.index);
+          const prevIndex = (currentIndex - 1 + meses.length) % meses.length;
+          showModal(prevIndex);
+        });
+      });
+    }, 100);
+  });
+</script>
+
+<!-- Estilos adicionales -->
+<style>
+  .zoom-card img {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .zoom-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .modal-body img {
+    object-fit: contain;
+  }
+</style>
   </main>
 
   <footer id="footer" class="footer position-relative dark-background">
@@ -268,7 +269,7 @@
     Calle 14 N° 3A - 167 Sur
   </a>
 </p>
-
+  
   <p>Facatativá, Cundinamarca</p>
   <p class="mt-3"><strong>Teléfono:</strong> <span>313 255 90 38</span></p>
   <p><strong>Correo:</strong> <span>s.mariadelaesperanza@yahoo.com</span></p>

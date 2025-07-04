@@ -129,11 +129,11 @@
                     <div class="stat-icon">
                       <i class="bi bi-trophy-fill"></i>
                     </div>
-                    <div class="stat-content">
-                      <h4>37 años</h4>
-                      <p>Educando niños, niñas y jóvenes</p>
-                    </div>
-                  </div>
+                    <div class="stat-content"> 
+                    <h4><span id="anios-sme"></span> años</h4>
+                    <p>Educando niños, niñas y jóvenes</p>
+                      </div>
+                      </div>
                   <div class="stat-item">
                     <div class="stat-icon">
                       <i class="bi bi-globe"></i>
@@ -496,6 +496,18 @@
 </section>
 
   </main>
+
+<script>
+  const yearNow = new Date().getFullYear();
+  const yearFounded = 1988;
+  const edadColegio = yearNow - yearFounded;
+
+  // Actualiza ambos elementos con el mismo número
+  document.getElementById("anios-sme").textContent = edadColegio;
+  document.getElementById("anios-sme-texto").textContent = edadColegio;
+</script>
+
+
 
   <footer id="footer" class="footer position-relative dark-background">
 
