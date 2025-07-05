@@ -283,11 +283,6 @@
       <div class="hover-img rounded overflow-hidden shadow-sm mb-3">
         <img src="assets/img/madreclara/hermanascapilla.webp" alt="Espiritualidad Clara Fey" class="img-fluid rounded">
       </div>
-
-      <!-- Clara orando -->
-      <div class="hover-img" style="max-width: 200px; margin: 0 auto;">
-        <img src="assets/img/madreclara/claraora.webp" alt="Clara Fey orando" class="img-fluid rounded shadow-sm">
-      </div>
     </div>
 
     <!-- Columna de texto -->
@@ -304,14 +299,33 @@
     </div>
   </div>
 
-  <!-- Frases con rotación -->
-  <section>
-    <div class="bg-light rounded p-4 mb-5 shadow-sm border border-2 border-warning-subtle">
-      <h4 class="fw-bold mb-3 text-center" style="color:#213b52;"><i class="bi bi-quote"></i> Palabras de la Madre Clara:</h4>
-      <div id="frase-madre-clara" class="text-center fst-italic fs-5">“Servir al amor con una mano y con la otra apoyarse en Jesús sin soltarlo.”</div>
+ <!-- Sección final: Imagen Clara orando + frase rotativa con fondo celeste -->
+<div class="bg-info-subtle rounded-4 p-4 mt-5 shadow-sm">
+  <div class="row align-items-center">
+    <!-- Imagen Claraora más grande -->
+    <div class="col-md-6 text-center mb-4 mb-md-0 animate-fade-in-up">
+      <div class="hover-img rounded overflow-hidden shadow-sm">
+        <img src="assets/img/madreclara/claraora.webp" alt="Clara Fey orando" class="img-fluid rounded" style="max-height: 460px; object-fit: cover;">
+      </div>
     </div>
-  </section>
 
+    <!-- Frase rotativa -->
+    <div class="col-md-6 animate-fade-in-up">
+      <h4 class="fw-bold text-center mb-3" style="color:#213b52;">
+        <i class="bi bi-quote text-warning"></i> Palabras de la Madre Clara:
+      </h4>
+      <div class="bg-light rounded-3 shadow-sm p-4 border border-1 border-warning-subtle">
+        <div id="frase-madre-clara" class="text-center fst-italic fs-5 text-secondary">
+          “Servir al amor con una mano y con la otra apoyarse en Jesús sin soltarlo.”
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Script de frases -->
   <script>
     const frases = [
       "Todo por Jesús, por Jesús solo.",
@@ -337,38 +351,54 @@
       "Nada hay más grande que vivir en la presencia del Señor, de una comunión a otra."
     ];
 
-    let index = 0;
-    const fraseEl = document.getElementById("frase-madre-clara");
+let index = 0;
+  const fraseEl = document.getElementById("frase-madre-clara");
 
-    function mostrarFrase() {
-      fraseEl.innerText = frases[index];
-      index = (index + 1) % frases.length;
-    }
+  function mostrarFrase() {
+    fraseEl.innerText = frases[index];
+    index = (index + 1) % frases.length;
+  }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      mostrarFrase();
-      setInterval(mostrarFrase, 10000); // cambia cada 10 segundos
-    });
-  </script>
-</div>
-
+  document.addEventListener("DOMContentLoaded", () => {
+    mostrarFrase();
+    setInterval(mostrarFrase, 10000); // cambia cada 10 segundos
+  });
+</script>
 </section>
 
 
-    <!-- Galería de imágenes e ilustración -->
-    <div class="row g-4 mb-5">
-      <div class="col-md-6" data-aos="zoom-in">
-        <img src="assets/img/madreclara/madre-real.jpg" alt="Clara Fey real" class="img-fluid rounded shadow-sm">
-      </div>
-      <div class="col-md-6" data-aos="zoom-in">
-        <img src="assets/img/madreclara/caricaturaclara.webp" alt="Clara Fey ilustrada" class="img-fluid rounded shadow-sm">
+<!-- Sección de oración con la Madre Clara -->
+<section class="my-5 py-5 px-3 px-md-5 rounded-4 bg-gradient bg-light border border-2 border-info-subtle shadow-sm position-relative overflow-hidden">
+  <div class="row align-items-center text-center">
+    
+    <!-- Imagen animada -->
+    <div class="col-md-5 mb-4 mb-md-0">
+      <div class="position-relative animate-float">
+        <img src="assets/img/madreclara/caricaturaclara.webp" alt="Madre Clara Orando" class="img-fluid" style="max-height: 420px;">
       </div>
     </div>
 
-  
-<a href="https://www.pijcolombia.org/espiritualidad" target="_blank" class="btn btn-outline-primary btn-sm mt-2">Conoce más</a>
+    <!-- Texto de oración -->
+    <div class="col-md-7">
+      <h3 class="fw-bold mb-4" style="color: #213b52;">
+        <i class="bi bi-stars text-warning me-2"></i>Ora con la Madre Clara
+      </h3>
 
-
+      <div class="bg-white rounded-4 p-4 mx-auto shadow-sm border-start border-5 border-warning-subtle" style="max-width: 600px;">
+        <p class="fst-italic text-secondary mb-4">
+          “Madre Clara, ayúdanos al instante, <br>
+          Ayúdanos por amor al Divino Infante, <br>
+          Ayúdanos por amor al Santísimo Sacramento, <br>
+          Haz que la necesidad cese al momento.”
+        </p>
+        <hr class="w-25 mx-auto my-4">
+        <p class="fw-semibold fs-5 text-primary-emphasis mb-0">
+          “Todo por Jesús, <br> Por Jesús solo.”
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
   </main>
 
