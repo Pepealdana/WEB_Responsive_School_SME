@@ -8894,3 +8894,42 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
+/*--------------------------------------------------------------
+# Madre Clara
+--------------------------------------------------------------*/
+
+/* Colores institucionales para los tabs */
+.nav-pills .nav-link {
+  background-color: #d4f4ff;
+  color: #213b52;
+  transition: all 0.3s ease;
+}
+.nav-pills .nav-link:hover {
+  background-color: #55C9F4;
+  color: white;
+}
+.nav-pills .nav-link.active {
+  background-color: #55C9F4 !important;
+  color: white !important;
+}
+
+/* Transición suave en pestañas */
+.tab-pane.fade-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+.tab-pane.fade-slide.show.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.hover-img img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+.hover-img:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
