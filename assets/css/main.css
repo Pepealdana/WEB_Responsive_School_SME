@@ -8960,3 +8960,21 @@ html {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+
+/* admisiones */
+
+  .admissions-info ol > li::marker {
+    color: #55C9F4;
+    font-weight: bold;
+  }
+
+  .admissions-info a {
+    color: #55C9F4;
+  }
+
+  .btn-outline-primary:hover {
+    background-color: #55C9F4 !important;
+    color: #fff !important;
+    border-color: #55C9F4 !important;
+  }
