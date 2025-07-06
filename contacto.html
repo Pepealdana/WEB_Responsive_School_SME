@@ -172,65 +172,95 @@
 
 
   <!-- Formulario de Contacto -->
-  <div class="container form-container-overlap">
-    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="300">
-      <div class="col-lg-10">
-        <div class="contact-form-wrapper">
-          <h2 class="text-center mb-4">Contáctanos</h2>
+<!-- Formulario de Contacto -->
+<div class="contact-form-box mt-5" data-aos="fade-up">
+  <!-- Mensaje de éxito -->
+  <div id="successMessage" class="form-success-message text-center">
+    ¡Tu mensaje ha sido enviado correctamente!
+  </div>
 
-          <form action="forms/contact.php" method="post" class="php-email-form">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <div class="input-with-icon">
-                    <i class="bi bi-person"></i>
-                    <input type="text" class="form-control" name="name" placeholder="Nombre completo" required="">
-                  </div>
-                </div>
-              </div>
+  <form id="formularioContacto" action="https://formsubmit.co/s.mariadelaesperanza@yahoo.com" method="POST">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="#">
 
-              <div class="col-md-6">
-                <div class="form-group">
-                  <div class="input-with-icon">
-                    <i class="bi bi-envelope"></i>
-                    <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required="">
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-12">
-                <div class="form-group">
-                  <div class="input-with-icon">
-                    <i class="bi bi-text-left"></i>
-                    <input type="text" class="form-control" name="subject" placeholder="Asunto" required="">
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="form-group">
-                  <div class="input-with-icon">
-                    <i class="bi bi-chat-dots message-icon"></i>
-                    <textarea class="form-control" name="message" placeholder="Escribe tu mensaje aquí..." style="height: 180px" required=""></textarea>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="loading">Cargando...</div>
-                <div class="error-message"></div>
-                <div class="sent-message">¡Tu mensaje ha sido enviado correctamente!</div>
-              </div>
-
-              <div class="col-12 text-center">
-                <button type="submit" class="btn btn-primary btn-submit">ENVIAR MENSAJE</button>
-              </div>
-            </div>
-          </form>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="input-with-icon">
+            <i class="bi bi-person"></i>
+            <input type="text" class="form-control" name="name" placeholder="Nombre completo" required>
+          </div>
         </div>
       </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="input-with-icon">
+            <i class="bi bi-envelope"></i>
+            <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="form-group">
+          <div class="input-with-icon">
+            <i class="bi bi-text-left"></i>
+            <input type="text" class="form-control" name="subject" placeholder="Asunto" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-group">
+          <div class="input-with-icon">
+            <i class="bi bi-chat-dots message-icon"></i>
+            <textarea class="form-control" name="message" placeholder="Escribe tu mensaje aquí..." style="height: 180px" required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-primary btn-submit">ENVIAR MENSAJE</button>
+      </div>
     </div>
-  </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('formularioContacto').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+    const successMsg = document.getElementById('successMessage');
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        successMsg.style.display = 'block';
+        form.reset();
+
+        // Oculta el mensaje después de 6 segundos
+        setTimeout(() => {
+          successMsg.style.display = 'none';
+        }, 6000);
+      } else {
+        alert('Ocurrió un error al enviar el mensaje. Intenta nuevamente.');
+      }
+    })
+    .catch(error => {
+      alert('Error al conectar con el servidor.');
+    });
+  });
+</script>
+
+
+
 </section>
 
 <!-- /Contact Section -->
