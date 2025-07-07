@@ -32,18 +32,18 @@ Crear una plataforma web institucional, informativa, moderna, accesible y respon
 
 ---
 
-## 🗂️ Estructura de carpetas
+## 📁 Estructura de carpetas
 
 WEB_Responsive_School_SME/
 │
 ├── assets/
-│ ├── css/ → Estilos personalizados y bootstrap
-│ ├── js/ → Scripts JS propios y externos
-│ ├── img/ → Imágenes institucionales y de secciones
-│ └── vendor/ → Librerías externas (AOS, Bootstrap Icons, etc.)
+│   ├── css/ → Estilos personalizados y bootstrap
+│   ├── js/ → Scripts JS propios y externos
+│   ├── img/ → Imágenes institucionales y de secciones
+│   └── vendor/ → Librerías externas (AOS, Bootstrap Icons, etc.)
 │
 ├── forms/
-│ └── contact.php → (Obsoleto) Script de backend con PHP Email Form
+│   └── contact.php → (Obsoleto) Script de backend con PHP Email Form
 │
 ├── index.html → Página de inicio
 ├── contacto.html → Página con formulario de contacto funcional
@@ -61,8 +61,6 @@ WEB_Responsive_School_SME/
 ├── .htaccess → Redirección de errores del servidor Apache
 └── README.md → Documentación del proyecto
 
-
----
 
 ## 📨 Formulario de contacto
 
