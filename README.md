@@ -32,8 +32,10 @@ Crear una plataforma web institucional, informativa, moderna, accesible y respon
 
 ---
 
+
 ## 📁 Estructura de carpetas
 
+```
 WEB_Responsive_School_SME/
 │
 ├── assets/
@@ -60,6 +62,8 @@ WEB_Responsive_School_SME/
 ├── 404.html → Página personalizada de error 404
 ├── .htaccess → Redirección de errores del servidor Apache
 └── README.md → Documentación del proyecto
+```
+
 
 
 ## 📨 Formulario de contacto
