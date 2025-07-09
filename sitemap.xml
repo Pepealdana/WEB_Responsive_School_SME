@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://colsme.edu.co/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://colsme.edu.co/admisiones.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://colsme.edu.co/contacto.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://colsme.edu.co/comunidadPIJ.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://colsme.edu.co/modelo-academico.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://colsme.edu.co/direccionamiento.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://colsme.edu.co/instalaciones.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://colsme.edu.co/gracias.html</loc>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://colsme.edu.co/404.html</loc>
+    <priority>0.10</priority>
+  </url>
+
+</urlset>
