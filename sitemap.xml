@@ -7,7 +7,17 @@
   </url>
 
   <url>
+    <loc>https://colsme.edu.co/comunidadpij.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+    <url>
     <loc>https://colsme.edu.co/admisiones.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+    <url>
+    <loc>https://colsme.edu.co/madreclara.html</loc>
     <priority>0.90</priority>
   </url>
 
@@ -22,7 +32,7 @@
   </url>
 
   <url>
-    <loc>https://colsme.edu.co/modelo-academico.html</loc>
+    <loc>https://colsme.edu.co/modeloacademico.html</loc>
     <priority>0.80</priority>
   </url>
 
@@ -34,11 +44,6 @@
   <url>
     <loc>https://colsme.edu.co/instalaciones.html</loc>
     <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://colsme.edu.co/gracias.html</loc>
-    <priority>0.50</priority>
   </url>
 
   <url>
