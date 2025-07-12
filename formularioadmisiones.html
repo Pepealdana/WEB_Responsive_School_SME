@@ -39,8 +39,8 @@
 
 <style>
     body {
-      margin: 0;
-      background-color: #ffde46; /* amarillo institucional */
+    
+      background-color: #ffffff; 
       font-family: 'Poppins', sans-serif;
     }
 
@@ -61,7 +61,6 @@
     }
 
    
-
     label {
       font-weight: 600;
       display: block;
@@ -184,91 +183,117 @@
   
   <!-- formulario -->
    
-<section class="form-section">
-    <h2>Formulario de Contacto</h2>
-    <p>Completa este formulario para iniciar el proceso de admisión al colegio.</p>
+<main>
+    <section class="formulario-contacto" style="padding: 2rem 1rem; max-width: 900px; margin: auto;">
+      <h2 style="text-align: center; color: #213b52;">Formulario de Contacto</h2>
+      
+      <form action="https://formsubmit.co/admisionessme1988@gmail.com" method="POST">
+        <div class="form-success-message" id="form-message">Gracias por tu mensaje. Pronto nos pondremos en contacto.</div>
 
-    <form action="https://formsubmit.co/admisionessme1988@gmail.com" method="POST" onsubmit="mostrarGracias(); return false;">
-      <!-- Datos del estudiante -->
-      <label>Nombres y apellidos del candidato(a):</label>
-      <input type="text" name="nombre_candidato" required>
+        <!-- Nombres -->
+        <div class="input-with-icon">
+          <i class="bi bi-person-fill"></i>
+          <input class="form-control" type="text" name="Nombres y apellidos del candidato(a)" placeholder="Nombres y apellidos del candidato(a)" required />
+        </div>
 
-      <label>Fecha de nacimiento:</label>
-      <input type="date" name="fecha_nacimiento" required>
+        <!-- Fecha de nacimiento -->
+        <div class="input-with-icon">
+          <i class="bi bi-calendar-event-fill"></i>
+          <input class="form-control" type="date" name="Fecha de nacimiento" required />
+        </div>
 
-      <label for="edad">Edad:</label>
-      <input type="number" id="edad" name="Edad" required>
+        <!-- Edad -->
+        <div class="input-with-icon">
+          <i class="bi bi-123"></i>
+          <input class="form-control" type="number" name="Edad" placeholder="Edad" required />
+        </div>
 
-      <label>Institución educativa actual:</label>
-      <input type="text" name="institucion_actual" required>
+        <!-- Institución -->
+        <div class="input-with-icon">
+          <i class="bi bi-building"></i>
+          <input class="form-control" type="text" name="Institución educativa actual" placeholder="Institución educativa actual" required />
+        </div>
 
-      <label>Ciudad de la institución:</label>
-      <input type="text" name="ciudad_institucion" required>
+        <!-- Ciudad institución -->
+        <div class="input-with-icon">
+          <i class="bi bi-geo-alt-fill"></i>
+          <input class="form-control" type="text" name="Ciudad institución" placeholder="Ciudad donde está ubicada la institución" required />
+        </div>
 
-      <label>Dirección de domicilio:</label>
-      <input type="text" name="direccion_domicilio" required>
+        <!-- Dirección -->
+        <div class="input-with-icon">
+          <i class="bi bi-house-door-fill"></i>
+          <input class="form-control" type="text" name="Dirección" placeholder="Dirección de domicilio" required />
+        </div>
 
-      <label>Ciudad o municipio donde vive actualmente:</label>
-      <input type="text" name="ciudad_residencia" required>
+        <!-- Ciudad actual -->
+        <div class="input-with-icon">
+          <i class="bi bi-geo-alt"></i>
+          <input class="form-control" type="text" name="Ciudad actual" placeholder="Ciudad o municipio donde vive actualmente" required />
+        </div>
 
-      <label>Grado al que aspira:</label>
-      <select name="grado_aspira" required>
-        <option value="">Seleccione un grado</option>
-        <option>Preescolar</option>
-        <option>Primero</option>
-        <option>Segundo</option>
-        <option>Tercero</option>
-        <option>Cuarto</option>
-        <option>Quinto</option>
-        <option>Sexto</option>
-        <option>Séptimo</option>
-        <option>Octavo</option>
-        <option>Noveno</option>
-        <option>Décimo</option>
-        <option>Undécimo</option>
-      </select>
+      
 
-      <!-- Datos del acudiente -->
-      <label>Nombre del acudiente:</label>
-      <input type="text" name="acudiente" required>
+        <!-- Documento acudiente -->
 
-      <label for="documento">Número de documento de identificación:</label>
-      <input type="number" id="documento" name="Documento" required>
+<div class="input-with-icon">
+  <i class="bi bi-book-fill"></i>
+  <select class="form-control" name="Grado al que aspira" required>
+    <option value="">Seleccione un grado</option>
+    <option>Preescolar</option>
+    <option>Primero</option>
+    <option>Segundo</option>
+    <option>Tercero</option>
+    <option>Cuarto</option>
+    <option>Quinto</option>
+    <option>Sexto</option>
+    <option>Séptimo</option>
+    <option>Octavo</option>
+    <option>Noveno</option>
+    <option>Décimo</option>
+    <option>Undécimo</option>
+  </select>
+</div>
 
-      <label>Fecha de expedición:</label>
-      <input type="date" name="fecha_expedicion" required>
 
-      <label for="contacto1">Número de contacto 1:</label>
-      <input type="number" id="contacto1" name="Contacto 1" required>
+        <!-- Fecha expedición -->
+        <div class="input-with-icon">
+          <i class="bi bi-calendar-check-fill"></i>
+          <input class="form-control" type="date" name="Fecha de expedición" required />
+        </div>
 
-      <label for="contacto2">Número de contacto 2 (opcional):</label>
-      <input type="number" id="contacto2" name="Contacto 2"> <!-- opcional -->
+      <!-- Teléfono 1 -->
+<div class="input-with-icon">
+  <i class="bi bi-telephone-fill"></i>
+  <input class="form-control" type="number" name="Número de contacto 1" placeholder="Número de contacto 1" required />
+</div>
 
-      <!-- Último campo -->
-      <label>¿Cómo supiste de nosotros?</label>
-      <input type="text" name="referencia" required>
+<!-- Teléfono 2 (opcional) -->
+<div class="input-with-icon">
+  <i class="bi bi-telephone-forward-fill"></i>
+  <input class="form-control" type="number" name="Número de contacto 2 (opcional)" placeholder="Número de contacto 2 (opcional)" />
+</div>
 
-      <!-- Configuración de FormSubmit -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_autoresponse" value="Gracias por tu interés. Hemos recibido tu solicitud y te contactaremos pronto.">
 
-      <button type="submit">Enviar formulario</button>
-    </form>
 
-    <div class="gracias" id="gracias">
-      ¡Gracias por enviarnos tu información! Pronto nos comunicaremos contigo.
-    </div>
-  </section>
+        <!-- ¿Cómo supiste de nosotros? -->
+        <div class="input-with-icon">
+          <i class="bi bi-chat-left-text-fill"></i>
+          <input class="form-control" type="text" name="¿Cómo supiste de nosotros?" placeholder="¿Cómo supiste de nosotros?" required />
+        </div>
 
-  <script>
-    function mostrarGracias() {
-      document.querySelector("form").style.display = "none";
-      document.getElementById("gracias").style.display = "block";
-    }
-  </script>
+        <!-- Botón -->
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button type="submit" class="btn-submit">Enviar</button>
+        </div>
 
+        <!-- Prevención de SPAM -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="box" />
+      </form>
+    </section>
   </main>
+
 
   <footer id="footer" class="footer position-relative dark-background">
 
