@@ -36,11 +36,58 @@
   * Editado por: Peters A.G. para Colsme.edu.co
   ======================================================== -->
 
+
+<style>
+   
+    .sugerencias {
+      padding: 100px 20px 40px;
+      text-align: center;
+    }
+
+    .sugerencias h2 {
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: #1a1a1a;
+      position: relative;
+      display: inline-block;
+    }
+
+    .sugerencias h2::before {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: #0c2e4d;
+      margin: 0 auto 15px auto;
+    }
+
+    .sugerencias p {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .formulario-iframe {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border: none;
+    }
+
+    iframe {
+      width: 100%;
+      height: 1700px; /* Ajusta si agregas más campos */
+      border: none;
+      overflow: hidden;
+    }
+  </style>
+
+
 </head>
 
-<body class="admissions-page">
+<body class="forms information">
 
-<header id="header" class="header d-flex align-items-center fixed-top">
+   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
    <a href="index.html" class="logo d-flex align-items-center">
@@ -96,166 +143,33 @@
     </div>
   </header>
 
-
-  <main class="main">
+<main class="main">
 
     <!-- Page Title -->
     <div class="page-title dark-background" style="background-image: url(assets/img/education/showcase-3.webp);background-position: center 80%;">
       <div class="container position-relative">
-        <h1>Admisiones</h1>
-        <p>Te invitamos a ser parte de nuestra comunidad educativa, donde formamos con fe, amor y excelencia a niños, niñas y jóvenes en el espíritu del Niño Jesús Pobre.</p>
+        <h1>Buzón de Sugerencias</h1>
+        <p>Saber tu opinión siempre nos hará una mejor Insitución</p>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Inicio</a></li>
-            <li class="current">Admisiones</li>
+            <li class="current">Buzón de sugerencias</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
-
-    
-   <!-- Admisiones - Colegio Santa María de la Esperanza -->
-<!-- Admisiones - Colegio Santa María de la Esperanza -->
-<section id="admisiones" class="admissions section" style="background-color: #ffdd57;">
-  <style>
-    .text-primary,
-    .admissions-requirements i {
-      color: #55C9F4 !important;
-    }
-
-    /* Botones de redes sociales */
-    .btn-outline-primary {
-      background-color: white;
-      color: #55C9F4;
-      border-color: #55C9F4;
-    }
-
-    .btn-outline-primary:hover {
-      background-color: #55C9F4;
-      color: white;
-      border-color: #55C9F4;
-    }
-
-    /* Botón de contacto */
-    .btn-primary {
-      background-color: #55C9F4;
-      border-color: #55C9F4;
-    }
-
-    .btn-primary:hover {
-      background-color: #3bb5db;
-      border-color: #3bb5db;
-    }
-
-    /* Color blanco al correo */
-    .admissions-info a[href^="mailto:"] {
-      color: black;
-      font-weight: 500;
-    }
-  </style>
-
-  <div class="container" data-aos="fade-up">
-    <div class="row gy-5 g-lg-5">
-
-      <!-- Información general -->
-      <div class="col-lg-6">
-        <div class="admissions-info">
-          <h2 class="fw-bold" style="color:#213b52">Proceso de Admisiones</h2>
-          <p class="lead">Nuestro proceso de admisión va más allá de la selección: buscamos familias que compartan nuestra filosofía educativa y deseen crecer junto a nosotros.</p>
-
-          <div class="admissions-steps mt-4">
-            <h4 class="fw-semibold">Pasos para realizar el proceso:</h4>
-            <div class="steps-wrapper mt-3">
-              <div class="step-item d-flex mb-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="step-number" style="background-color:#55C9F4;">1</div>
-                <div class="step-content ms-3">
-                  <h5>Adquiere el formulario</h5>
-                  <p>Disponible en el colegio o escribiendo a <a href="mailto:admisionessme1988@gmail.com">admisionessme1988@gmail.com</a>.</p>
-                </div>
-              </div>
-              <div class="step-item d-flex mb-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="step-number" style="background-color:#55C9F4;">2</div>
-                <div class="step-content ms-3">
-                  <h5>Cita para examen y observación</h5>
-                  <p>Serás contactado para agendar exámenes académicos y observación del aspirante.</p>
-                </div>
-              </div>
-              <div class="step-item d-flex mb-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="step-number" style="background-color:#55C9F4;">3</div>
-                <div class="step-content ms-3">
-                  <h5>Entrevista familiar</h5>
-                  <p>Al entregar los documentos requeridos, se agendará una entrevista con orientación escolar.</p>
-                </div>
-              </div>
-              <div class="step-item d-flex mb-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="step-number" style="background-color:#55C9F4;">4</div>
-                <div class="step-content ms-3">
-                  <h5>Resultado y bienvenida</h5>
-                  <p>Recibirás el resultado por correo y, si eres admitido, una cita con la rectora para el ingreso.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-5" data-aos="fade-up">
-            <h4 class="fw-semibold">¡Atento a nuestras redes sociales!</h4>
-            <p class="mb-2">Desde junio, participa en nuestros <strong>Open Campus</strong>, conoce nuestras instalaciones y recibe beneficios.</p>
-            <div class="d-flex gap-3">
-              <a href="https://www.facebook.com/ColegioSantaMariaDeLaEsperanza" target="_blank" class="btn btn-sm btn-outline-primary">
-                <i class="bi bi-facebook"></i> Facebook
-              </a>
-              <a href="https://www.instagram.com/colegio_sme/?hl=es-la" target="_blank" class="btn btn-sm btn-outline-primary">
-                <i class="bi bi-instagram"></i> Instagram
-              </a>
-            </div>
-          </div>
-        </div>
+  
+  <!-- Main -->
+ <main>
+    <section class="sugerencias">
+      
+      <div class="formulario-iframe">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLX8E0ty9sJETMxOgt0kEBxPZdERD3ZhNp6UepYK8HlEYt5g/viewform?embedded=true"
+          allowfullscreen>
+          Cargando…
+        </iframe>
       </div>
-
-      <!-- Requisitos -->
-      <div class="col-lg-6">
-        <div class="admissions-requirements">
-          <h3 class="fw-bold" style="color:#213b52">Requisitos para la admisión</h3>
-          <ul class="list-unstyled mt-4">
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="100">
-              <i class="bi bi-clipboard-check me-3 fs-4"></i>
-              <span>Formulario diligenciado</span>
-            </li>
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="150">
-              <i class="bi bi-file-earmark-text me-3 fs-4"></i>
-              <span>Registro civil de nacimiento</span>
-            </li>
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-person-badge me-3 fs-4"></i>
-              <span>Fotocopia de documento de identidad del estudiante y acudientes</span>
-            </li>
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="250">
-              <i class="bi bi-people me-3 fs-4"></i>
-              <span>Boletines de los últimos grados cursados</span>
-            </li>
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-house-door me-3 fs-4"></i>
-              <span>Certificado de afiliación EPS</span>
-            </li>
-          </ul>
-
-          <div class="mt-4" data-aos="fade-up" data-aos-delay="350">
-            <h5 class="fw-semibold">Grados con cupo disponible</h5>
-            <p class="mb-1">Desde Prejardín hasta Grado Octavo.</p>
-            <p class="small text-muted fst-italic">Para grados superiores, por favor contáctanos directamente.</p>
-          </div>
-        </div>
-
-        <!-- Botón de contacto -->
-        <div class="mt-5" data-aos="fade-up">
-          <a href="formularioadmisiones.html" class="btn btn-lg btn-primary"><i class="bi bi-envelope-paper"></i> Solicita Información Aquí</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+    </section>
   </main>
 
   <footer id="footer" class="footer position-relative dark-background">

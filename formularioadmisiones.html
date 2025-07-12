@@ -36,11 +36,81 @@
   * Editado por: Peters A.G. para Colsme.edu.co
   ======================================================== -->
 
+
+<style>
+    body {
+      margin: 0;
+      background-color: #ffde46; /* amarillo institucional */
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .form-section {
+      background-color: #55C9F4; /* azul institucional */
+      color: #0e0138;
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #07032a;
+      margin-bottom: 10px;
+    }
+
+   
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #ffffff; /* blanco */
+      color: #000;
+    }
+
+    button {
+      background-color: #fff;
+      color: #0c2e4d;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto 0;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #abe6fc;
+    }
+
+    .gracias {
+      display: none;
+      text-align: center;
+      color: #051e46b4;
+      background-color: #f2efdc;
+      border: 1px solid #f2efdc;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+
 </head>
 
-<body class="admissions-page">
+<body class="forms information">
 
-<header id="header" class="header d-flex align-items-center fixed-top">
+   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
    <a href="index.html" class="logo d-flex align-items-center">
@@ -86,7 +156,7 @@
             <ul>
               <li><a href="contacto.html">Contáctenos</a></li>
               <li><a href="https://colsme.phidias.co/">Phidias</a></li>
-              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfLX8E0ty9sJETMxOgt0kEBxPZdERD3ZhNp6UepYK8HlEYt5g/viewform?usp=sf_link">Buzón de Sugerencias</a></li>
+              <li><a href="buzondesugerencias.html">Buzón de Sugerencias</a></li>
             </ul>
                     
         </ul>
@@ -96,165 +166,107 @@
     </div>
   </header>
 
-
-  <main class="main">
+<main class="main">
 
     <!-- Page Title -->
     <div class="page-title dark-background" style="background-image: url(assets/img/education/showcase-3.webp);background-position: center 80%;">
       <div class="container position-relative">
-        <h1>Admisiones</h1>
-        <p>Te invitamos a ser parte de nuestra comunidad educativa, donde formamos con fe, amor y excelencia a niños, niñas y jóvenes en el espíritu del Niño Jesús Pobre.</p>
+        <h1>Solicitud de Información</h1>
+        <p>Si estás interesado en iniciar el proceso de Admisión como estudiante nuevo</p>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="index.html">Inicio</a></li>
-            <li class="current">Admisiones</li>
+            <li class="current">Formulario proceso de Admisiones</li>
           </ol>
         </nav>
       </div>
     </div><!-- End Page Title -->
+  
+  <!-- formulario -->
+   
+<section class="form-section">
+    <h2>Formulario de Contacto</h2>
+    <p>Completa este formulario para iniciar el proceso de admisión al colegio.</p>
 
-    
-   <!-- Admisiones - Colegio Santa María de la Esperanza -->
-<!-- Admisiones - Colegio Santa María de la Esperanza -->
-<section id="admisiones" class="admissions section" style="background-color: #ffdd57;">
-  <style>
-    .text-primary,
-    .admissions-requirements i {
-      color: #55C9F4 !important;
-    }
+    <form action="https://formsubmit.co/admisionessme1988@gmail.com" method="POST" onsubmit="mostrarGracias(); return false;">
+      <!-- Datos del estudiante -->
+      <label>Nombres y apellidos del candidato(a):</label>
+      <input type="text" name="nombre_candidato" required>
 
-    /* Botones de redes sociales */
-    .btn-outline-primary {
-      background-color: white;
-      color: #55C9F4;
-      border-color: #55C9F4;
-    }
+      <label>Fecha de nacimiento:</label>
+      <input type="date" name="fecha_nacimiento" required>
 
-    .btn-outline-primary:hover {
-      background-color: #55C9F4;
-      color: white;
-      border-color: #55C9F4;
-    }
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" name="Edad" required>
 
-    /* Botón de contacto */
-    .btn-primary {
-      background-color: #55C9F4;
-      border-color: #55C9F4;
-    }
+      <label>Institución educativa actual:</label>
+      <input type="text" name="institucion_actual" required>
 
-    .btn-primary:hover {
-      background-color: #3bb5db;
-      border-color: #3bb5db;
-    }
+      <label>Ciudad de la institución:</label>
+      <input type="text" name="ciudad_institucion" required>
 
-    /* Color blanco al correo */
-    .admissions-info a[href^="mailto:"] {
-      color: black;
-      font-weight: 500;
-    }
-  </style>
+      <label>Dirección de domicilio:</label>
+      <input type="text" name="direccion_domicilio" required>
 
-  <div class="container" data-aos="fade-up">
-    <div class="row gy-5 g-lg-5">
+      <label>Ciudad o municipio donde vive actualmente:</label>
+      <input type="text" name="ciudad_residencia" required>
 
-      <!-- Información general -->
-      <div class="col-lg-6">
-        <div class="admissions-info">
-          <h2 class="fw-bold" style="color:#213b52">Proceso de Admisiones</h2>
-          <p class="lead">Nuestro proceso de admisión va más allá de la selección: buscamos familias que compartan nuestra filosofía educativa y deseen crecer junto a nosotros.</p>
+      <label>Grado al que aspira:</label>
+      <select name="grado_aspira" required>
+        <option value="">Seleccione un grado</option>
+        <option>Preescolar</option>
+        <option>Primero</option>
+        <option>Segundo</option>
+        <option>Tercero</option>
+        <option>Cuarto</option>
+        <option>Quinto</option>
+        <option>Sexto</option>
+        <option>Séptimo</option>
+        <option>Octavo</option>
+        <option>Noveno</option>
+        <option>Décimo</option>
+        <option>Undécimo</option>
+      </select>
 
-          <div class="admissions-steps mt-4">
-            <h4 class="fw-semibold">Pasos para realizar el proceso:</h4>
-            <div class="steps-wrapper mt-3">
-              <div class="step-item d-flex mb-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="step-number" style="background-color:#55C9F4;">1</div>
-                <div class="step-content ms-3">
-                  <h5>Adquiere el formulario</h5>
-                  <p>Disponible en el colegio o escribiendo a <a href="mailto:admisionessme1988@gmail.com">admisionessme1988@gmail.com</a>.</p>
-                </div>
-              </div>
-              <div class="step-item d-flex mb-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="step-number" style="background-color:#55C9F4;">2</div>
-                <div class="step-content ms-3">
-                  <h5>Cita para examen y observación</h5>
-                  <p>Serás contactado para agendar exámenes académicos y observación del aspirante.</p>
-                </div>
-              </div>
-              <div class="step-item d-flex mb-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="step-number" style="background-color:#55C9F4;">3</div>
-                <div class="step-content ms-3">
-                  <h5>Entrevista familiar</h5>
-                  <p>Al entregar los documentos requeridos, se agendará una entrevista con orientación escolar.</p>
-                </div>
-              </div>
-              <div class="step-item d-flex mb-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="step-number" style="background-color:#55C9F4;">4</div>
-                <div class="step-content ms-3">
-                  <h5>Resultado y bienvenida</h5>
-                  <p>Recibirás el resultado por correo y, si eres admitido, una cita con la rectora para el ingreso.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+      <!-- Datos del acudiente -->
+      <label>Nombre del acudiente:</label>
+      <input type="text" name="acudiente" required>
 
-          <div class="mt-5" data-aos="fade-up">
-            <h4 class="fw-semibold">¡Atento a nuestras redes sociales!</h4>
-            <p class="mb-2">Desde junio, participa en nuestros <strong>Open Campus</strong>, conoce nuestras instalaciones y recibe beneficios.</p>
-            <div class="d-flex gap-3">
-              <a href="https://www.facebook.com/ColegioSantaMariaDeLaEsperanza" target="_blank" class="btn btn-sm btn-outline-primary">
-                <i class="bi bi-facebook"></i> Facebook
-              </a>
-              <a href="https://www.instagram.com/colegio_sme/?hl=es-la" target="_blank" class="btn btn-sm btn-outline-primary">
-                <i class="bi bi-instagram"></i> Instagram
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <label for="documento">Número de documento de identificación:</label>
+      <input type="number" id="documento" name="Documento" required>
 
-      <!-- Requisitos -->
-      <div class="col-lg-6">
-        <div class="admissions-requirements">
-          <h3 class="fw-bold" style="color:#213b52">Requisitos para la admisión</h3>
-          <ul class="list-unstyled mt-4">
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="100">
-              <i class="bi bi-clipboard-check me-3 fs-4"></i>
-              <span>Formulario diligenciado</span>
-            </li>
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="150">
-              <i class="bi bi-file-earmark-text me-3 fs-4"></i>
-              <span>Registro civil de nacimiento</span>
-            </li>
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-person-badge me-3 fs-4"></i>
-              <span>Fotocopia de documento de identidad del estudiante y acudientes</span>
-            </li>
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="250">
-              <i class="bi bi-people me-3 fs-4"></i>
-              <span>Boletines de los últimos grados cursados</span>
-            </li>
-            <li class="d-flex mb-3" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-house-door me-3 fs-4"></i>
-              <span>Certificado de afiliación EPS</span>
-            </li>
-          </ul>
+      <label>Fecha de expedición:</label>
+      <input type="date" name="fecha_expedicion" required>
 
-          <div class="mt-4" data-aos="fade-up" data-aos-delay="350">
-            <h5 class="fw-semibold">Grados con cupo disponible</h5>
-            <p class="mb-1">Desde Prejardín hasta Grado Octavo.</p>
-            <p class="small text-muted fst-italic">Para grados superiores, por favor contáctanos directamente.</p>
-          </div>
-        </div>
+      <label for="contacto1">Número de contacto 1:</label>
+      <input type="number" id="contacto1" name="Contacto 1" required>
 
-        <!-- Botón de contacto -->
-        <div class="mt-5" data-aos="fade-up">
-          <a href="formularioadmisiones.html" class="btn btn-lg btn-primary"><i class="bi bi-envelope-paper"></i> Solicita Información Aquí</a>
-        </div>
-      </div>
+      <label for="contacto2">Número de contacto 2 (opcional):</label>
+      <input type="number" id="contacto2" name="Contacto 2"> <!-- opcional -->
+
+      <!-- Último campo -->
+      <label>¿Cómo supiste de nosotros?</label>
+      <input type="text" name="referencia" required>
+
+      <!-- Configuración de FormSubmit -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_autoresponse" value="Gracias por tu interés. Hemos recibido tu solicitud y te contactaremos pronto.">
+
+      <button type="submit">Enviar formulario</button>
+    </form>
+
+    <div class="gracias" id="gracias">
+      ¡Gracias por enviarnos tu información! Pronto nos comunicaremos contigo.
     </div>
-  </div>
-</section>
+  </section>
 
+  <script>
+    function mostrarGracias() {
+      document.querySelector("form").style.display = "none";
+      document.getElementById("gracias").style.display = "block";
+    }
+  </script>
 
   </main>
 
