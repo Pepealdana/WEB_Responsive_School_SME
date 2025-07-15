@@ -196,11 +196,12 @@
           <input class="form-control" type="text" name="Nombres y apellidos del candidato(a)" placeholder="Nombres y apellidos del candidato(a)" required />
         </div>
 
-        <!-- Fecha de nacimiento -->
-        <div class="input-with-icon">
-          <i class="bi bi-calendar-event-fill"></i>
-          <input class="form-control" type="date" name="Fecha de nacimiento" required />
-        </div>
+<!-- Fecha de nacimiento con label -->
+<label for="fecha-nacimiento" style="margin-top: 1rem; font-weight: 600;">Fecha de nacimiento</label>
+<div class="input-with-icon">
+  <i class="bi bi-calendar-event-fill"></i>
+  <input id="fecha-nacimiento" class="form-control" type="date" name="Fecha de nacimiento" required />
+</div>
 
         <!-- Edad -->
         <div class="input-with-icon">
@@ -220,60 +221,74 @@
           <input class="form-control" type="text" name="Ciudad institución" placeholder="Ciudad donde está ubicada la institución" required />
         </div>
 
-        <!-- Dirección -->
-        <div class="input-with-icon">
-          <i class="bi bi-house-door-fill"></i>
-          <input class="form-control" type="text" name="Dirección" placeholder="Dirección de domicilio" required />
-        </div>
-
         <!-- Ciudad actual -->
         <div class="input-with-icon">
           <i class="bi bi-geo-alt"></i>
           <input class="form-control" type="text" name="Ciudad actual" placeholder="Ciudad o municipio donde vive actualmente" required />
         </div>
 
-      
-
-        <!-- Documento acudiente -->
-
-<div class="input-with-icon">
-  <i class="bi bi-book-fill"></i>
-  <select class="form-control" name="Grado al que aspira" required>
-    <option value="">Seleccione un grado</option>
-    <option>Preescolar</option>
-    <option>Primero</option>
-    <option>Segundo</option>
-    <option>Tercero</option>
-    <option>Cuarto</option>
-    <option>Quinto</option>
-    <option>Sexto</option>
-    <option>Séptimo</option>
-    <option>Octavo</option>
-    <option>Noveno</option>
-    <option>Décimo</option>
-    <option>Undécimo</option>
-  </select>
-</div>
-
-
-        <!-- Fecha expedición -->
+       <!-- Dirección  candidato-->
         <div class="input-with-icon">
-          <i class="bi bi-calendar-check-fill"></i>
-          <input class="form-control" type="date" name="Fecha de expedición" required />
+          <i class="bi bi-house-door-fill"></i>
+          <input class="form-control" type="text" name="Dirección" placeholder="Dirección de domicilio del candidato(a)" required />
         </div>
 
-      <!-- Teléfono 1 -->
-<div class="input-with-icon">
-  <i class="bi bi-telephone-fill"></i>
-  <input class="form-control" type="number" name="Número de contacto 1" placeholder="Número de contacto 1" required />
+        <!-- Grado-->
+        <div class="input-with-icon">
+          <i class="bi bi-person-lines-fill"></i>
+          <select class="form-control" name="Grado al que aspira" required>
+            <option value="">Seleccione el grado al que aspira</option>
+            <option>Preescolar</option>
+            <option>Primero</option>
+            <option>Segundo</option>
+            <option>Tercero</option>
+            <option>Cuarto</option>
+            <option>Quinto</option>
+            <option>Sexto</option>
+            <option>Séptimo</option>
+            <option>Octavo</option>
+            <option>Noveno</option>
+            <option>Décimo</option>
+            <option>Undécimo</option>
+          </select>
+        </div>
+
+
+        <!-- Nombre acudiente -->
+        <div class="input-with-icon">
+          <i class="bi bi-file-person"></i>
+          <input class="form-control" type="text" name="Nombre Acudiente" placeholder="Nombre del Acudiente" required />  
+        </div>
+
+                <!-- cédula acudiente -->
+       <div class="input-with-icon">
+  <i class="bi bi-person-vcard"></i>
+  <input class="form-control" type="text" name="Cédula del Acudiente" placeholder="Cédula del Acudiente" pattern="[0-9]+" title="Solo números" required />
 </div>
 
-<!-- Teléfono 2 (opcional) -->
-<div class="input-with-icon">
-  <i class="bi bi-telephone-forward-fill"></i>
-  <input class="form-control" type="number" name="Número de contacto 2 (opcional)" placeholder="Número de contacto 2 (opcional)" />
-</div>
+ <!-- Dirección acudiente-->
+        <div class="input-with-icon">
+          <i class="bi bi-house-door-fill"></i>
+          <input class="form-control" type="text" name="Dirección" placeholder="Dirección de domicilio del acudiente" required />
+        </div>
 
+        <!-- Teléfono 1 -->
+      <div class="input-with-icon">
+        <i class="bi bi-telephone-fill"></i>
+        <input class="form-control" type="tel" name="Número de contacto 1" placeholder="Número de contacto 1" required />
+      </div>
+
+        <!-- Correo electrónico -->
+        <div class="input-with-icon">
+          <i class="bi bi-envelope-fill"></i>
+          <input class="form-control" type="email" name="Correo electrónico" placeholder="Correo electrónico" required />
+        </div>
+
+      <!-- Teléfono 2 (opcional) -->
+      <div class="input-with-icon">
+        <i class="bi bi-telephone-forward-fill"></i>
+        <input class="form-control" type="tel" name="Número de contacto 2 (opcional)" placeholder="Número de contacto 2 (opcional)" />
+      </div>
 
 
         <!-- ¿Cómo supiste de nosotros? -->
@@ -365,7 +380,7 @@
             <li><a href="https://colsme.phidias.co/">Phidias</a></li>
             <li><a href="https://www.progrentis.com/index.html">Progrentis</a></li>
             <li><a href="terminos.html">Términos y privacidad</a></li>
-            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfLX8E0ty9sJETMxOgt0kEBxPZdERD3ZhNp6UepYK8HlEYt5g/viewform?usp=sf_link">Buzón de sugerencias</a></li>
+            <li><a href="buzondesugerencias.html">Buzón de sugerencias</a></li>
           </ul>
         </div>
 
@@ -403,6 +418,10 @@
   <script>
   document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
+
+
+<input class="form-control sin-flechas" type="number" name="Cédula del Acudiente" placeholder="Cédula del Acudiente" required />
+
 
 
 </body>
