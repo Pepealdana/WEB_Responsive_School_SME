@@ -507,8 +507,63 @@
   document.getElementById("anios-sme-texto").textContent = edadColegio;
 </script>
 
+<!-- WordPress -->
+<section id="noticias" class="noticias section bg-light py-5">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title text-center mb-4">
+      <h2>Noticias Recientes</h2>
+      <p>Mantente informado con las novedades de nuestra comunidad educativa.</p>
+    </div>
+
+    <div class="row gy-4">
+
+      <!-- Noticia 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="assets/img/noticias/noticia1.jpg" class="card-img-top" alt="Imagen noticia 1">
+          <div class="card-body">
+            <h5 class="card-title">Inicio de clases 2025</h5>
+            <p class="card-text small text-muted">Julio 15, 2025 - Comunidad</p>
+            <p class="card-text">Dimos la bienvenida a nuestros estudiantes con actividades de integración, oración y bienvenida institucional.</p>
+            <a href="#" class="btn btn-primary btn-sm">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="assets/img/noticias/noticia2.jpg" class="card-img-top" alt="Imagen noticia 2">
+          <div class="card-body">
+            <h5 class="card-title">Celebración del Día de la Familia</h5>
+            <p class="card-text small text-muted">Junio 28, 2025 - Eventos</p>
+            <p class="card-text">Una jornada llena de alegría, juegos y oración compartida en familia. Gracias por su participación.</p>
+            <a href="#" class="btn btn-primary btn-sm">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticia 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="assets/img/noticias/noticia3.jpg" class="card-img-top" alt="Imagen noticia 3">
+          <div class="card-body">
+            <h5 class="card-title">Proyecto STEM en grados altos</h5>
+            <p class="card-text small text-muted">Junio 10, 2025 - Innovación</p>
+            <p class="card-text">Los estudiantes desarrollaron aplicaciones con Arduino y MIT App Inventor en clase de tecnología y robótica.</p>
+            <a href="#" class="btn btn-primary btn-sm">Leer más</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
+
+
+<!-- footer -->
   <footer id="footer" class="footer position-relative dark-background">
 
     <div class="container footer-top">
@@ -593,6 +648,8 @@
   </p>
 </div>
 
+
+
   </footer>
 
   <!-- Scroll Top -->
@@ -616,6 +673,40 @@
 
   <script>
   document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const contenedor = document.getElementById("contenedor-noticias");
+    const RSS_URL = "https://colsme.edu.co/blog/feed/";
+
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=" + RSS_URL)
+      .then(res => res.json())
+      .then(data => {
+        const noticias = data.items.slice(0, 3); // Mostrar 3 noticias
+        noticias.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "col-lg-4 col-md-6";
+          card.innerHTML = `
+            <div class="card h-100 shadow-sm border-0">
+              <img src="${item.thumbnail || 'assets/img/placeholder.jpg'}" class="card-img-top" alt="${item.title}">
+              <div class="card-body">
+                <h5 class="card-title">${item.title}</h5>
+                <p class="card-text small text-muted">${new Date(item.pubDate).toLocaleDateString()}</p>
+                <p class="card-text">${item.description.split(" ").slice(0, 20).join(" ")}...</p>
+                <a href="${item.link}" class="btn btn-primary btn-sm" target="_blank">Leer más</a>
+              </div>
+            </div>
+          `;
+          contenedor.appendChild(card);
+        });
+      })
+      .catch(error => {
+        contenedor.innerHTML = "<p class='text-danger'>No se pudieron cargar las noticias.</p>";
+        console.error("Error al cargar el feed:", error);
+      });
+  });
 </script>
 
 

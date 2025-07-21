@@ -9104,3 +9104,61 @@ form .formulario-container {
   border: none;
 }
 
+.card-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #213b52;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+
+/* Sección Noticias Cards */
+#noticias {
+  background-color: #f8f9fa;
+}
+
+#noticias .card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#noticias .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+#noticias .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+#noticias .card-title {
+  color: #213b52;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+#noticias .card-text {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+#noticias .btn {
+  background-color: #55C9F4;
+  border: none;
+  font-weight: bold;
+}
+
+#noticias .btn:hover {
+  background-color: #31b5e0;
+}
