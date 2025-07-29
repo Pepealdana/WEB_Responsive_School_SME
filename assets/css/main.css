@@ -9162,3 +9162,18 @@ form .formulario-container {
 #noticias .btn:hover {
   background-color: #31b5e0;
 }
+
+/* aviso alquiler teatro */
+.alquila-btn {
+  background-color: #0c2e4d;
+  border: none;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+}
+
+.alquila-btn:hover {
+  opacity: 0.85;
+}
+
+
