@@ -9179,3 +9179,30 @@ form .formulario-container {
 }
 
 
+/* Tarjetas modelo pedagógico */
+.pedagogia-card{
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
+}
+
+.pedagogia-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.pedagogia-card i{
+  transition: transform 0.35s ease;
+}
+
+.pedagogia-card:hover i{
+  transform: scale(1.15);
+}
+
+.card {
+transition: all .3s ease;
+}
+
+.card:hover{
+transform: translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
