@@ -168,4 +168,19 @@
     selector: '.glightbox'
   });
 
+  /**
+   * obra social slider peregrinación y semillas
+   */
+  new Swiper('.swiper-card', {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+
 })();

@@ -38,6 +38,14 @@
 
 </head>
 
+<script>
+const video = document.getElementById('videoBanquete');
+
+video.addEventListener('loadedmetadata', () => {
+  video.currentTime = 15;
+});
+</script>
+
 <body class="social-page">
 
 <header id="header" class="header fixed-top">
@@ -172,88 +180,152 @@ económica o familiar, generando espacios de encuentro, ayuda y esperanza para l
 <!-- ACCIONES SOLIDARIAS -->
 <section class="section bg-light py-5">
 
-<div class="container">
+  <div class="container">
 
-<div class="text-center mb-5">
-<h2 class="fw-bold">Acciones de solidaridad</h2>
-<p class="text-muted">
-Experiencias que permiten vivir el valor del servicio.
-</p>
-</div>
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Acciones de solidaridad</h2>
+      <p class="text-muted">
+        Experiencias que permiten vivir el valor del servicio.
+      </p>
+    </div>
 
-<div class="row g-4">
+    <div class="row g-4">
 
-<div class="col-lg-4">
-<div class="card border-0 shadow-sm h-100">
+      <!-- ADORACIÓN -->
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
 
-<img src="assets/img/procasita/adoracion.webp" class="card-img-top">
+          <img src="assets/img/procasita/adoracion2.webp" class="card-img-top">
 
-<div class="card-body">
-<h5 class="fw-bold">Adoración eucarística</h5>
+          <div class="card-body">
+            <h5 class="fw-bold">Adoración eucarística</h5>
 
-<p>
-Cada 25 del mes la comunidad educativa se reúne para celebrar la adoración al Niño Jesús,
-tradición promovida desde los inicios de la congregación por la Madre Clara Fey.           
-</p>
-<p>
-Como signo de ofrenda y solidaridad, los estudiantes llevan alimentos que luego son
-organizados y entregados a familias o personas necesitadas de la comunidad.
-</p>
-</div>
+            <p>
+              Cada 25 del mes la comunidad educativa se reúne para celebrar la adoración al Niño Jesús,
+              tradición promovida desde los inicios de la congregación por la Madre Clara Fey.
+            </p>
 
-</div>
-</div>
+            <p>
+              Como signo de ofrenda y solidaridad, los estudiantes llevan alimentos que luego son
+              organizados y entregados a familias o personas necesitadas de la comunidad.
+            </p>
+          </div>
 
-
-<div class="col-lg-4">
-<div class="card border-0 shadow-sm h-100">
-
-<img src="assets/img/procasita/semillas3.webp" class="card-img-top">
-
-<div class="card-body">
-<h5 class="fw-bold">Grupo Semillas</h5>
-
-<p>
-Este grupo está conformado por estudiantes de los grados 9°, 10° y 11°, quienes participan
-activamente en visitas a ancianatos, escuelas y comunidades cercanas con necesidades sociales.
-</p>
-
-<p>
-Durante estas jornadas realizan actividades recreativas, acompañamiento y comparten el
-mensaje que inspiró a la Madre Clara Fey: conducir a los niños y jóvenes a Jesús
-y fomentar el amor por la Eucaristía.
-</p>
-</div>
-
-</div>
-</div>
+        </div>
+      </div>
 
 
-<div class="col-lg-4">
-<div class="card border-0 shadow-sm h-100">
+      <!-- GRUPO SEMILLAS (SLIDER) -->
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
 
-<img src="assets/img/procasita/peregrinacion.webp" class="card-img-top">
+          <div class="swiper swiper-card card-img-top">
+            <div class="swiper-wrapper">
 
-<div class="card-body">
-<h5 class="fw-bold">Peregrinación al pobre</h5>
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/semillas1.webp" class="img-fluid">
+              </div>
 
-<p>
-Cada curso del colegio apadrina durante el año una fundación, organización o familia
-en condición de vulnerabilidad.
-</p>
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/semillas2.webp" class="img-fluid">
+              </div>
 
-<p>
-Los estudiantes organizan actividades solidarias para recolectar alimentos, artículos
-de aseo y compartir momentos de recreación, fomentando la empatía y el compromiso con
-quienes más lo necesitan.
-</div>
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/semillas3.webp" class="img-fluid">
+              </div>
 
-</div>
-</div>
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/semillas4.webp" class="img-fluid">
+              </div>
 
-</div>
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/semillas5.webp" class="img-fluid">
+              </div>
 
-</div>
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/semillas6.webp" class="img-fluid">
+              </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="card-body">
+            <h5 class="fw-bold">Grupo Semillas</h5>
+
+            <p>
+              Este grupo está conformado por estudiantes de los grados 9°, 10° y 11°, quienes participan
+              activamente en visitas a ancianatos, escuelas y comunidades cercanas con necesidades sociales.
+            </p>
+
+            <p>
+              Durante estas jornadas realizan actividades recreativas, acompañamiento y comparten el
+              mensaje que inspiró a la Madre Clara Fey: conducir a los niños y jóvenes a Jesús
+              y fomentar el amor por la Eucaristía.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- PEREGRINACIÓN (SLIDER) -->
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+
+          <div class="swiper swiper-card card-img-top">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/peregrina1.webp" class="img-fluid">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/peregrina2.webp" class="img-fluid">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/peregrina3.webp" class="img-fluid">
+              </div>
+              
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/peregrina4.webp" class="img-fluid">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/peregrina5.webp" class="img-fluid">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/img/procasita/peregrina6.webp" class="img-fluid">
+              </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="card-body">
+            <h5 class="fw-bold">Peregrinación al pobre</h5>
+
+            <p>
+              Cada curso del colegio apadrina durante el año una fundación, organización o familia
+              en condición de vulnerabilidad.
+            </p>
+
+            <p>
+              Los estudiantes organizan actividades solidarias para recolectar alimentos, artículos
+              de aseo y compartir momentos de recreación, fomentando la empatía y el compromiso con
+              quienes más lo necesitan.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 
@@ -266,7 +338,7 @@ quienes más lo necesitan.
 
 <div class="col-lg-6">
 
-<img src="assets/img/obrasocial/procasita.webp"
+<img src="assets/img/procasita/casita2026.webp"
 class="img-fluid rounded shadow">
 
 </div>
@@ -301,67 +373,106 @@ class="img-fluid rounded shadow">
 <div class="container">
 
 <div class="text-center mb-5">
-<h2 class="fw-bold">Galería PROCASITA</h2>
+<h2 class="fw-bold">Conoce un poco más de esta hermosa obra social</h2>
 <p class="text-muted">
-Momentos que muestran el impacto de este proyecto.
+Compartirmos algunas imágenes de las actividades realizadas por el proyecto PROCASITA, una iniciativa que refleja el compromiso de nuestra comunidad educativa con la solidaridad y el servicio a los demás.
 </p>
 </div>
 
-<div class="row g-4">
 
-<div class="col-md-4">
-<a href="assets/img/obrasocial/procasita1.webp" class="glightbox">
-<img src="assets/img/obrasocial/procasita1.webp"
-class="img-fluid rounded shadow">
-</a>
+
+<!-- PROCASITA VIDEO + GALERÍA SLIDER -->
+<section class="section py-2 bg-light">
+
+  <div class="container">
+
+  <div class="procasita-card">
+
+    <div class="row g-4 align-items-center">
+
+      <!-- VIDEO -->
+      <div class="col-lg-2 pe-lg-1">
+
+        <div class="video-container-vertical">
+          <video controls preload="metadata" playsinline>
+            <source src="assets/img/videos/casita2025.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+
+
+      <!-- GALERÍA SLIDER -->
+      <div class="col-lg-7">
+
+        <div id="sliderProcasita" class="carousel slide" data-bs-ride="false">
+
+          <div class="carousel-inner">
+
+            <!-- SLIDE 1 -->
+            <div class="carousel-item active">
+              <div class="row g-3">
+
+                <div class="col-6">
+                  <a href="assets/img/procasita/adoracion2.webp" class="glightbox" data-gallery="procasita">
+                    <img src="assets/img/procasita/adoracion2.webp" class="img-fluid rounded shadow-sm">
+                  </a>
+                  <p class="text-center small mt-2">Slide 1</p>
+                </div>
+
+                <div class="col-6">
+                  <a href="assets/img/procasita/casita2026.webp" class="glightbox" data-gallery="procasita">
+                    <img src="assets/img/procasita/casita2026.webp" class="img-fluid rounded shadow-sm">
+                  </a>
+                  <p class="text-center small mt-2">Slide 1 - A</p>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-item">
+              <div class="row g-3">
+
+                <div class="col-6">
+                  <a href="assets/img/procasita/casita2026.webp" class="glightbox" data-gallery="procasita">
+                    <img src="assets/img/procasita/casita2026.webp" class="img-fluid rounded shadow-sm">
+                  </a>
+                </div>
+
+                <div class="col-6">
+                  <a href="assets/img/obrasocial/procasita4.webp" class="glightbox" data-gallery="procasita">
+                    <img src="assets/img/obrasocial/procasita4.webp" class="img-fluid rounded shadow-sm">
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- DUPLICA MÁS SLIDES SEGÚN NECESITES -->
+
+          </div>
+
+          <!-- CONTROLES -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#sliderProcasita" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button class="carousel-control-next" type="button" data-bs-target="#sliderProcasita" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+    </div>
 </div>
 
-<div class="col-md-4">
-<a href="assets/img/obrasocial/procasita2.webp" class="glightbox">
-<img src="assets/img/obrasocial/procasita2.webp"
-class="img-fluid rounded shadow">
-</a>
-</div>
-
-<div class="col-md-4">
-<a href="assets/img/obrasocial/procasita3.webp" class="glightbox">
-<img src="assets/img/obrasocial/procasita3.webp"
-class="img-fluid rounded shadow">
-</a>
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- VIDEO -->
-<section class="section py-5">
-
-<div class="container">
-
-<div class="text-center mb-5">
-<h2 class="fw-bold">Videos del proyecto</h2>
-</div>
-
-<div class="row g-4">
-
-<div class="col-lg-6">
-<div class="ratio ratio-16x9">
-<iframe src="TU_VIDEO_YOUTUBE"></iframe>
-</div>
-</div>
-
-<div class="col-lg-6">
-<div class="ratio ratio-16x9">
-<iframe src="TU_VIDEO_YOUTUBE"></iframe>
-</div>
-</div>
-
-</div>
-
-</div>
 </section>
 
 

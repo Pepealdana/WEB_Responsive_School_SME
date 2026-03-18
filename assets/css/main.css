@@ -9206,3 +9206,92 @@ transition: all .3s ease;
 transform: translateY(-8px);
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
+
+/* slider obra social - peregrinación y semillas */
+
+.swiper-card {
+height: 300px;
+overflow: hidden;
+border-top-left-radius: 0.5rem;
+border-top-right-radius: 0.5rem;
+}
+
+.swiper-card img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+
+/* VIDEO VERTICAL */
+.video-container-vertical {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.video-container-vertical video {
+  width: 70%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+
+/* GALERÍA */
+.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* VIDEO procasita*/
+.video-container-vertical {
+  max-width: 230px;
+  margin: 0 auto;
+}
+
+.video-container-vertical video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* SLIDER IMÁGENES */
+.carousel-inner img {
+  transition: transform 0.3s ease;
+}
+
+.carousel-inner img:hover {
+  transform: scale(1.05);
+}
+
+/* FLECHAS MÁS VISIBLES */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* TARJETA CONTENEDORA */
+.procasita-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Responsive (menos padding en móvil) */
+@media (max-width: 768px) {
+  .procasita-card {
+    padding: 20px;
+  }
+}
+
+.procasita-card {
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
