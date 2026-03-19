@@ -9249,7 +9249,7 @@ object-fit: cover;
 
 /* VIDEO procasita*/
 .video-container-vertical {
-  max-width: 230px;
+  max-width: 210px;
   margin: 0 auto;
 }
 
@@ -9297,16 +9297,50 @@ object-fit: cover;
 
 .img-wrapper {
   width: 100%;
-  height: 100px; /* altura uniforme */
+  height: 260px; /* ajusta entre 240–320 según te guste */
   display: flex;
-  align-items: center;
+  align-items: center;   /* centra vertical */
   justify-content: center;
   overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Imagen dentro */
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* llena sin deformar */
+  transition: transform 0.3s ease;
+}
+
+#sliderProcasita a {
+  width: 100%;
+  display: block;
+}
+
+#sliderProcasita .row {
+  justify-content: flex-end; /* empuja a la derecha */
+}
+
+#sliderProcasita .col-6 {
+  display: flex;
+}
+
+.img-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .img-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
 }
