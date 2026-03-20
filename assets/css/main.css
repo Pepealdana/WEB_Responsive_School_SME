@@ -9356,3 +9356,9 @@ object-fit: cover;
   border-radius: 50%;
   padding: 15px;
 }
+
+@media (max-width: 768px) {
+  .col-7, .col-5 {
+    width: 100%;
+  }
+}
