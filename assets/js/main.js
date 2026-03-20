@@ -184,3 +184,274 @@
   });
 
 })();
+
+ /**
+   * galeria slider procasita
+   */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const data = [
+
+    {
+      grande: "assets/img/obrasocial/procasita/amosme.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2025_1.webp",
+      texto1: "#SomosSME",
+      texto2: "2025"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2025_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2025_3.webp",
+      texto1: "2025",
+      texto2: "2025"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2025_4.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2024_1.webp",
+      texto1: "2025",
+      texto2: "2024"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2023_5.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2023_4.webp",
+      texto1: "2023",
+      texto2: "2023"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2023_3.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2023_2.webp",
+      texto1: "2023",
+      texto2: "2023"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2023_1.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2022_1.webp",
+      texto1: "2023",
+      texto2: "2022"
+    },
+
+   {
+      grande: "assets/img/obrasocial/procasita/procasita_2021_6.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2021_5.webp",
+      texto1: "2021",
+      texto2: "2021"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2021_4.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2021_3.webp",
+      texto1: "2021",
+      texto2: "2021"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2021_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2021_1.webp",
+      texto1: "2021",
+      texto2: "2021"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2020_4.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2020_3.webp",
+      texto1: "2020",
+      texto2: "2020"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2020_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2020_1.webp",
+      texto1: "2020",
+      texto2: "2020"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2019_4.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2019_3.webp",
+      texto1: "2019",
+      texto2: "2019"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2019_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2019_1.webp",
+      texto1: "2019",
+      texto2: "2019"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2018_3.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2018_2.webp",
+      texto1: "2018",
+      texto2: "2018"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2018_1.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2016_y_2017_3.webp",
+      texto1: "2018",
+      texto2: "2016 y 2017"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2016_y_2017_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2016_y_2017_1.webp",
+      texto1: "2016 y 2017",
+      texto2: "2016 y 2017"
+    },
+
+   {
+      grande: "assets/img/obrasocial/procasita/procasita_2015_3.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2015_2.webp",
+      texto1: "2015",
+      texto2: "2015"
+    },
+
+     {
+      grande: "assets/img/obrasocial/procasita/procasita_2015_1.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2013_3.webp",
+      texto1: "2015",
+      texto2: "2013"
+    },
+
+     {
+      grande: "assets/img/obrasocial/procasita/procasita_2013_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2013_1.webp",
+      texto1: "2013",
+      texto2: "2013"
+    },
+
+     {
+      grande: "assets/img/obrasocial/procasita/procasita_2006_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2004_2.webp",
+      texto1: "2006",
+      texto2: "2004"
+    },
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2004_1.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2003_3.webp",
+      texto1: "2004",
+      texto2: "2003"
+    },
+
+     {
+      grande: "assets/img/obrasocial/procasita/procasita_2003_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2003_1.webp",
+      texto1: "2003",
+      texto2: "2003"
+    },
+
+     {
+      grande: "assets/img/obrasocial/procasita/procasita_2002_1.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2001_4.webp",
+      texto1: "2002",
+      texto2: "2001"
+    },
+
+     {
+      grande: "assets/img/obrasocial/procasita/procasita_2001_3.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_2001_2.webp",
+      texto1: "2001",
+      texto2: "2001"
+    }, 
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_2001_1.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_1998_3.webp",
+      texto1: "2001",
+      texto2: "1998"
+    }, 
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_1998_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_1998_1.webp",
+      texto1: "1998",
+      texto2: "1998"
+    }, 
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_1997_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_1997_1.webp",
+      texto1: "1997",
+      texto2: "1997"
+    }, 
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_1995__96_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_1995_y_96_1.webp",
+      texto1: "1995 y 1996",
+      texto2: "1995 y 1996"
+    }, 
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_1992_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_1992_visitando_la_casa_en_2015.webp",
+      texto1: "1992",
+      texto2: "1992 vista de visita en 2015"
+    }, 
+
+    {
+      grande: "assets/img/obrasocial/procasita/procasita_1991_2.webp",
+      pequena: "assets/img/obrasocial/procasita/procasita_1991_visitando_la_casa_en_2015.webp",
+      texto1: "1991",
+      texto2: "1991 vista de visita en 2015"
+    }, 
+
+    // 👉 SIGUE AGREGANDO AQUÍ TUS PAREJAS (con coma entre cada objeto)
+
+  ];
+
+  const container = document.getElementById("carouselProcasitaInner");
+
+  // Limpiar por si acaso
+  container.innerHTML = "";
+
+  data.forEach((item, index) => {
+
+    const activeClass = index === 0 ? "active" : "";
+
+    const slide = `
+      <div class="carousel-item ${activeClass}">
+        <div class="row g-3">
+
+          <div class="col-7">
+            <div class="img-box">
+              <a href="${item.grande}" class="glightbox" data-gallery="procasita">
+                <div class="img-wrapper">
+                  <img src="${item.grande}" class="gallery-img">
+                </div>
+              </a>
+              <p class="small mt-2 text-center">${item.texto1}</p>
+            </div>
+          </div>
+
+          <div class="col-5">
+            <div class="img-box">
+              <a href="${item.pequena}" class="glightbox" data-gallery="procasita">
+                <div class="img-wrapper">
+                  <img src="${item.pequena}" class="gallery-img">
+                </div>
+              </a>
+              <p class="small mt-2 text-center">${item.texto2}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    `;
+
+    container.innerHTML += slide;
+  });
+
+  // 🔥 IMPORTANTE: reiniciar GLightbox después de generar contenido
+  const lightbox = GLightbox({
+    selector: '.glightbox'
+  });
+
+});
