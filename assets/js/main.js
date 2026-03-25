@@ -36,18 +36,17 @@
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
 
-  /**
-   * Hide mobile nav on same-page/hash links
-   */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
+const navLinks = document.querySelectorAll('#navmenu a');
+
+if (navLinks.length > 0) {
+  navLinks.forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
         mobileNavToogle();
       }
     });
-
   });
-
+}
   /**
    * Toggle mobile nav dropdowns
    */
@@ -409,7 +408,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const container = document.getElementById("carouselProcasitaInner");
 
-  // Limpiar por si acaso
+// ✅ Validar que el contenedor exista antes de usarlo
+if (container) {
+
+  // Limpiar contenido
   container.innerHTML = "";
 
   data.forEach((item, index) => {
@@ -449,10 +451,15 @@ document.addEventListener("DOMContentLoaded", function () {
     container.innerHTML += slide;
   });
 
-  // 🔥 IMPORTANTE: reiniciar GLightbox después de generar contenido
-  const lightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  // 🔥 Reiniciar GLightbox SOLO si existe
+  if (typeof GLightbox !== "undefined") {
+    GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
+} else {
+  console.warn("⚠️ No se encontró #carouselProcasitaInner");
+}
 });
 

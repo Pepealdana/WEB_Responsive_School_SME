@@ -27,7 +27,8 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Archivo CSS principal -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <link href="assets/css/main.css?v=4" rel="stylesheet">
 
     <!-- =======================================================
   * Plantilla: NiceSchool
@@ -39,10 +40,13 @@
 </head>
 
 <script>
-const video = document.getElementById('videoBanquete');
-
-video.addEventListener('loadedmetadata', () => {
-  video.currentTime = 15;
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById('videoBanquete');
+  if (video) {
+    video.addEventListener('loadedmetadata', () => {
+      video.currentTime = 15;
+    });
+  }
 });
 </script>
 
@@ -359,12 +363,13 @@ class="img-fluid rounded shadow">
   para hacer realidad este sueño.
   </p>
 
-</div>
+      </div> <!-- row -->
+    </div> <!-- procasita-card -->
+  </div> <!-- container -->
+</section> <!-- sección interna -->
 
-</div>
-
-</div>
-</section>
+</div> <!-- container principal -->
+</section> <!-- sección galería -->
 
 
 <!-- GALERÍA PROCASITA -->
