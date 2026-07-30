@@ -117,42 +117,203 @@
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Campus Facilities Section -->
-     <!-- Página en construcción -->
-<section class="section py-5 bg-light text-center" id="en-construccion">
-  <div class="container" data-aos="fade-up">
-    <!-- Icono y círculo decorativo -->
-    <div class="position-relative mb-4" data-aos="zoom-in" data-aos-delay="200">
-      <i class="bi bi-tools display-1 text-primary"></i>
-      <div class="circle circle-1 position-absolute bg-primary-subtle rounded-circle" style="width: 80px; height: 80px; top: -30px; left: 50%; transform: translateX(-50%); z-index: -1;"></div>
+    <!-- =======================================================
+     Bienvenida al Campus
+======================================================= -->
+<section id="campus-intro" class="section py-5">
+
+  <div class="container">
+
+    <div class="row align-items-center gy-5">
+
+      <!-- Imagen -->
+      <div class="col-lg-6" data-aos="fade-right">
+
+        <div class="campus-image">
+
+          <img src="assets/img/campus/campus-01-vista-general.webp"
+               class="img-fluid rounded-4 shadow"
+               alt="Vista panorámica del Colegio Santa María de la Esperanza">
+
+        </div>
+
+      </div>
+
+      <!-- Texto -->
+      <div class="col-lg-6" data-aos="fade-left">
+
+       
+        <h2 class="mt-3 mb-4">
+          Un espacio donde aprender, crecer y convivir
+        </h2>
+
+        <p>
+          El Colegio Santa María de la Esperanza ofrece un entorno privilegiado,
+          rodeado de naturaleza y diseñado para favorecer el aprendizaje, la
+          convivencia y el desarrollo integral de cada estudiante.
+        </p>
+
+        <p>
+          Nuestras instalaciones combinan amplios espacios verdes, ambientes
+          académicos modernos y escenarios deportivos, brindando un lugar seguro
+          y acogedor donde cada niño y joven puede descubrir sus talentos y
+          construir su proyecto de vida.
+        </p>
+
+        <div class="row mt-4 g-3">
+
+          <div class="col-6">
+
+            <div class="campus-feature">
+
+              <i class="bi bi-tree-fill"></i>
+
+              <div>
+
+                <h6>Zonas verdes</h6>
+
+                <p>Espacios naturales para aprender y compartir.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-6">
+
+            <div class="campus-feature">
+
+              <i class="bi bi-book-fill"></i>
+
+              <div>
+
+                <h6>Ambientes académicos</h6>
+
+                <p>Aulas y laboratorios preparados para cada etapa.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-6">
+
+            <div class="campus-feature">
+
+              <i class="bi bi-trophy-fill"></i>
+
+              <div>
+
+                <h6>Escenarios deportivos</h6>
+
+                <p>Promovemos la actividad física y el trabajo en equipo.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-6">
+
+            <div class="campus-feature">
+
+              <i class="bi bi-heart-fill"></i>
+
+              <div>
+
+                <h6>Formación integral</h6>
+
+                <p>Educamos desde los valores y la fe.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <!-- Título y texto -->
-    <h1 class="fw-bold mb-3" data-aos="fade-up" data-aos-delay="300">¡Ups! Esta sección está en construcción</h1>
-    <p class="lead text-muted mb-4" data-aos="fade-up" data-aos-delay="400">
-      Estamos trabajando con mucho cariño para traerte algo maravilloso. <br>
-      Vuelve pronto… <strong>Todo Por Jesús, por Jesús Solo.</strong>
-    </p>
-
-    <!-- Botón de regreso -->
-    <a href="index.html" class="btn btn-outline-primary rounded-pill px-4 py-2" data-aos="zoom-in" data-aos-delay="600">
-      <i class="bi bi-arrow-left-circle"></i> Volver al inicio
-    </a>
   </div>
+
 </section>
+    
+<!-- =======================================================
+     Galería Editorial del Campus
+======================================================= -->
+<!-- =======================================================
+     Visor del Campus
+======================================================= -->
 
-<!-- Estilo decorativo opcional -->
-<style>
-  .circle-1 {
-    animation: pulse 3s infinite ease-in-out;
-  }
+<section id="campus-gallery" class="section">
 
-  @keyframes pulse {
-    0% { transform: scale(0.9); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 0.15; }
-    100% { transform: scale(0.9); opacity: 0.5; }
-  }
-</style>
+    <div class="container">
+
+        <div class="section-title text-center" data-aos="fade-up">
+
+            <h2>Descubre nuestro campus</h2>
+
+            <p>
+                Recorre algunos de los espacios que hacen parte de la vida
+                académica, deportiva, espiritual y recreativa del Colegio
+                Santa María de la Esperanza.
+            </p>
+
+        </div>
+
+        <!-- Indicador -->
+
+        <div class="gallery-indicator">
+
+        </div>
+
+        <!-- Aquí el JS construirá la galería -->
+
+        <div id="galleryContainer">
+
+        </div>
+
+        <!-- Navegación -->
+
+        <div class="gallery-navigation">
+
+            <button
+                id="btnPrevious"
+                class="btn btn-outline-secondary">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Espacios anteriores
+
+            </button>
+
+            <button
+                id="btnNext"
+                class="btn btn-primary">
+
+                Ver más espacios
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Paginación -->
+
+        <div id="galleryDots">
+
+        </div>
+
+    </div>
+
+</section>
 
 
   </main>
@@ -261,6 +422,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/campus-gallery.js"></script>
 
   <script>
   document.getElementById('current-year').textContent = new Date().getFullYear();
