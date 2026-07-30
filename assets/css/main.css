@@ -9858,3 +9858,57 @@ RESPONSIVE
     }
 
 }
+
+/*====================================================
+TOUR VIRTUAL
+====================================================*/
+
+#campus-tour{
+
+    background:#f8fafc;
+
+}
+
+.campus-tour-wrapper{
+
+    max-width:1200px;
+    margin:auto;
+    border-radius:22px;
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.campus-tour-wrapper iframe{
+
+    width:100%;
+    height:100%;
+    border:0;
+
+}
+
+.campus-tour-actions{
+
+    margin-top:2rem;
+
+}
+
+.campus-tour-actions .btn{
+
+    padding:.9rem 2rem;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+}
+
+.campus-tour-actions .btn:hover{
+
+    transform:translateY(-3px);
+
+}

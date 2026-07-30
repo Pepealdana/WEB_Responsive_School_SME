@@ -118,12 +118,12 @@ maker:{
 
 steam:{
     archivo:"innovacion-06-danzas.webp",
-    titulo:"Salón de Danzas"
+    titulo:"Danzas"
 },
 
 tecnologia:{
     archivo:"innovacion-07-musica.webp",
-    titulo:"Salón de Música"
+    titulo:"Música"
 },
 
     /*=====================================================
