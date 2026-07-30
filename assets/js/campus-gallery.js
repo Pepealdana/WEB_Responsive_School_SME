@@ -53,78 +53,78 @@ const fotos = {
     =====================================================*/
 
     biblioteca:{
-        archivo:"academico-01-biblioteca.webp",
+        archivo:"academico-05-biblioteca.webp",
         titulo:"Biblioteca"
     },
 
     salones:{
-        archivo:"academico-02-salones.webp",
+        archivo:"academico-06-salones.webp",
         titulo:"Salones de Clase"
     },
 
     teatro:{
-        archivo:"academico-03-teatro.webp",
+        archivo:"academico-07-teatro.webp",
         titulo:"Teatro"
     },
 
     preescolar1:{
-        archivo:"academico-04-preescolar.webp",
+        archivo:"academico-01-preescolar.webp",
         titulo:"Preescolar"
     },
 
     preescolar2:{
-        archivo:"academico-05-preescolar.webp",
+        archivo:"academico-02-preescolar.webp",
         titulo:"Preescolar"
     },
 
     preescolar3:{
-        archivo:"academico-06-preescolar.webp",
+        archivo:"academico-03-preescolar.webp",
         titulo:"Preescolar"
     },
 
     preescolar4:{
-        archivo:"academico-07-preescolar.webp",
+        archivo:"academico-04-preescolar.webp",
         titulo:"Preescolar"
     },
 
-    /*=====================================================
-        TECNOLOGÍA E INNOVACIÓN
-    =====================================================*/
+/*=====================================================
+    AMBIENTES ESPECIALIZADOS
+=====================================================*/
 
-    laboratorio:{
-        archivo:"innovacion-01-laboratorio.webp",
-        titulo:"Laboratorio"
-    },
+laboratorio:{
+    archivo:"innovacion-01-laboratorio.webp",
+    titulo:"Laboratorio"
+},
 
-    informatica:{
-        archivo:"innovacion-02-informatica.webp",
-        titulo:"Sala de Informática"
-    },
+informatica:{
+    archivo:"innovacion-02-informatica.webp",
+    titulo:"Sala de Informática"
+},
 
-    robotica:{
-        archivo:"innovacion-03-robotica.webp",
-        titulo:"Robótica"
-    },
+robotica:{
+    archivo:"innovacion-03-robotica.webp",
+    titulo:"Robótica"
+},
 
-    ingles:{
-        archivo:"innovacion-04-ingles.webp",
-        titulo:"Laboratorio de Inglés"
-    },
+ingles:{
+    archivo:"innovacion-04-ingles.webp",
+    titulo:"Laboratorio de Inglés"
+},
 
-    maker:{
-        archivo:"innovacion-05-maker.webp",
-        titulo:"Espacio Maker"
-    },
+maker:{
+    archivo:"innovacion-05-gamificacion.webp",
+    titulo:"Gamificación"
+},
 
-    steam:{
-        archivo:"innovacion-06-steam.webp",
-        titulo:"Aprendizaje STEAM"
-    },
+steam:{
+    archivo:"innovacion-06-danzas.webp",
+    titulo:"Salón de Danzas"
+},
 
-    tecnologia:{
-        archivo:"innovacion-07-tecnologia.webp",
-        titulo:"Tecnología"
-    },
+tecnologia:{
+    archivo:"innovacion-07-musica.webp",
+    titulo:"Salón de Música"
+},
 
     /*=====================================================
         VIDA ESCOLAR
@@ -156,7 +156,7 @@ const fotos = {
     },
 
     corredores:{
-        archivo:"vida-06-corredores.webp",
+        archivo:"vida-06-corredor.webp",
         titulo:"Corredores"
     },
 
@@ -212,7 +212,7 @@ const recorridos = [
 
     {
 
-        titulo:"Tecnología e Innovación",
+        titulo:"Ambientes Especializados",
 
         descripcion:"Laboratorios y ambientes especializados que impulsan la creatividad, la investigación y el aprendizaje tecnológico.",
 
@@ -235,13 +235,14 @@ const recorridos = [
         descripcion:"Espacios donde la convivencia, el deporte y la espiritualidad hacen parte de la experiencia educativa.",
 
         imagenes:[
+            "capilla",
             "canchas1",
             "canchas2",
             "parque",
             "restaurante",
             "fuente",
             "corredores",
-            "capilla"
+            
         ]
 
     }
