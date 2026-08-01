@@ -1,3 +1,5 @@
+/* VERSION 30-07-2026 16:15 */
+
 /**
 * Template Name: NiceSchool
 * Template URL: https://bootstrapmade.com/nice-school-bootstrap-education-template/
@@ -462,4 +464,6 @@ if (container) {
   console.warn("⚠️ No se encontró #carouselProcasitaInner");
 }
 });
+
+
 
