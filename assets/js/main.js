@@ -467,3 +467,85 @@ if (container) {
 
 
 
+/* ==========================================================
+   REPRODUCTOR DEL HIMNO INSTITUCIONAL
+========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const himnoAudio = document.getElementById("himnoAudio");
+
+  if (!himnoAudio) return;
+
+  const playBtn = document.getElementById("playBtn");
+  const playIcon = document.getElementById("playIcon");
+  const progressBar = document.getElementById("progressBar");
+  const currentTime = document.getElementById("currentTime");
+  const duration = document.getElementById("duration");
+
+  // Formato mm:ss
+  function formatTime(seconds) {
+
+    if (isNaN(seconds)) return "0:00";
+
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+
+    return `${min}:${sec.toString().padStart(2, "0")}`;
+
+  }
+
+  // Cuando carga el audio
+  himnoAudio.addEventListener("loadedmetadata", () => {
+
+    progressBar.max = Math.floor(himnoAudio.duration);
+    duration.textContent = formatTime(himnoAudio.duration);
+
+  });
+
+  // Actualizar barra y tiempo
+  himnoAudio.addEventListener("timeupdate", () => {
+
+    progressBar.value = Math.floor(himnoAudio.currentTime);
+    currentTime.textContent = formatTime(himnoAudio.currentTime);
+
+  });
+
+  // Botón Play / Pause
+  playBtn.addEventListener("click", () => {
+
+    if (himnoAudio.paused) {
+
+      himnoAudio.play();
+      playIcon.classList.remove("bi-play-fill");
+      playIcon.classList.add("bi-pause-fill");
+
+    } else {
+
+      himnoAudio.pause();
+      playIcon.classList.remove("bi-pause-fill");
+      playIcon.classList.add("bi-play-fill");
+
+    }
+
+  });
+
+  // Mover barra manualmente
+  progressBar.addEventListener("input", () => {
+
+    himnoAudio.currentTime = progressBar.value;
+
+  });
+
+  // Cuando termina
+  himnoAudio.addEventListener("ended", () => {
+
+    playIcon.classList.remove("bi-pause-fill");
+    playIcon.classList.add("bi-play-fill");
+
+    progressBar.value = 0;
+    currentTime.textContent = "0:00";
+
+  });
+
+});

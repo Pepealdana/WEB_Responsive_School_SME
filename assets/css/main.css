@@ -10031,3 +10031,946 @@ ESCUDO INSTITUCIONAL
     line-height:1.7;
 
 }
+
+.px-icon{
+    width:36px;
+    height:auto;
+    display:block;
+    transition:transform .3s ease;
+}
+
+.escudo-card:hover .px-icon{
+    transform:scale(1.1);
+}
+
+/*==============================================================
+BANDERA
+==============================================================*/
+
+.bandera-img{
+
+    max-width:700px;
+
+    transition:.4s;
+
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.15));
+
+}
+
+.bandera-img:hover{
+
+    transform:scale(1.02);
+
+}
+
+.color-card{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+    background:#fffdf7;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    border:1px solid rgba(12,46,77,.08);
+
+    box-shadow:0 10px 24px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.color-card:hover{
+
+    transform:translateX(8px);
+
+}
+
+.color-circle{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    flex-shrink:0;
+
+}
+
+.celeste{
+
+    background:#5CC3EA;
+
+}
+
+.dorado{
+
+    background:#FFD857;
+
+}
+
+.escudo-mini{
+
+    width:56px;
+    height:56px;
+
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.escudo-mini img{
+
+    width:56px;
+    height:56px;
+
+    object-fit:contain;
+
+    transition:.35s;
+
+}
+
+.color-card:hover .escudo-mini img{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+.color-card h5{
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+}
+
+.color-card p{
+
+    margin:0;
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+/*==========================================================
+ADVOCACIÓN
+==========================================================*/
+
+.advocacion-section{
+
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f7fbff 100%
+    );
+
+}
+
+.advocacion-img{
+
+    max-width:420px;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+}
+
+.advocacion-img:hover{
+
+    transform:scale(1.03);
+
+}
+
+#oracionMaria .card{
+
+    background:#fffef8;
+
+    border-radius:18px;
+
+}
+
+/*==============================================================
+DETALLE DEL ESCUDO
+==============================================================*/
+
+.simbolo-detalle{
+
+    background:#fffdf7;
+
+    border-top:6px solid #d8b24d;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.simbolo-detalle h5{
+
+    color:#0c2e4d;
+
+    font-weight:700;
+
+    margin-top:18px;
+
+}
+
+.simbolo-detalle p{
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+.frase-destacada{
+
+    margin-top:25px;
+
+    background:#fff7dd;
+
+    padding:22px;
+
+    border-left:5px solid #d8b24d;
+
+    border-radius:12px;
+
+}
+
+/*==============================================================
+DETALLE BANDERA
+==============================================================*/
+
+.bandera-detalle{
+
+    background:linear-gradient(
+        90deg,
+        rgba(70,170,220,.06),
+        rgba(70,180,120,.06)
+    );
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.titulo-azul{
+
+    color:#2c82c9;
+
+    font-weight:700;
+
+}
+
+.titulo-verde{
+
+    color:#2e8b57;
+
+    font-weight:700;
+
+}
+
+.bandera-detalle ul{
+
+    padding-left:20px;
+
+}
+
+.bandera-detalle li{
+
+    margin-bottom:14px;
+
+    line-height:1.7;
+
+}
+
+.frase-bandera{
+
+    margin-top:30px;
+
+    background:white;
+
+    border-left:5px solid #0c2e4d;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    font-size:1.05rem;
+
+}
+
+.bandera-img{
+
+    width:100%;
+    height:auto;
+    display:block;
+
+    border-radius:20px;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.18);
+
+}
+
+/*==============================================================
+# HIMNO
+==============================================================*/
+
+/*====================================================
+HIMNO PLAYER
+====================================================*/
+
+.himno-player{
+
+background:#fff;
+
+border-radius:24px;
+
+padding:45px;
+
+margin-bottom:90px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.10);
+
+}
+
+.himno-cover{
+
+width:190px;
+
+border-radius:20px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.player-controls{
+
+display:flex;
+
+align-items:center;
+
+margin-top:30px;
+
+gap:20px;
+
+}
+
+.play-btn{
+
+width:65px;
+
+height:65px;
+
+border:none;
+
+border-radius:50%;
+
+background:#1d4d8f;
+
+color:white;
+
+font-size:30px;
+
+transition:.3s;
+
+}
+
+.play-btn:hover{
+
+background:#f4c542;
+
+color:#1d4d8f;
+
+transform:scale(1.05);
+
+}
+
+.player-progress{
+
+flex:1;
+
+}
+
+.player-progress input{
+
+width:100%;
+
+cursor:pointer;
+
+}
+
+.time{
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:.85rem;
+
+margin-top:5px;
+
+color:#666;
+
+}
+
+.lyrics-toggle{
+
+margin-top:25px;
+
+background:none;
+
+border:none;
+
+font-weight:600;
+
+color:#1d4d8f;
+
+font-size:1rem;
+
+}
+
+.lyrics{
+
+max-width:760px;
+
+margin:auto;
+
+text-align:center;
+
+font-size:1.12rem;
+
+line-height:2;
+
+padding:40px 20px;
+
+}
+
+#himno{
+
+padding-bottom:90px;
+
+}
+
+#advocacion{
+
+padding-top:90px;
+
+}
+
+/*======================================
+=      ACORDEONES DE SÍMBOLOS
+======================================*/
+
+.symbol-accordion{
+
+background:#fff;
+
+border-radius:22px;
+
+overflow:hidden;
+
+box-shadow:0 18px 45px rgba(250, 247, 247, 0.12);
+
+}
+
+.symbol-toggle{
+
+width:100%;
+
+padding:32px;
+
+border:none;
+
+background:#fff;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+transition:.35s;
+
+gap:12px;
+
+}
+
+.symbol-toggle-left{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+gap:10px;
+
+}
+
+.symbol-toggle-left i{
+
+font-size:2.3rem;
+
+color:#1f4d88;
+
+margin-bottom:6px;
+
+}
+
+.symbol-toggle h5{
+
+margin:0;
+
+font-weight:700;
+
+color:#183b67;
+
+}
+
+.symbol-toggle small{
+
+color:#6c757d;
+
+}
+
+.symbol-body{
+
+padding:35px;
+
+border-top:1px solid #ececec;
+
+}
+
+.symbol-body h4{
+
+margin-top:20px;
+
+color:#183b67;
+
+font-weight:600;
+
+}
+
+.symbol-body p{
+
+line-height:1.9;
+
+color:#444;
+
+}
+
+.escudo-final{
+
+margin-top:30px;
+
+padding:25px;
+
+background:#f5f9ff;
+
+border-left:5px solid #1f4d88;
+
+border-radius:14px;
+
+}
+.symbol-toggle .bi-chevron-down{
+
+font-size:1.5rem;
+
+transition:.35s;
+
+}
+
+.symbol-toggle[aria-expanded="true"] .bi-chevron-down{
+
+transform:rotate(180deg);
+
+}
+
+.symbol-icon{
+
+    width:70px;
+    height:70px;
+
+    object-fit:contain;
+
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.15));
+
+    transition:.35s ease;
+
+}
+
+.symbol-toggle:hover .symbol-icon{
+
+    transform:scale(1.08);
+
+}
+
+.symbol-icon-box{
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+
+}
+
+
+
+.bandera-chip{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+background:white;
+
+padding:18px 22px;
+
+border-radius:18px;
+
+box-shadow:0 10px 24px rgba(0,0,0,.08);
+
+height:100%;
+
+transition:.3s;
+
+}
+
+.bandera-chip:hover{
+
+transform:translateY(-6px);
+
+}
+
+.chip-circle{
+
+width:46px;
+
+height:46px;
+
+border-radius:50%;
+
+flex-shrink:0;
+
+}
+
+.chip-escudo{
+
+width:54px;
+
+height:54px;
+
+flex-shrink:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.chip-escudo img{
+
+width:54px;
+
+height:54px;
+
+object-fit:contain;
+
+}
+
+.bandera-img{
+
+max-width:850px;
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+margin:auto;
+
+filter:drop-shadow(0 20px 35px rgba(0,0,0,.18));
+
+transition:.4s;
+
+}
+
+.bandera-img:hover{
+
+transform:scale(1.02);
+
+}
+
+/*==============================================================
+TÍTULOS CON ESCUDO
+==============================================================*/
+
+.titulo-escudo{
+
+    width:46px;
+
+    height:46px;
+
+    object-fit:contain;
+
+    flex-shrink:0;
+
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,.15));
+
+    transition:.3s;
+
+}
+
+.symbol-body h4:hover .titulo-escudo{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+/*==============================================================
+ADVOCACIÓN NUEVA
+==============================================================*/
+
+.advocacion-card{
+
+background:white;
+
+border-radius:30px;
+
+padding:50px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.advocacion-img{
+
+max-width:360px;
+
+transition:.4s;
+
+filter:drop-shadow(0 18px 30px rgba(0,0,0,.18));
+
+}
+
+.advocacion-img:hover{
+
+transform:scale(1.03);
+
+}
+
+.valor-card{
+
+background:#f8fbff;
+
+border-radius:18px;
+
+padding:25px;
+
+text-align:center;
+
+height:100%;
+
+transition:.35s;
+
+}
+
+.valor-card:hover{
+
+transform:translateY(-8px);
+
+background:white;
+
+box-shadow:0 12px 28px rgba(0,0,0,.12);
+
+}
+
+.valor-card i{
+
+font-size:2rem;
+
+color:#1d4d8f;
+
+margin-bottom:15px;
+
+display:block;
+
+}
+
+.valor-card h6{
+
+font-weight:700;
+
+margin-bottom:10px;
+
+}
+
+.valor-card p{
+
+margin:0;
+
+font-size:.95rem;
+
+color:#666;
+
+}
+
+/*==================================================
+UNIFORMES
+==================================================*/
+
+.uniforme-showcase{
+
+background:white;
+
+padding:40px;
+
+border-radius:28px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.10);
+
+text-align:center;
+
+}
+
+.uniforme-principal{
+
+max-width:900px;
+
+width:100%;
+
+transition:.35s;
+
+filter:drop-shadow(0 20px 35px rgba(0,0,0,.12));
+
+}
+
+.uniforme-principal:hover{
+
+transform:scale(1.02);
+
+}
+
+.uniforme-chip{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:22px;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+height:100%;
+
+transition:.3s;
+
+}
+
+.uniforme-chip:hover{
+
+transform:translateY(-8px);
+
+}
+
+.uniforme-icon{
+
+width:58px;
+
+height:58px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:#2b67d4;
+
+color:white;
+
+font-size:24px;
+
+flex-shrink:0;
+
+}
+
+.uniforme-icon.deporte{
+
+background:#2d9d68;
+
+}
+
+.uniforme-icon.gala{
+
+background:#d6a327;
+
+}
+
+.uniforme-chip h5{
+
+margin-bottom:6px;
+
+font-weight:700;
+
+}
+
+.uniforme-chip p{
+
+margin:0;
+
+color:#666;
+
+}
+
+
+
