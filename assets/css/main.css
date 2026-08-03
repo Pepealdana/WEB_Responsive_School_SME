@@ -10786,11 +10786,21 @@ box-shadow:0 20px 45px rgba(0,0,0,.12);
 
 .advocacion-img{
 
-max-width:360px;
+    width:100%;
 
-transition:.4s;
+    max-width:380px;
 
-filter:drop-shadow(0 18px 30px rgba(0,0,0,.18));
+    height:auto;
+
+    display:block;
+
+    margin:0 auto;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+    transition:.35s;
 
 }
 
