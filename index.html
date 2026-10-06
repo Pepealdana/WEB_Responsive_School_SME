@@ -627,43 +627,103 @@ document.addEventListener("DOMContentLoaded", function () {
   const RSS_URL = "https://api.rss2json.com/v1/api.json?rss_url=https://noticias.colsme.edu.co/feed";
   const contenedorNoticias = document.getElementById("contenedor-noticias");
 
+  if (!contenedorNoticias) return;
+
+  function obtenerUrlSegura(value) {
+    try {
+      const url = new URL(String(value || ""), window.location.href);
+      return ["https:", "http:"].includes(url.protocol) ? url.href : "";
+    } catch {
+      return "";
+    }
+  }
+
+  function extraerImagenSegura(description) {
+    const html = String(description || "");
+    const match = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+    return obtenerUrlSegura(match?.[1]) || "assets/img/noticias/default.jpg";
+  }
+
+  function textoPlano(description) {
+    const temporal = document.createElement("div");
+    temporal.innerHTML = String(description || "");
+    return (temporal.textContent || temporal.innerText || "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
   fetch(RSS_URL)
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw new Error("No fue posible consultar el feed.");
+      return response.json();
+    })
     .then(data => {
-      const noticias = data.items.slice(0, 3); // Solo mostrar las 3 más recientes
+      const noticias = Array.isArray(data.items) ? data.items.slice(0, 3) : [];
 
       noticias.forEach(item => {
-        // Extrae la imagen del contenido del RSS
-        const imgMatch = item.description.match(/<img.*?src="(.*?)"/);
-        const imagen = imgMatch ? imgMatch[1] : "assets/img/noticias/default.jpg";
-
         const card = document.createElement("div");
         card.className = "col-lg-4 col-md-6";
-        card.innerHTML = `
-          <div class="card h-100 shadow-sm border-0">
-            <img src="${imagen}" class="card-img-top" alt="Imagen de la noticia">
-            <div class="card-body">
-              <h5 class="card-title">${item.title}</h5>
-              <p class="card-text small text-muted">${new Date(item.pubDate).toLocaleDateString("es-ES")}</p>
-              <p class="card-text">${item.description.replace(/<[^>]*>?/gm, '').slice(0, 120)}...</p>
-              <a href="${item.link}" class="btn btn-primary btn-sm" target="_blank">Leer más</a>
-            </div>
-          </div>
-        `;
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "card h-100 shadow-sm border-0";
+
+        const image = document.createElement("img");
+        image.src = extraerImagenSegura(item.description);
+        image.alt = "Imagen de la noticia";
+        image.className = "card-img-top";
+
+        const body = document.createElement("div");
+        body.className = "card-body";
+
+        const title = document.createElement("h5");
+        title.className = "card-title";
+        title.textContent = String(item.title || "Noticia");
+
+        const date = document.createElement("p");
+        date.className = "card-text small text-muted";
+        const parsedDate = new Date(item.pubDate);
+        date.textContent = Number.isNaN(parsedDate.getTime())
+          ? ""
+          : parsedDate.toLocaleDateString("es-ES");
+
+        const summary = document.createElement("p");
+        summary.className = "card-text";
+        summary.textContent = textoPlano(item.description).slice(0, 120) + "...";
+
+        const linkUrl = obtenerUrlSegura(item.link);
+        if (linkUrl) {
+          const link = document.createElement("a");
+          link.href = linkUrl;
+          link.className = "btn btn-primary btn-sm";
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.textContent = "Leer más";
+          body.appendChild(link);
+        }
+
+        body.prepend(summary);
+        body.prepend(date);
+        body.prepend(title);
+        wrapper.appendChild(image);
+        wrapper.appendChild(body);
+        card.appendChild(wrapper);
         contenedorNoticias.appendChild(card);
       });
 
-      // 🚨 Mensaje si hay menos de 3 noticias
       if (noticias.length < 3) {
         const mensaje = document.createElement("p");
-        mensaje.textContent = "⚠️ Solo se cargaron " + noticias.length + " noticias.";
+        mensaje.textContent = "Solo se cargaron " + noticias.length + " noticias.";
         mensaje.classList.add("text-warning", "text-center", "mt-3");
         contenedorNoticias.appendChild(mensaje);
       }
     })
     .catch(error => {
       console.error("Error al cargar el feed RSS", error);
-      contenedorNoticias.innerHTML = "<p class='text-danger'>No se pudieron cargar las noticias.</p>";
+      contenedorNoticias.replaceChildren();
+      const mensaje = document.createElement("p");
+      mensaje.className = "text-danger";
+      mensaje.textContent = "No se pudieron cargar las noticias.";
+      contenedorNoticias.appendChild(mensaje);
     });
 });
 </script>
