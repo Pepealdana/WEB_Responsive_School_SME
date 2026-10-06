@@ -1,0 +1,19 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+
+# Logs y archivos temporales
+*.log
+npm-debug.log*
+yarn-debug.log*
+*.bak
+*.tmp
