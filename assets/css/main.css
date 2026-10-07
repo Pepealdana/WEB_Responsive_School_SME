@@ -760,8 +760,9 @@ section,
 }
 
 .hero .hero-container {
+  
   position: relative;
-  min-height: 90vh;
+  min-height: 82vh;
   display: flex;
   align-items: center;
   padding: 180px 0 80px 0;
@@ -11046,3 +11047,48 @@ color:#555;
 
 }
 
+/* ==========================================================
+   NUEVOS HORIZONTES
+   Transición institucional
+   ========================================================== */
+
+.transicion-institucional {
+  width: 100%;
+  background: #ffffff;
+  padding: 0;
+  margin-top: 90px;
+  margin-bottom: -90px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.transicion-institucional picture {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.transicion-institucional-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+/* ==========================================================
+   AJUSTE PARA MÓVILES
+   El encabezado móvil ocupa un poco menos de espacio.
+   ========================================================== */
+
+@media (max-width: 767.98px) {
+
+  .transicion-institucional {
+    margin-top: 80px;
+  }
+
+}
