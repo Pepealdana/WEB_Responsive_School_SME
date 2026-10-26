@@ -44,9 +44,6 @@ WEB_Responsive_School_SME/
 │   ├── img/ → Imágenes institucionales y de secciones
 │   └── vendor/ → Librerías externas (AOS, Bootstrap Icons, etc.)
 │
-├── forms/
-│   └── contact.php → (Obsoleto) Script de backend con PHP Email Form
-│
 ├── index.html → Página de inicio
 ├── contacto.html → Página con formulario de contacto funcional
 ├── admisiones.html → Información del proceso de admisión
@@ -124,3 +121,19 @@ Peters Aldana Gómez – Docente de Tecnología e Informática
 Este proyecto es de uso educativo e institucional.  
 Todos los derechos reservados © Colegio Santa María de la Esperanza 2025.
 
+
+
+## Seguridad — Fase 1
+
+Se realizó una primera revisión de seguridad del sitio:
+
+- se añadió `.gitignore` para excluir configuración local, secretos y archivos temporales;
+- se eliminó el endpoint PHP de contacto obsoleto;
+- el formulario actual usa FormSubmit y mantiene activada su protección CAPTCHA;
+- se añadió un campo honeypot contra envíos automatizados;
+- el renderizado de noticias externas dejó de insertar directamente título, resumen y enlaces del RSS mediante `innerHTML`;
+- los enlaces externos generados desde el feed se validan y utilizan `noopener noreferrer`;
+- se añadieron encabezados HTTP de seguridad en `.htaccess`;
+- se incorporaron CodeQL y Dependabot para el mantenimiento preventivo.
+
+La revisión no sustituye la configuración de seguridad del servidor de producción. Los encabezados de `.htaccess` requieren que Apache tenga habilitado `mod_headers`.
