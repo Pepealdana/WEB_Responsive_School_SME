@@ -1,0 +1,27 @@
+
+{
+  "id": "/",
+  "name": "Colegio Santa María de la Esperanza",
+  "short_name": "COLSME",
+  "description": "Sitio web oficial del Colegio Santa María de la Esperanza",
+  "lang": "es-CO",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#142c4c",
+  "icons": [
+    {
+      "src": "assets/img/new_logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/new_logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
