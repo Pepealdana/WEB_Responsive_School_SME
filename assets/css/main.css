@@ -153,13 +153,18 @@ h6 {
   z-index: 997;
 }
 
+
 .header .logo {
   line-height: 1;
+  gap: 12px;
 }
 
 .header .logo img {
-  max-height: 60px;
-  margin-right: 30px;
+  height: auto;
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+  margin-left: -4px;
 }
 
 .header .logo i {
@@ -168,11 +173,30 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 28px;
+  font-size: 30px;
   margin: 0;
   font-weight: 600;
   color: #000000;
+  line-height: 1.2;
 }
+
+/* Diseño móvil */
+@media (max-width: 767px) {
+  .header .logo {
+    gap: 8px;
+  }
+
+  .header .logo img {
+    max-height: 72px;
+    margin-left: -4px;
+  }
+
+  .header .logo h1 {
+    font-size: clamp(17px, 4.5vw, 24px);
+    line-height: 1.15;
+  }
+}
+
 
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
