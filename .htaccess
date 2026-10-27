@@ -8,9 +8,22 @@ ErrorDocument 404 /404.html
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
+# El navegador debe comprobar si hay una nueva versión del service worker.
+<IfModule mod_headers.c>
+  <Files "service-worker.js">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </Files>
+</IfModule>
+
 <IfModule mod_expires.c>
   ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/manifest+json "access plus 1 day"
   ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType text/css "access plus 1 week"
   ExpiresByType application/javascript "access plus 1 week"
 </IfModule>
