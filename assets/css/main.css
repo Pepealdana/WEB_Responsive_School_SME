@@ -139,6 +139,7 @@ h6 {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -146,56 +147,52 @@ h6 {
   --background-color: #ffdd57;
   --default-color: #ffffff;
   --heading-color: #ffffff;
+
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 15px 0;
+
+  height: 100px;
+  min-height: 100px;
+  padding: 0;
+
   transition: all 0.5s;
   z-index: 997;
 }
 
-
 .header .logo {
+  display: flex;
+  align-items: center;
   line-height: 1;
-  gap: 12px;
 }
 
 .header .logo img {
-  height: auto;
-  max-height: 90px;
+  display: block;
   width: auto;
+  height: 100px;
+  max-height: none;
+  max-width: 480px;
   object-fit: contain;
-  margin-left: -4px;
 }
 
-.header .logo i {
-  font-size: 18px;
-  margin-right: 6px;
-}
 
-.header .logo h1 {
-  font-size: 30px;
-  margin: 0;
-  font-weight: 600;
-  color: #000000;
-  line-height: 1.2;
-}
-
-/* Diseño móvil */
+/*--------------------------------------------------------------
+# Responsive Header - Mobile
+--------------------------------------------------------------*/
 @media (max-width: 767px) {
-  .header .logo {
-    gap: 8px;
+  .header {
+    height: 82px;
+    min-height: 82px;
+    padding: 0;
   }
 
   .header .logo img {
-    max-height: 72px;
-    margin-left: -4px;
-  }
-
-  .header .logo h1 {
-    font-size: clamp(17px, 4.5vw, 24px);
-    line-height: 1.15;
+    height: 76px;
+    width: auto;
+    max-width: min(300px, 68vw);
+    object-fit: contain;
   }
 }
+
 
 
 .scrolled .header {
