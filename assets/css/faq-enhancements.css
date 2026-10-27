@@ -109,3 +109,18 @@
   #preguntas-frecuentes details > p,
   #preguntas-frecuentes-contacto details > p { animation: none; }
 }
+
+/* Enlace destacado al final de las preguntas frecuentes */
+#preguntas-frecuentes > .container > .row a,
+#preguntas-frecuentes-contacto > .container > .row a {
+  color: #0c2e4d;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #0c2e4d;
+  text-underline-offset: 3px;
+}
+#preguntas-frecuentes > .container > .row a:hover,
+#preguntas-frecuentes-contacto > .container > .row a:hover {
+  color: #164c78;
+  text-decoration-thickness: 2px;
+}
