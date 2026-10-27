@@ -1,139 +1,60 @@
-# 🌐 Colegio Santa María de la Esperanza – Sitio Web Institucional
+# Colegio Santa María de la Esperanza — Sitio web institucional
 
-Este proyecto corresponde al sitio web oficial del **Colegio Santa María de la Esperanza**, una institución educativa católica ubicada en Facatativá (Cundinamarca, Colombia), orientada por la espiritualidad de la Madre Clara Fey y las Hermanas del Niño Jesús Pobre.
+Sitio web estático del Colegio Santa María de la Esperanza (COLSME), Facatativá, Cundinamarca, Colombia.
 
-👉 Enlace en producción: [https://colsme.edu.co](https://colsme.edu.co)
+- **Producción:** https://colsme.edu.co/
+- **Repositorio:** https://github.com/Pepealdana/WEB_Responsive_School_SME
+- **Tecnologías:** HTML5, CSS3, JavaScript, Bootstrap 5, Bootstrap Icons, AOS, Swiper y GLightbox.
+- **Despliegue:** alojamiento estático/Apache; no requiere Node.js ni compilación.
 
----
+## Estructura
 
-## 🧭 Objetivo
+- Páginas HTML en la raíz: inicio, información institucional, comunidad PIJ, admisiones, contacto y páginas temáticas.
+- `assets/css/main.css`: estilos compartidos y componentes institucionales.
+- `assets/js/main.js`: navegación e interacciones comunes.
+- `assets/js/campus-gallery.js`: visor de fotografías del campus.
+- `assets/vendor/`: bibliotecas de terceros distribuidas localmente.
+- `manifest.json` y `service-worker.js`: manifiesto web y estrategia de caché.
+- `.htaccess`: página 404, cabeceras HTTP y políticas de caché para Apache.
+- `.github/workflows/codeql.yml` y `.github/dependabot.yml`: análisis estático y mantenimiento preventivo.
 
-Crear una plataforma web institucional, informativa, moderna, accesible y responsive, que permita a estudiantes, familias y visitantes conocer:
+## Desarrollo local
 
-- La filosofía, identidad y espiritualidad del colegio.
-- El proceso de admisión y contacto.
-- Recursos educativos y presentación académica.
-- Secciones temáticas especiales como Madre Clara Fey, comunidad PIJ, exalumnos y símbolos institucionales.
+1. Clona el repositorio y abre la carpeta en VS Code.
+2. Usa Live Server o un servidor HTTP local. No abras los archivos mediante `file://`.
+3. Prueba en `http://127.0.0.1:5500/` o el puerto que indique Live Server.
+4. Para inspeccionar la caché, abre DevTools > Application > Service Workers y Cache Storage.
 
----
+## Caché y funcionamiento sin conexión
 
-## 🛠️ Tecnologías utilizadas
+El service worker usa una caché versionada. Las navegaciones intentan primero la red para priorizar el contenido actualizado y recurren a una copia guardada cuando no hay conexión. Los recursos estáticos del mismo origen se reutilizan desde caché y se descargan si no están almacenados. No se almacenan solicitudes que no sean GET, recursos externos ni archivos de audio/vídeo.
 
-| Herramienta / Lenguaje  | Propósito                                      |
-|-------------------------|-----------------------------------------------|
-| **HTML5**               | Maquetación semántica de cada página.         |
-| **CSS3** (custom + Bootstrap 5) | Estilos personalizados + diseño responsive.   |
-| **JavaScript**          | Animaciones, formularios, efectos dinámicos.  |
-| **AOS (Animate On Scroll)** | Efectos de entrada suaves al hacer scroll.   |
-| **Bootstrap Icons**     | Iconografía profesional y ligera.             |
-| **FormSubmit.co**       | Envío de formularios sin backend propio.      |
-| **Google Maps Embed**   | Integración del mapa de ubicación del colegio.|
-| **PHP Email Form (descartado)** | Inicialmente considerado, luego reemplazado. |
+Al modificar la lista de recursos esenciales o la estrategia, incrementa `CACHE_VERSION` en `service-worker.js`. Comprueba primera visita online, recarga tras desplegar, navegación offline a páginas visitadas y formularios online. Los formularios que dependen de servicios remotos no funcionan sin conexión.
 
----
+## Rendimiento
 
+- Mantén dimensiones explícitas en imágenes y utiliza WebP/AVIF cuando sea apropiado.
+- Usa carga diferida para imágenes fuera de la primera pantalla; no la uses para el elemento principal visible (LCP/hero).
+- No cargues bibliotecas en páginas que no las necesitan.
+- Conserva versiones minificadas de dependencias para producción.
+- Antes de retirar CSS repetido, comprueba cascada, especificidad y resultado en escritorio y móvil; una regla aparentemente duplicada puede modificar el diseño.
 
-## 📁 Estructura de carpetas
+## Seguridad y privacidad
 
-```
-WEB_Responsive_School_SME/
-│
-├── assets/
-│   ├── css/ → Estilos personalizados y bootstrap
-│   ├── js/ → Scripts JS propios y externos
-│   ├── img/ → Imágenes institucionales y de secciones
-│   └── vendor/ → Librerías externas (AOS, Bootstrap Icons, etc.)
-│
-├── index.html → Página de inicio
-├── contacto.html → Página con formulario de contacto funcional
-├── admisiones.html → Información del proceso de admisión
-├── comunidadpij.html → Sección sobre la comunidad religiosa PIJ
-├── madreclara.html → Página dedicada a Clara Fey
-├── direccion.html → Misión, visión, valores y creencias
-├── modeloacademico.html → Propuesta pedagógica del colegio
-├── simbolos.html → Escudo, bandera e himno institucional
-├── tourvirtual.html → Instalaciones y recorrido virtual
-├── cronograma.html → Calendario institucional
-├── exalumnos.html → Espacio para antiguos estudiantes
-├── gracias.html → Página de confirmación tras envío de formulario
-├── 404.html → Página personalizada de error 404
-├── .htaccess → Redirección de errores del servidor Apache
-└── README.md → Documentación del proyecto
-```
+- No guardes credenciales, tokens ni información privada de estudiantes, familias o funcionarios en el repositorio.
+- Los formularios dependen de servicios externos. Verifica destino, validación y políticas de privacidad antes de modificar su configuración.
+- Las cabeceras de `.htaccess` solo se aplican si Apache permite `mod_headers`. HSTS debe mantenerse únicamente si el dominio y los subdominios incluidos operan permanentemente por HTTPS.
+- La web estática no puede proteger secretos incluidos en JavaScript del cliente. El service worker y las cabeceras no sustituyen controles del servidor ni una auditoría de proveedores externos.
 
+## Despliegue
 
+Publica los archivos en la raíz del sitio (por ejemplo, `public_html`) conservando la estructura de carpetas. Verifica HTTPS, página 404, formularios, imágenes, navegación móvil y registro del service worker después del despliegue.
 
-## 📨 Formulario de contacto
+## Documentación
 
-- Funciona mediante integración con [FormSubmit.co](https://formsubmit.co/)
-- Campos: nombre, correo, asunto, mensaje
-- Redirección tras envío exitoso a `gracias.html`
-- Validación nativa en el frontend
-- Código JavaScript personalizado para mostrar confirmación sin recargar
+- [Política de seguridad](SECURITY.md)
+- [Términos y privacidad](terminos.html)
 
----
+## Autoría y licencia
 
-## 🎨 Colores institucionales
-
-- **Amarillo (#FFDD57):** Fondo y tarjetas especiales
-- **Celeste institucional (#55C9F4):** Botones, encabezados, acentos
-- **Azul profundo (#213B52):** Tipografía principal
-- **Blanco:** Formularios y textos destacados
-
----
-
-## 🔐 Consideraciones de privacidad
-
-- Los únicos formularios activos son: **buzón de sugerencias (Google Forms)** y **formulario de contacto**.
-- El sitio cumple con la Ley 1581 de 2012 (Protección de Datos en Colombia).
-- Ver más en: [terminos.html](terminos.html)
-
----
-
-## 🚀 Cómo desplegar
-
-1. Subir la carpeta del proyecto vía **cPanel**, **FTP** o **Administrador de Archivos** a `/public_html`
-2. Asegurarse que `index.html` esté en la raíz.
-3. Comprobar visibilidad en el dominio configurado (ej. `https://colsme.edu.co`)
-4. Validar que los assets (imágenes, estilos, scripts) carguen correctamente.
-
----
-
-## 🧩 Extensiones recomendadas
-
-- **Prettier** y **Live Server** para desarrollo en VS Code
-- **FileZilla** para carga por FTP
-- **ImageOptim / TinyPNG** para optimización de imágenes
-
----
-
-## ✨ Autoría y desarrollo
-
-**Desarrollado y mantenido por:**  
-Peters Aldana Gómez – Docente de Tecnología e Informática  
- 
-📧 [pepealdanagomez@hotmail.com](mailto:pepealdanagomez@hotmail.com)
-
----
-
-## 📜 Licencia
-
-Este proyecto es de uso educativo e institucional.  
-Todos los derechos reservados © Colegio Santa María de la Esperanza 2025.
-
-
-
-## Seguridad — Fase 1
-
-Se realizó una primera revisión de seguridad del sitio:
-
-- se añadió `.gitignore` para excluir configuración local, secretos y archivos temporales;
-- se eliminó el endpoint PHP de contacto obsoleto;
-- el formulario actual usa FormSubmit y mantiene activada su protección CAPTCHA;
-- se añadió un campo honeypot contra envíos automatizados;
-- el renderizado de noticias externas dejó de insertar directamente título, resumen y enlaces del RSS mediante `innerHTML`;
-- los enlaces externos generados desde el feed se validan y utilizan `noopener noreferrer`;
-- se añadieron encabezados HTTP de seguridad en `.htaccess`;
-- se incorporaron CodeQL y Dependabot para el mantenimiento preventivo.
-
-La revisión no sustituye la configuración de seguridad del servidor de producción. Los encabezados de `.htaccess` requieren que Apache tenga habilitado `mod_headers`.
+Desarrollado y mantenido por Peters Aldana Gómez. Proyecto de uso educativo e institucional. Todos los derechos reservados © Colegio Santa María de la Esperanza.
