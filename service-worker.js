@@ -2,7 +2,7 @@
 'use strict';
 
 const CACHE_PREFIX = 'colsme-site-';
-const CACHE_VERSION = 'v1-20261027';
+const CACHE_VERSION = 'v2-20261027';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const CORE_ASSETS = [
   './',
