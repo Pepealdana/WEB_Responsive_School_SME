@@ -47,3 +47,52 @@
 @media (prefers-reduced-motion: reduce) {
   .whatsapp-float { transition: none; }
 }
+
+/* Panel de orientación: solo se muestra cuando el visitante pulsa WhatsApp */
+.whatsapp-contact-panel {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: calc(154px + env(safe-area-inset-bottom));
+  z-index: 998;
+  width: min(340px, calc(100vw - 32px));
+  padding: 18px;
+  border: 1px solid rgba(18, 48, 72, .12);
+  border-radius: 16px;
+  background: #fff;
+  color: #17334a;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .2);
+  font-family: inherit;
+}
+.whatsapp-contact-panel[hidden] { display: none; }
+.whatsapp-contact-header { display:flex; align-items:flex-start; gap:12px; margin-bottom:14px; }
+.whatsapp-contact-heading { flex:1; margin:0; font-size:16px; line-height:1.35; font-weight:700; }
+.whatsapp-contact-subtitle { margin:5px 0 0; color:#52616c; font-size:13px; line-height:1.45; }
+.whatsapp-contact-close {
+  display:inline-flex; align-items:center; justify-content:center; flex:0 0 32px;
+  width:32px; height:32px; margin:-5px -5px 0 0; border:0; border-radius:50%;
+  background:#f0f3f5; color:#17334a; font-size:21px; cursor:pointer;
+}
+.whatsapp-contact-options { display:grid; gap:8px; }
+.whatsapp-contact-option {
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  width:100%; padding:11px 12px; border:1px solid #dce4e9; border-radius:10px;
+  background:#fff; color:#17334a; text-align:left; font:inherit; font-size:14px;
+  cursor:pointer; transition:background-color .15s ease, border-color .15s ease;
+}
+.whatsapp-contact-option:hover { background:#f1f8f5; border-color:#168b55; }
+.whatsapp-contact-option:focus-visible, .whatsapp-contact-close:focus-visible {
+  outline:3px solid #e3b72f; outline-offset:2px;
+}
+.whatsapp-contact-option span:last-child { color:#168b55; font-size:18px; }
+.whatsapp-contact-faq { display:block; margin-top:12px; color:#0d557c; font-size:13px; text-decoration:underline; }
+@media (max-width:575.98px) {
+  .whatsapp-contact-panel {
+    right:max(12px, env(safe-area-inset-right));
+    bottom:calc(134px + env(safe-area-inset-bottom));
+    width:min(330px, calc(100vw - 24px));
+    padding:15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-contact-option { transition:none; }
+}
