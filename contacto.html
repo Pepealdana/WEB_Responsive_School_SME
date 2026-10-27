@@ -44,7 +44,34 @@
       background-color: #ffffff; 
       font-family: 'Poppins', sans-serif;
     }
-</style>
+
+    .contact-email-link {
+      display: flex;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+      border-radius: inherit;
+    }
+    .contact-email-link:hover,
+    .contact-email-link:focus-visible {
+      color: inherit;
+      text-decoration: none;
+    }
+    .contact-email-link:focus-visible {
+      outline: 3px solid #0c2e4d;
+      outline-offset: 4px;
+    }
+    .contact-email-link .info-content p {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 3px;
+      transition: text-decoration-color .18s ease;
+    }
+    .contact-email-link:hover .info-content p,
+    .contact-email-link:focus-visible .info-content p {
+      text-decoration-color: currentColor;
+    }
+  </style>
 
 
   <style>
@@ -173,7 +200,7 @@
       </div>
 
       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="contact-info-box">
+        <a class="contact-info-box contact-email-link" href="mailto:s.mariadelaesperanza@yahoo.com" aria-label="Escribir un correo electrónico al colegio">
           <div class="icon-box">
             <i class="bi bi-envelope"></i>
           </div>
@@ -181,7 +208,7 @@
             <h4>Correo electrónico</h4>
             <p>s.mariadelaesperanza@yahoo.com</p>
           </div>
-        </div>
+        </a>
       </div>
 
       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
