@@ -81,13 +81,12 @@ if (navLinks.length > 0) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -103,12 +102,12 @@ if (navLinks.length > 0) {
       mirror: false
     });
   }
-  window.addEventListener('load', aosInit);
+  if (typeof AOS !== 'undefined') window.addEventListener('load', aosInit);
 
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') new PureCounter();
 
   /**
    * Init isotope layout and filters
@@ -118,9 +117,11 @@ if (navLinks.length > 0) {
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
+    const isotopeContainer = isotopeItem.querySelector('.isotope-container');
+    if (!isotopeContainer || typeof imagesLoaded === 'undefined' || typeof Isotope === 'undefined') return;
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+    imagesLoaded(isotopeContainer, function() {
+      initIsotope = new Isotope(isotopeContainer, {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
@@ -130,8 +131,10 @@ if (navLinks.length > 0) {
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
       filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+        const activeFilter = isotopeItem.querySelector('.isotope-filters .filter-active');
+        if (activeFilter) activeFilter.classList.remove('filter-active');
         this.classList.add('filter-active');
+        if (!initIsotope) return;
         initIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
@@ -147,13 +150,17 @@ if (navLinks.length > 0) {
    * Init swiper sliders
    */
   function initSwiper() {
+    if (typeof Swiper === 'undefined') return;
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+      const configElement = swiperElement.querySelector(".swiper-config");
+      if (!configElement) return;
+      let config;
+      try { config = JSON.parse(configElement.textContent.trim()); }
+      catch (error) { console.error("Configuración Swiper no válida.", error); return; }
 
       if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
+        if (typeof initSwiperWithCustomPagination === 'function') initSwiperWithCustomPagination(swiperElement, config);
+        else new Swiper(swiperElement, config);
       } else {
         new Swiper(swiperElement, config);
       }
@@ -165,24 +172,18 @@ if (navLinks.length > 0) {
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') GLightbox({ selector: '.glightbox' });
 
   /**
    * obra social slider peregrinación y semillas
    */
-  new Swiper('.swiper-card', {
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    }
-  });
+  if (typeof Swiper !== 'undefined' && document.querySelector('.swiper-card')) {
+    new Swiper('.swiper-card', {
+      loop: true,
+      autoplay: { delay: 5000, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true }
+    });
+  }
 
 })();
 
