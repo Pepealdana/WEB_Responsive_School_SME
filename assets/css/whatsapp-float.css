@@ -1,0 +1,49 @@
+/* Botón flotante institucional de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: calc(88px + env(safe-area-inset-bottom));
+  z-index: 998;
+  display: inline-flex;
+  width: 54px;
+  height: 54px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, .75);
+  border-radius: 50%;
+  background: #168b55;
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, .18);
+  text-decoration: none;
+  transition: background-color .18s ease, box-shadow .18s ease;
+}
+.whatsapp-float:hover {
+  background: #117747;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .24);
+}
+.whatsapp-float:focus-visible {
+  outline: 3px solid #f4c542;
+  outline-offset: 3px;
+}
+.whatsapp-float svg {
+  display: block;
+  width: 27px;
+  height: 27px;
+  fill: currentColor;
+}
+@media (max-width: 575.98px) {
+  .whatsapp-float {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: calc(78px + env(safe-area-inset-bottom));
+    width: 46px;
+    height: 46px;
+  }
+  .whatsapp-float svg {
+    width: 23px;
+    height: 23px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float { transition: none; }
+}
