@@ -1,0 +1,111 @@
+/* Mejora visual accesible para las preguntas frecuentes del sitio SME */
+#preguntas-frecuentes,
+#preguntas-frecuentes-contacto {
+  scroll-margin-top: 110px;
+}
+#preguntas-frecuentes .section-title h2,
+#preguntas-frecuentes-contacto .section-title h2 {
+  color: #123b63;
+}
+#preguntas-frecuentes details,
+#preguntas-frecuentes-contacto details {
+  overflow: hidden;
+  border: 1px solid #d7e3ec !important;
+  border-left: 5px solid #55c9f4 !important;
+  border-radius: 12px !important;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(12, 46, 77, .07);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+#preguntas-frecuentes details:hover,
+#preguntas-frecuentes-contacto details:hover {
+  border-left-color: #0c2e4d !important;
+  box-shadow: 0 7px 20px rgba(12, 46, 77, .12);
+  transform: translateY(-2px);
+}
+#preguntas-frecuentes details[open],
+#preguntas-frecuentes-contacto details[open] {
+  border-left-color: #0c2e4d !important;
+  box-shadow: 0 8px 22px rgba(12, 46, 77, .13);
+}
+#preguntas-frecuentes summary,
+#preguntas-frecuentes-contacto summary {
+  position: relative;
+  padding: 3px 32px 3px 2px;
+  color: #0c2e4d;
+  font-size: 1.04rem;
+  font-weight: 700;
+  line-height: 1.55;
+  cursor: pointer;
+  list-style: none;
+}
+#preguntas-frecuentes summary::-webkit-details-marker,
+#preguntas-frecuentes-contacto summary::-webkit-details-marker {
+  display: none;
+}
+#preguntas-frecuentes summary::after,
+#preguntas-frecuentes-contacto summary::after {
+  content: "+";
+  position: absolute;
+  right: 3px;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #e7f7fd;
+  color: #0c557c;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1;
+  transition: transform .2s ease, background-color .2s ease;
+}
+#preguntas-frecuentes details[open] summary::after,
+#preguntas-frecuentes-contacto details[open] summary::after {
+  content: "−";
+  transform: rotate(180deg);
+  background: #0c2e4d;
+  color: #fff;
+}
+#preguntas-frecuentes details > p,
+#preguntas-frecuentes-contacto details > p {
+  margin: 12px 0 2px;
+  padding: 13px 4px 2px;
+  border-top: 1px solid #e5edf2;
+  color: #344b5e;
+  line-height: 1.75;
+  animation: faq-reveal .24s ease-out both;
+}
+#preguntas-frecuentes details a,
+#preguntas-frecuentes-contacto details a {
+  color: #075b91;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+#preguntas-frecuentes summary:focus-visible,
+#preguntas-frecuentes-contacto summary:focus-visible {
+  outline: 3px solid #d5a900;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+@keyframes faq-reveal {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 575.98px) {
+  #preguntas-frecuentes summary,
+  #preguntas-frecuentes-contacto summary { font-size: .98rem; }
+  #preguntas-frecuentes details,
+  #preguntas-frecuentes-contacto details { padding: 14px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #preguntas-frecuentes details,
+  #preguntas-frecuentes-contacto details,
+  #preguntas-frecuentes summary::after,
+  #preguntas-frecuentes-contacto summary::after { transition: none; }
+  #preguntas-frecuentes details > p,
+  #preguntas-frecuentes-contacto details > p { animation: none; }
+}
