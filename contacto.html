@@ -46,6 +46,38 @@
     }
 </style>
 
+
+  <style>
+    .contact-phone-link {
+      display: flex;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+      border-radius: inherit;
+    }
+    .contact-phone-link:hover,
+    .contact-phone-link:focus-visible {
+      color: inherit;
+      text-decoration: none;
+    }
+    .contact-phone-link:focus-visible {
+      outline: 3px solid #0c2e4d;
+      outline-offset: 4px;
+    }
+    .contact-phone-link .info-content p {
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 3px;
+      transition: text-decoration-color .18s ease;
+    }
+    .contact-phone-link:hover .info-content p,
+    .contact-phone-link:focus-visible .info-content p {
+      text-decoration-color: currentColor;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .contact-phone-link .info-content p { transition: none; }
+    }
+  </style>
 </head>
 
 
@@ -153,7 +185,7 @@
       </div>
 
       <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="contact-info-box">
+        <a class="contact-info-box contact-phone-link" href="tel:+573132559038" aria-label="Llamar al teléfono institucional 313 255 90 38">
           <div class="icon-box">
             <i class="bi bi-telephone"></i>
           </div>
@@ -161,7 +193,7 @@
             <h4>Teléfono</h4>
             <p>313 255 90 38</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
