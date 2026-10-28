@@ -38,3 +38,46 @@
 @media(max-width:991.98px) { .dimension-grid,.alumni-timeline { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(max-width:575.98px) { .dimension-grid,.alumni-timeline { grid-template-columns:1fr; } .dimension-filters,.alumni-decade-filters { justify-content:flex-start; } .dimension-filter,.decade-filter { padding:.5rem .8rem; font-size:.88rem; } .alumni-cover { min-height:140px; } }
 @media(prefers-reduced-motion:reduce) { .dimension-card,.dimension-filter,.decade-filter { transition:none; } .dimension-card:hover,.dimension-filter:hover,.decade-filter:hover { transform:none; } }
+
+/* Rediseño visual de Estudiantes: mosaico editorial y prioridad móvil */
+.students-gallery { padding-top:clamp(2rem,4vw,4rem)!important; }
+.students-gallery .students-intro { max-width:900px; margin-bottom:2rem!important; }
+.students-gallery .students-intro h2 { font-size:clamp(1.8rem,3vw,2.6rem); letter-spacing:-.035em; }
+.students-gallery .students-intro .lead { max-width:780px; margin-inline:auto; font-size:clamp(1rem,1.35vw,1.2rem); line-height:1.7; color:#29465f; }
+.students-gallery .dimension-filters { justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; padding:.3rem .1rem .8rem; margin-bottom:1.3rem!important; scrollbar-width:thin; }
+.students-gallery .dimension-filter { flex:0 0 auto; box-shadow:0 2px 8px #0c2e4d0a; }
+.students-gallery .dimension-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; align-items:stretch; }
+.students-gallery .dimension-card { position:relative; display:flex; flex-direction:column; border:0; border-top:3px solid var(--dimension); border-radius:18px; background:linear-gradient(145deg,var(--dimension-soft) 0%,#fff 90%); box-shadow:0 4px 16px #0c2e4d0c; }
+.students-gallery .dimension-card:hover { transform:translateY(-3px); box-shadow:0 12px 28px #0c2e4d18; }
+.students-gallery .dimension-card-head { padding:1.15rem 1.2rem .6rem; }
+.students-gallery .dimension-icon { border-radius:50%; }
+.students-gallery .dimension-card-body { display:flex; flex:1; flex-direction:column; padding:0 1.2rem 1.2rem; }
+.students-gallery .dimension-card-body>p { margin:.35rem 0 .9rem; font-size:.96rem; line-height:1.65; }
+.students-gallery .dimension-count { align-self:flex-start; margin-top:auto; background:color-mix(in srgb,var(--dimension) 12%,white); color:#173d5a; }
+.students-gallery .dimension-empty { min-height:95px; margin-top:.85rem!important; border:1px dashed color-mix(in srgb,var(--dimension) 38%,white); border-radius:12px; background:color-mix(in srgb,var(--dimension-soft) 55%,white); padding:.8rem; }
+.students-gallery .dimension-empty i { font-size:1.35rem; }
+.students-gallery .dimension-empty strong { font-size:.95rem; }
+.students-gallery .dimension-empty span { font-size:.87rem; }
+.students-gallery .dimension-card[hidden] { display:none!important; }
+@media(min-width:992px) {
+ .students-gallery .dimension-card:nth-child(2),.students-gallery .dimension-card:nth-child(5) { transform:translateY(10px); }
+ .students-gallery .dimension-card:nth-child(2):hover,.students-gallery .dimension-card:nth-child(5):hover { transform:translateY(6px); }
+}
+@media(max-width:991.98px) { .students-gallery .dimension-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem; } }
+@media(max-width:575.98px) {
+ .students-gallery { padding-block:1.8rem!important; }
+ .students-gallery .students-intro { text-align:left; margin-bottom:1.2rem!important; }
+ .students-gallery .students-intro h2 { font-size:1.8rem; }
+ .students-gallery .students-intro .lead { font-size:1rem; line-height:1.6; }
+ .students-gallery .dimension-filters { margin-inline:-.5rem; padding-inline:.5rem; gap:.45rem; }
+ .students-gallery .dimension-filter { padding:.55rem .85rem; font-size:.86rem; }
+ .students-gallery .dimension-grid { grid-template-columns:1fr; gap:.8rem; }
+ .students-gallery .dimension-card { border-radius:15px; }
+ .students-gallery .dimension-card-head { padding:1rem 1rem .45rem; }
+ .students-gallery .dimension-card-body { padding:0 1rem 1rem; }
+ .students-gallery .dimension-card-body>p { font-size:.94rem; margin-bottom:.7rem; }
+ .students-gallery .dimension-empty { min-height:72px; flex-direction:row; justify-content:flex-start; text-align:left; gap:.65rem; }
+ .students-gallery .dimension-empty i { flex:0 0 auto; }
+ .students-gallery .dimension-empty span { display:none; }
+}
+@media(prefers-reduced-motion:reduce) { .students-gallery .dimension-card { transition:none; } }
