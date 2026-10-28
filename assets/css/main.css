@@ -11438,3 +11438,30 @@ color:#555;
   }
 
 }
+
+/* Index hero: alinear los textos de estadísticas solo en móvil */
+@media (max-width: 576px) {
+  .hero .hero-container .stats-card .stats-grid .stat-item {
+    align-items:center;
+    text-align:left;
+  }
+
+  .hero .hero-container .stats-card .stats-grid .stat-item .stat-content {
+    flex:1;
+    min-width:0;
+    text-align:left;
+  }
+
+  .hero .hero-container .stats-card .stats-grid .stat-item .stat-content h4,
+  .hero .hero-container .stats-card .stats-grid .stat-item .stat-content p {
+    text-align:left;
+  }
+
+  .hero .hero-container .stats-card .stats-grid .stat-item .stat-content h4 {
+    line-height:1.15;
+  }
+
+  .hero .hero-container .stats-card .stats-grid .stat-item .stat-content p {
+    line-height:1.35;
+  }
+}
