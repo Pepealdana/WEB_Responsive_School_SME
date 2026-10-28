@@ -1,0 +1,40 @@
+/* Galería pedagógica de Estudiantes SME */
+.students-gallery { --sme-navy:#0c2e4d; --sme-yellow:#ffdf57; }
+.students-intro { max-width:850px; margin-inline:auto; text-align:center; }
+.students-eyebrow { color:#0c2e4d; font-size:.8rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.students-gallery h2,.alumni-archive h2 { color:#0c2e4d; font-weight:700; }
+.dimension-filters,.alumni-decade-filters { display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem; }
+.dimension-filter,.decade-filter { border:1px solid #d7e2eb; border-radius:999px; background:#fff; color:#0c2e4d; padding:.6rem 1rem; font:inherit; font-weight:600; transition:background-color .18s ease,color .18s ease,transform .18s ease; }
+.dimension-filter:hover,.decade-filter:hover { transform:translateY(-2px); }
+.dimension-filter[aria-pressed="true"],.decade-filter[aria-pressed="true"] { background:#0c2e4d; color:#fff; border-color:#0c2e4d; }
+.dimension-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.2rem; }
+.dimension-card { --dimension:#55c9f4; --dimension-soft:#e8f8ff; overflow:hidden; border:1px solid #e2e9ee; border-top:5px solid var(--dimension); border-radius:18px; background:#fff; box-shadow:0 8px 24px rgba(12,46,77,.07); transition:transform .2s ease,box-shadow .2s ease; }
+.dimension-card:hover { transform:translateY(-4px); box-shadow:0 14px 30px rgba(12,46,77,.12); }
+.dimension-card[hidden] { display:none !important; }
+.dimension-card-head { display:flex; align-items:center; gap:1rem; padding:1.25rem 1.25rem .8rem; }
+.dimension-icon { display:grid; place-items:center; flex:0 0 48px; width:48px; height:48px; border-radius:14px; background:var(--dimension-soft); color:var(--dimension); font-size:1.4rem; }
+.dimension-card h3 { margin:0; color:#0c2e4d; font-size:1.15rem; font-weight:700; }
+.dimension-card .dimension-short { margin:.2rem 0 0; color:#596b79; font-size:.88rem; }
+.dimension-card-body { padding:0 1.25rem 1.3rem; }
+.dimension-card-body p { color:#405466; line-height:1.65; }
+.dimension-count { display:inline-block; border-radius:999px; background:var(--dimension-soft); color:#173d5a; padding:.3rem .65rem; font-size:.78rem; font-weight:700; }
+.dimension-empty { display:flex; min-height:145px; flex-direction:column; align-items:center; justify-content:center; gap:.45rem; border:1px dashed color-mix(in srgb,var(--dimension) 55%,white); border-radius:12px; background:linear-gradient(135deg,var(--dimension-soft),#fff); color:#526575; text-align:center; padding:1rem; }
+.dimension-empty i { color:var(--dimension); font-size:1.7rem; }
+.dimension-empty strong { color:#0c2e4d; }
+.students-gallery-note { max-width:850px; margin:1.5rem auto 0; color:#5c6d79; font-size:.9rem; text-align:center; }
+.alumni-archive .archive-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; margin:1.5rem 0; }
+.alumni-search { width:min(100%,360px); padding:.75rem 1rem; border:1px solid #d5e0e8; border-radius:12px; background:#fff; color:#0c2e4d; }
+.alumni-search:focus-visible { outline:3px solid #55c9f4; outline-offset:2px; }
+.alumni-timeline { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.2rem; }
+.alumni-promotion { overflow:hidden; border:1px solid #e0e7ed; border-radius:16px; background:#fff; box-shadow:0 8px 24px rgba(12,46,77,.07); }
+.alumni-promotion[hidden] { display:none !important; }
+.alumni-cover { display:grid; place-items:center; min-height:180px; padding:1.5rem; background:linear-gradient(145deg,#0c2e4d,#1a5279); color:#ffdf57; text-align:center; }
+.alumni-cover i { font-size:2.2rem; margin-bottom:.4rem; }
+.alumni-cover .alumni-year { font-size:1.7rem; font-weight:800; }
+.alumni-promotion-body { padding:1.1rem 1.2rem 1.3rem; }
+.alumni-promotion-body h3 { color:#0c2e4d; font-size:1.1rem; font-weight:700; }
+.alumni-empty-state { max-width:760px; margin:1.5rem auto; padding:2.5rem 1.5rem; border:1px dashed #bdccd8; border-radius:18px; background:#f7fafc; text-align:center; }
+.alumni-empty-state i { color:#0c2e4d; font-size:2.3rem; }
+@media(max-width:991.98px) { .dimension-grid,.alumni-timeline { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:575.98px) { .dimension-grid,.alumni-timeline { grid-template-columns:1fr; } .dimension-filters,.alumni-decade-filters { justify-content:flex-start; } .dimension-filter,.decade-filter { padding:.5rem .8rem; font-size:.88rem; } .alumni-cover { min-height:140px; } }
+@media(prefers-reduced-motion:reduce) { .dimension-card,.dimension-filter,.decade-filter { transition:none; } .dimension-card:hover,.dimension-filter:hover,.decade-filter:hover { transform:none; } }
