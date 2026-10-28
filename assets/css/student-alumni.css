@@ -174,3 +174,53 @@
   .students-gallery .dimension-grid { display:grid; grid-template-columns:1fr; gap:.9rem; }
   .students-gallery .dimension-card { margin:0; padding:1rem; border-radius:14px; }
 }
+
+/* Ajuste final Estudiantes: fondo blanco desde los filtros hasta las dimensiones */
+.students-gallery .dimension-showcase-panel {
+  background:#fff;
+  border:1px solid #e5ebf0;
+  box-shadow:0 14px 38px rgba(12,46,77,.10);
+}
+.students-gallery .dimension-filters {
+  border-bottom:1px solid #e8edf1;
+  padding-bottom:1.15rem;
+  margin-bottom:1.4rem!important;
+}
+.students-gallery .dimension-filter {
+  background:#fff;
+  border:1px solid #dce5ec;
+  color:#0c2e4d;
+  box-shadow:0 2px 7px rgba(12,46,77,.06);
+}
+.students-gallery .dimension-filter[aria-pressed="true"],
+.students-gallery .dimension-filter.active,
+.students-gallery .dimension-filter.is-active {
+  background:#0c2e4d;
+  border-color:#0c2e4d;
+  color:#fff;
+}
+/* Cada dimensión recupera su tarjeta cromática */
+.students-gallery .dimension-card {
+  padding:1.25rem 1.2rem 1rem;
+  border:1px solid color-mix(in srgb,var(--dimension) 42%,#e5ebf0);
+  border-top:4px solid var(--dimension);
+  border-radius:16px;
+  background:linear-gradient(155deg,color-mix(in srgb,var(--dimension-soft) 58%,white),#fff 78%);
+  box-shadow:0 5px 16px rgba(12,46,77,.065);
+}
+.students-gallery .dimension-card:hover {
+  transform:translateY(-3px);
+  border-color:color-mix(in srgb,var(--dimension) 65%,#e5ebf0);
+  box-shadow:0 11px 25px rgba(12,46,77,.11);
+}
+.students-gallery .dimension-card-head { padding:0 0 .7rem; }
+.students-gallery .dimension-card-body { padding:0; }
+.students-gallery .dimension-empty {
+  margin-top:.5rem!important;
+  padding:.75rem .15rem .15rem;
+  border-top:1px dashed color-mix(in srgb,var(--dimension) 42%,#dce4e9);
+}
+@media(max-width:575.98px) {
+  .students-gallery .dimension-showcase-panel { padding:1rem; border-radius:18px; }
+  .students-gallery .dimension-card { padding:1rem; border-radius:14px; }
+}
