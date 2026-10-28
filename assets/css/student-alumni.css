@@ -378,3 +378,123 @@
   height:100%;
   box-sizing:border-box;
 }
+
+/* Galerías de dimensiones: sección blanca, tarjetas cromáticas y visor mosaico */
+.students-gallery,
+.students-gallery.section {
+  background:#fff !important;
+  color:#173d5a;
+  padding-block:clamp(2.5rem,5vw,4.5rem)!important;
+}
+.students-gallery .students-intro { text-align:center; }
+.students-gallery .students-intro h2 { color:#0c2e4d; }
+.students-gallery .students-intro .lead { color:#526779; }
+.students-gallery .dimension-showcase-panel {
+  background:#fff!important;
+  border:1px solid #edf0f3;
+  border-radius:24px;
+  padding:clamp(1rem,2.4vw,2rem);
+  box-shadow:0 12px 34px rgba(12,46,77,.06);
+}
+.students-gallery .dimension-filters {
+  display:flex; flex-wrap:wrap; gap:.6rem;
+  justify-content:flex-start;
+  border-bottom:1px solid #edf0f3;
+  padding-bottom:1.2rem;
+}
+.students-gallery .dimension-filter {
+  flex:0 0 auto; background:#fff; color:#0c2e4d;
+  border:1px solid #dfe7ed; border-radius:12px;
+  padding:.65rem 1rem; box-shadow:none;
+}
+.students-gallery .dimension-filter[aria-pressed="true"] {
+  background:#0c2e4d; border-color:#0c2e4d; color:#fff;
+}
+.students-gallery .dimension-grid {
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  align-items:stretch; gap:1.25rem;
+}
+.students-gallery .dimension-card,
+.students-gallery .dimension-card:nth-child(n) {
+  display:flex; flex-direction:column; grid-column:auto!important;
+  width:auto; min-width:0; height:100%; transform:none!important;
+  padding:1rem; border:1px solid color-mix(in srgb,var(--dimension) 25%,white);
+  border-top:4px solid var(--dimension); border-radius:18px;
+  background:var(--dimension-soft); box-shadow:0 5px 18px rgba(12,46,77,.06);
+  overflow:hidden; transition:transform .24s ease,box-shadow .24s ease;
+}
+.students-gallery .dimension-card:hover {
+  transform:translateY(-5px)!important;
+  box-shadow:0 14px 28px rgba(12,46,77,.13);
+}
+.students-gallery .dimension-card-head { display:flex; align-items:center; gap:.8rem; padding:.15rem .1rem .85rem; }
+.students-gallery .dimension-icon { flex:0 0 44px; width:44px; height:44px; display:grid; place-items:center; border-radius:50%; background:rgba(255,255,255,.88); color:var(--dimension); }
+.students-gallery .dimension-card h3 { margin:0 0 .25rem; color:#0c2e4d; font-size:1.08rem; }
+.students-gallery .dimension-short { margin:0; color:var(--dimension); font-size:.9rem; }
+.students-gallery .dimension-cover-button {
+  position:relative; display:block; width:100%; aspect-ratio:4/3; padding:0;
+  overflow:hidden; border:0; border-radius:12px; background:rgba(255,255,255,.66);
+  cursor:pointer; text-align:left; color:#173d5a;
+}
+.students-gallery .dimension-cover-button img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .45s ease; }
+.students-gallery .dimension-cover-button:hover img { transform:scale(1.055); }
+.students-gallery .dimension-cover-empty { display:flex; flex-direction:column; align-items:stretch; justify-content:stretch; border:1px solid color-mix(in srgb,var(--dimension) 20%,white); }
+.students-gallery .dimension-cover-empty .cover-art { display:grid; flex:1; place-items:center; color:var(--dimension); background:linear-gradient(135deg,rgba(255,255,255,.78),color-mix(in srgb,var(--dimension) 13%,white)); }
+.students-gallery .dimension-cover-empty .cover-art i { font-size:3.6rem; opacity:.8; }
+.students-gallery .dimension-cover-empty .cover-label { display:flex; align-items:center; gap:.5rem; padding:.7rem .9rem; background:rgba(255,255,255,.8); font-size:.9rem; }
+.students-gallery .dimension-cover-overlay {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:.5rem;
+  background:rgba(12,46,77,.72); color:#fff; font-weight:700; opacity:0;
+  transition:opacity .2s ease;
+}
+.students-gallery .dimension-cover-button:hover .dimension-cover-overlay,
+.students-gallery .dimension-cover-button:focus-visible .dimension-cover-overlay { opacity:1; }
+.students-gallery .dimension-card-body { display:flex; flex:1; flex-direction:column; padding:.8rem .1rem .15rem; }
+.students-gallery .dimension-card-body>p { color:#29465f; font-size:.93rem; line-height:1.6; margin:0 0 .9rem; }
+.students-gallery .dimension-open-link { align-self:flex-start; margin-top:auto; padding:.45rem 0; border:0; background:transparent; color:var(--dimension); font-weight:700; }
+.students-gallery .dimension-open-link i { margin-left:.25rem; transition:transform .2s ease; }
+.students-gallery .dimension-open-link:hover i { transform:translate(3px,-3px); }
+.students-gallery .dimension-card[hidden] { display:none!important; }
+@media(max-width:991.98px) { .students-gallery .dimension-grid { grid-template-columns:repeat(2,minmax(0,1fr))!important; } }
+@media(max-width:575.98px) {
+ .students-gallery .students-intro { text-align:left; }
+ .students-gallery .dimension-showcase-panel { padding:.8rem; border-radius:18px; box-shadow:none; }
+ .students-gallery .dimension-filters { flex-wrap:nowrap; overflow-x:auto; padding-bottom:1rem; }
+ .students-gallery .dimension-filter { padding:.6rem .85rem; font-size:.88rem; }
+ .students-gallery .dimension-grid { grid-template-columns:1fr!important; gap:1rem; }
+ .students-gallery .dimension-card { padding:.9rem!important; }
+ .students-gallery .dimension-cover-button { aspect-ratio:5/3; }
+}
+/* Visor independiente: las fotografías se agrupan en un mosaico tipo masonry */
+.dimension-modal-open { overflow:hidden; }
+.dimension-gallery-modal[hidden] { display:none!important; }
+.dimension-gallery-modal { position:fixed; z-index:2000; inset:0; display:grid; place-items:center; padding:clamp(.5rem,2vw,1.5rem); }
+.dimension-modal-backdrop { position:absolute; inset:0; background:rgba(6,23,39,.78); backdrop-filter:blur(5px); animation:dimensionFadeIn .18s ease both; }
+.dimension-modal-panel { position:relative; z-index:1; display:flex; flex-direction:column; width:min(1200px,100%); max-height:min(92vh,1000px); overflow:hidden; border-radius:20px; background:#fff; box-shadow:0 24px 80px rgba(0,0,0,.3); animation:dimensionPanelIn .24s ease both; }
+.dimension-modal-header { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.15rem 1.4rem; border-bottom:1px solid #e8edf1; background:var(--dimension-soft,#f7fafc); }
+.dimension-modal-kicker { margin:0 0 .15rem; color:var(--dimension); font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.dimension-modal-header h2 { margin:0; color:#0c2e4d; font-size:clamp(1.2rem,2.4vw,1.8rem); }
+.dimension-modal-close { flex:0 0 42px; width:42px; height:42px; border:1px solid #dce4e9; border-radius:50%; background:#fff; color:#0c2e4d; }
+.dimension-modal-content { overflow:auto; padding:clamp(1rem,2.4vw,1.7rem); }
+.dimension-gallery-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:300px; padding:2rem; border:1px dashed color-mix(in srgb,var(--dimension) 35%,#dce4e9); border-radius:16px; background:var(--dimension-soft); text-align:center; }
+.dimension-gallery-empty-icon { display:grid; place-items:center; width:64px; height:64px; margin-bottom:1rem; border-radius:50%; background:#fff; color:var(--dimension); font-size:1.8rem; }
+.dimension-gallery-empty h3 { color:#0c2e4d; font-size:1.25rem; }
+.dimension-gallery-empty p { max-width:620px; margin:0; color:#526779; line-height:1.7; }
+.dimension-photo-masonry { columns:4 220px; column-gap:14px; }
+.dimension-photo-item { display:block; break-inside:avoid; margin:0 0 14px; overflow:hidden; border-radius:12px; background:#eef2f5; }
+.dimension-photo-item img { display:block; width:100%; height:auto; transition:transform .35s ease; }
+.dimension-photo-item:hover img { transform:scale(1.035); }
+@keyframes dimensionFadeIn { from{opacity:0} to{opacity:1} }
+@keyframes dimensionPanelIn { from{opacity:0;transform:translateY(14px) scale(.99)} to{opacity:1;transform:translateY(0) scale(1)} }
+@media(prefers-reduced-motion:reduce) {
+ .students-gallery .dimension-card,.students-gallery .dimension-cover-button img,.dimension-modal-panel,.dimension-modal-backdrop { animation:none!important; transition:none!important; }
+}
+@media(max-width:575.98px) {
+ .dimension-gallery-modal { padding:0; }
+ .dimension-modal-panel { width:100%; max-height:100dvh; height:100dvh; border-radius:0; }
+ .dimension-modal-header { padding:1rem; }
+ .dimension-photo-masonry { columns:2 140px; column-gap:8px; }
+ .dimension-photo-item { margin-bottom:8px; border-radius:8px; }
+ .dimension-gallery-empty { min-height:240px; padding:1.25rem; }
+}
