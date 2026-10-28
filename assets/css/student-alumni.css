@@ -113,3 +113,64 @@
  .students-gallery .dimension-card-body>p { font-size:.95rem; line-height:1.6; }
  .students-gallery .dimension-empty { margin-top:.4rem!important; }
 }
+
+
+/* Estudiantes: panel blanco unificador y marcos cromáticos por dimensión */
+.students-gallery {
+  background:#ffdf57;
+}
+.students-gallery .dimension-showcase-panel {
+  position:relative;
+  padding:clamp(1rem,2.6vw,2.2rem);
+  border:1px solid rgba(12,46,77,.08);
+  border-radius:26px;
+  background:#fff;
+  box-shadow:0 16px 42px rgba(12,46,77,.12);
+}
+.students-gallery .dimension-filters {
+  margin-top:0;
+  padding-bottom:1.1rem;
+  border-bottom:1px solid #e8edf1;
+}
+.students-gallery .dimension-grid {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1.15rem;
+  align-items:stretch;
+}
+.students-gallery .dimension-card {
+  grid-column:auto;
+  min-width:0;
+  padding:1.25rem 1.2rem 1rem;
+  border:1px solid color-mix(in srgb,var(--dimension) 40%,#e8edf1);
+  border-top:4px solid var(--dimension);
+  border-radius:16px;
+  background:linear-gradient(155deg,color-mix(in srgb,var(--dimension-soft) 45%,white),#fff 58%);
+  box-shadow:0 4px 14px rgba(12,46,77,.045);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.students-gallery .dimension-card:hover {
+  transform:translateY(-3px);
+  border-color:color-mix(in srgb,var(--dimension) 65%,#e8edf1);
+  box-shadow:0 10px 24px rgba(12,46,77,.10);
+}
+.students-gallery .dimension-card-head { padding:0 0 .7rem; }
+.students-gallery .dimension-card-body { padding:0; }
+.students-gallery .dimension-card-body>p { line-height:1.65; }
+.students-gallery .dimension-empty {
+  margin-top:auto!important;
+  padding:.75rem .15rem .15rem;
+  border-top:1px dashed color-mix(in srgb,var(--dimension) 38%,#dce4e9);
+}
+@media(min-width:992px) {
+  .students-gallery .dimension-card:nth-child(2),
+  .students-gallery .dimension-card:nth-child(5) { transform:none; }
+}
+@media(max-width:991.98px) {
+  .students-gallery .dimension-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .students-gallery .dimension-card { grid-column:auto; }
+}
+@media(max-width:575.98px) {
+  .students-gallery .dimension-showcase-panel { padding:1rem; border-radius:19px; }
+  .students-gallery .dimension-grid { display:grid; grid-template-columns:1fr; gap:.9rem; }
+  .students-gallery .dimension-card { margin:0; padding:1rem; border-radius:14px; }
+}
