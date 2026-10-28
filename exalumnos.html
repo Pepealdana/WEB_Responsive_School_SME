@@ -29,6 +29,7 @@
   <!-- Archivo CSS principal -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/whatsapp-float.css?v=20261027-2">
+  <link rel="stylesheet" href="assets/css/student-alumni.css?v=20261027-1">
 
     <!-- =======================================================
   * Plantilla: NiceSchool
@@ -113,43 +114,29 @@
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Exalumnos Section -->
-    <!-- Página en construcción -->
-<section class="section py-5 bg-light text-center" id="en-construccion">
-  <div class="container" data-aos="fade-up">
-    <!-- Icono y círculo decorativo -->
-    <div class="position-relative mb-4" data-aos="zoom-in" data-aos-delay="200">
-      <i class="bi bi-tools display-1 text-primary"></i>
-      <div class="circle circle-1 position-absolute bg-primary-subtle rounded-circle" style="width: 80px; height: 80px; top: -30px; left: 50%; transform: translateX(-50%); z-index: -1;"></div>
-    </div>
-
-    <!-- Título y texto -->
-    <h1 class="fw-bold mb-3" data-aos="fade-up" data-aos-delay="300">¡Ups! Esta sección está en construcción</h1>
-    <p class="lead text-muted mb-4" data-aos="fade-up" data-aos-delay="400">
-      Estamos trabajando con mucho cariño para traerte algo maravilloso. <br>
-      Vuelve pronto… <strong>Todo Por Jesús, por Jesús Solo.</strong>
-    </p>
-
-    <!-- Botón de regreso -->
-    <a href="index.html" class="btn btn-outline-primary rounded-pill px-4 py-2" data-aos="zoom-in" data-aos-delay="600">
-      <i class="bi bi-arrow-left-circle"></i> Volver al inicio
-    </a>
-  </div>
-</section>
-
-<!-- Estilo decorativo opcional -->
-<style>
-  .circle-1 {
-    animation: pulse 3s infinite ease-in-out;
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(0.9); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 0.15; }
-    100% { transform: scale(0.9); opacity: 0.5; }
-  }
-</style>
-
+    <!-- Archivo histórico de promociones -->
+    <section class="section alumni-archive py-5">
+      <div class="container" data-alumni-archive>
+        <div class="students-intro mb-4" data-aos="fade-up">
+          <p class="students-eyebrow mb-2">Memoria institucional</p>
+          <h2 class="display-6 mb-3">Generaciones que dejan huella</h2>
+          <p class="lead">Cada promoción forma parte de la historia del Colegio Santa María de la Esperanza. Estamos preparando un archivo para reencontrarnos con sus recuerdos, sus nombres y sus años de graduación.</p>
+        </div>
+        <div class="archive-toolbar">
+          <label class="visually-hidden" for="alumni-search">Buscar promoción por año o nombre</label>
+          <input class="alumni-search" id="alumni-search" type="search" data-alumni-search placeholder="Buscar por año o nombre de promoción" autocomplete="off">
+          <p class="small text-muted mb-0">Archivo de promociones · Fotografías históricas</p>
+        </div>
+        <div class="alumni-decade-filters mb-4" data-alumni-filters aria-label="Filtrar promociones por década"></div>
+        <div class="alumni-timeline" data-alumni-grid></div>
+        <div class="alumni-empty-state" data-alumni-empty>
+          <i class="bi bi-hourglass-split" aria-hidden="true"></i>
+          <h3 class="h4 mt-3">Estamos organizando nuestro archivo histórico</h3>
+          <p class="mb-0">Pronto incorporaremos las fotografías y los nombres confirmados de las promociones. Algunas generaciones pueden no contar con registro fotográfico.</p>
+        </div>
+        <p class="students-gallery-note">La información se añadirá a medida que se confirme el material disponible. No todas las promociones necesariamente tendrán una fotografía de archivo.</p>
+      </div>
+    </section>
 
   </main>
 
@@ -356,6 +343,7 @@
       });
     }
   </script>
+  <script src="assets/js/alumni-archive.js?v=20261027-1" defer></script>
   <script src="assets/js/whatsapp-float.js?v=20261027-2" defer></script>
 </body>
 
