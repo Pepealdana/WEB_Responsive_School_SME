@@ -507,3 +507,67 @@
     justify-content:flex-start !important;
   }
 }
+
+/* Exalumnos: archivo de recuerdos por generaciones */
+.alumni-archive {
+  background:#f7f9fc;
+  padding-block:clamp(2.5rem,5vw,5rem)!important;
+}
+.alumni-archive .students-intro { max-width:850px; margin-bottom:2rem!important; }
+.alumni-archive .students-eyebrow { color:#1684ae; }
+.alumni-archive .students-intro h2 { color:#0c2e4d; letter-spacing:-.035em; }
+.alumni-archive .students-intro .lead { color:#526779; line-height:1.75; }
+.alumni-archive-introline { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin:0 0 1.25rem; padding-bottom:1rem; border-bottom:1px solid #e2e9ef; color:#0c2e4d; }
+.alumni-archive-introline>span:first-child { display:flex; align-items:center; gap:.55rem; font-weight:700; }
+.alumni-archive-introline>span:first-child i { color:#1684ae; font-size:1.2rem; }
+.alumni-archive-caption { color:#708293; font-size:.9rem; }
+.alumni-archive .alumni-decade-filters { justify-content:flex-start; margin-bottom:1.5rem; }
+.alumni-archive .decade-filter { border-radius:999px; background:#fff; }
+.alumni-archive .alumni-timeline { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.2rem; align-items:stretch; }
+.alumni-memory-card { min-width:0; overflow:hidden; border:1px solid #e5ebf0; border-radius:17px; background:#fff; box-shadow:0 6px 20px rgba(12,46,77,.055); transition:transform .24s ease,box-shadow .24s ease; }
+.alumni-memory-card:hover { transform:translateY(-5px); box-shadow:0 15px 32px rgba(12,46,77,.13); }
+.alumni-memory-card[hidden] { display:none!important; }
+.alumni-memory-cover { position:relative; display:block; width:100%; aspect-ratio:4/3; overflow:hidden; border:0; padding:0; background:#eaf0f5; text-align:left; cursor:pointer; }
+.alumni-memory-cover>img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .45s ease; }
+.alumni-memory-card:hover .alumni-memory-cover>img { transform:scale(1.055); }
+.alumni-cover-placeholder { display:flex; height:100%; flex-direction:column; justify-content:center; align-items:center; gap:.7rem; background:linear-gradient(145deg,#0c2e4d,#1c5c80); color:#ffdf57; font-weight:700; }
+.alumni-cover-placeholder i { font-size:2.6rem; }
+.alumni-memory-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:.5rem; background:rgba(12,46,77,.72); color:#fff; font-weight:700; opacity:0; transition:opacity .2s ease; }
+.alumni-memory-cover:hover .alumni-memory-overlay,.alumni-memory-cover:focus-visible .alumni-memory-overlay { opacity:1; }
+.alumni-year-stamp { position:absolute; left:.8rem; bottom:.8rem; padding:.35rem .65rem; border:1px solid rgba(255,255,255,.5); border-radius:8px; background:rgba(12,46,77,.88); color:#fff; font-size:.9rem; font-weight:800; backdrop-filter:blur(5px); }
+.alumni-memory-info { padding:1rem 1rem 1.1rem; }
+.alumni-memory-kicker { color:#1684ae; font-size:.68rem; font-weight:800; letter-spacing:.12em; }
+.alumni-memory-info h3 { margin:.35rem 0 .6rem; color:#0c2e4d; font-size:1.08rem; line-height:1.4; }
+.alumni-memory-info p { display:flex; align-items:center; gap:.45rem; margin:0; color:#718191; font-size:.88rem; }
+.alumni-memory-info p i { color:#1684ae; }
+.alumni-archive .alumni-empty-state { padding:clamp(2rem,5vw,4rem) 1.5rem; border:1px dashed #cdd9e3; border-radius:22px; background:#fff; }
+.alumni-archive .alumni-empty-state>i { display:inline-grid; place-items:center; width:66px; height:66px; border-radius:50%; background:#e8f7fc; color:#1684ae; font-size:1.8rem; }
+.alumni-archive .alumni-empty-state h3 { color:#0c2e4d; }
+.alumni-archive .alumni-empty-state p { max-width:650px; margin-inline:auto; color:#667b8b; line-height:1.7; }
+.alumni-archive .students-gallery-note { color:#748493; }
+.alumni-modal-open { overflow:hidden; }
+.alumni-memory-modal[hidden] { display:none!important; }
+.alumni-memory-modal { position:fixed; z-index:2000; inset:0; display:grid; place-items:center; padding:clamp(.5rem,2vw,1.5rem); }
+.alumni-memory-backdrop { position:absolute; inset:0; background:rgba(6,23,39,.8); backdrop-filter:blur(5px); }
+.alumni-memory-panel { position:relative; display:flex; flex-direction:column; width:min(1200px,100%); max-height:92vh; overflow:hidden; border-radius:20px; background:#fff; box-shadow:0 24px 80px rgba(0,0,0,.3); animation:dimensionPanelIn .24s ease both; }
+.alumni-memory-modal-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.15rem 1.4rem; border-bottom:1px solid #e5ebf0; background:#f0f8fc; }
+.alumni-memory-modal-head p { margin:0 0 .2rem; color:#1684ae; font-size:.75rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+.alumni-memory-modal-head h2 { margin:0; color:#0c2e4d; font-size:1.5rem; }
+.alumni-memory-close { width:42px; height:42px; border:1px solid #dce4e9; border-radius:50%; background:#fff; color:#0c2e4d; }
+.alumni-memory-modal-content { overflow:auto; padding:1.25rem; }
+.alumni-memory-masonry { columns:4 220px; column-gap:14px; }
+.alumni-memory-photo { display:block; break-inside:avoid; margin:0 0 14px; overflow:hidden; border-radius:12px; background:#eef2f5; }
+.alumni-memory-photo img { display:block; width:100%; height:auto; transition:transform .3s ease; }
+.alumni-memory-photo:hover img { transform:scale(1.035); }
+@media(max-width:991.98px) { .alumni-archive .alumni-timeline { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:575.98px) {
+ .alumni-archive-introline { align-items:flex-start; flex-direction:column; gap:.35rem; }
+ .alumni-archive .alumni-timeline { grid-template-columns:1fr; gap:1rem; }
+ .alumni-memory-cover { aspect-ratio:5/3; }
+ .alumni-memory-modal { padding:0; }
+ .alumni-memory-panel { width:100%; height:100dvh; max-height:100dvh; border-radius:0; }
+ .alumni-memory-modal-head { padding:1rem; }
+ .alumni-memory-masonry { columns:2 140px; column-gap:8px; }
+ .alumni-memory-photo { margin-bottom:8px; border-radius:8px; }
+}
+@media(prefers-reduced-motion:reduce) { .alumni-memory-card,.alumni-memory-cover>img,.alumni-memory-overlay,.alumni-memory-panel { transition:none!important; animation:none!important; } }
