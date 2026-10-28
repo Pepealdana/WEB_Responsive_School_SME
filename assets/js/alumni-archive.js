@@ -29,5 +29,6 @@
  filters.addEventListener("click",e=>{const b=e.target.closest("[data-decade]");if(!b)return;filters.querySelectorAll("[data-decade]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));grid.querySelectorAll(".alumni-memory-card").forEach(card=>card.hidden=b.dataset.decade!=="all"&&card.dataset.decade!==b.dataset.decade);});
  modal.addEventListener("click",e=>{if(e.target.closest("[data-close-alumni]"))close();});
  document.addEventListener("keydown",e=>{if(!modal.hidden&&e.key==="Escape")close();});
+ empty.hidden=promotions.length>0;
  if(!promotions.length){filters.hidden=true;empty.hidden=false;}
 })();
