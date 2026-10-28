@@ -81,3 +81,35 @@
  .students-gallery .dimension-empty span { display:none; }
 }
 @media(prefers-reduced-motion:reduce) { .students-gallery .dimension-card { transition:none; } }
+
+/* Estudiantes: composición más orgánica, menos tarjetas tipo dashboard */
+.students-gallery .dimension-grid { grid-template-columns:repeat(12,minmax(0,1fr)); gap:1.4rem 1.1rem; align-items:start; }
+.students-gallery .dimension-card { grid-column:span 4; border:0; border-radius:0; border-top:0; border-bottom:1px solid color-mix(in srgb,var(--dimension) 35%,transparent); background:transparent; box-shadow:none; overflow:visible; }
+.students-gallery .dimension-card:hover { transform:none; box-shadow:none; }
+.students-gallery .dimension-card:nth-child(2),.students-gallery .dimension-card:nth-child(5) { transform:none; }
+.students-gallery .dimension-card-head { padding:0 0 .75rem; align-items:flex-start; }
+.students-gallery .dimension-icon { flex:0 0 42px; width:42px; height:42px; background:var(--dimension-soft); }
+.students-gallery .dimension-card h3 { font-size:1.12rem; }
+.students-gallery .dimension-card-body { padding:0 0 1rem; }
+.students-gallery .dimension-card-body>p { margin:.2rem 0 .75rem; color:#29465f; }
+.students-gallery .dimension-empty { display:flex; flex-direction:row; justify-content:flex-start; min-height:0; padding:.7rem 0; border:0; border-radius:0; border-top:1px dashed color-mix(in srgb,var(--dimension) 35%,transparent); background:transparent; text-align:left; gap:.55rem; }
+.students-gallery .dimension-empty i { font-size:1rem; }
+.students-gallery .dimension-empty span { display:inline; font-size:.86rem; color:#647789; }
+.students-gallery .dimension-empty strong { display:none; }
+.students-gallery .dimension-filters { margin-bottom:2rem!important; }
+@media(min-width:992px) {
+ .students-gallery .dimension-card:nth-child(2),.students-gallery .dimension-card:nth-child(5) { transform:translateY(0); }
+ .students-gallery .dimension-card:nth-child(1),.students-gallery .dimension-card:nth-child(4) { grid-column:span 4; }
+}
+@media(max-width:991.98px) {
+ .students-gallery .dimension-grid { grid-template-columns:repeat(6,minmax(0,1fr)); gap:1.2rem; }
+ .students-gallery .dimension-card { grid-column:span 3; }
+}
+@media(max-width:575.98px) {
+ .students-gallery .dimension-grid { display:block; }
+ .students-gallery .dimension-card { margin:0 0 1.4rem; padding:0 0 1.1rem; }
+ .students-gallery .dimension-card-head { padding:0 0 .55rem; }
+ .students-gallery .dimension-card h3 { font-size:1.08rem; }
+ .students-gallery .dimension-card-body>p { font-size:.95rem; line-height:1.6; }
+ .students-gallery .dimension-empty { margin-top:.4rem!important; }
+}
