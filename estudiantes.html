@@ -29,6 +29,7 @@
   <!-- Archivo CSS principal -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/whatsapp-float.css?v=20261027-2">
+  <link rel="stylesheet" href="assets/css/student-alumni.css?v=20261027-1">
 
     <!-- =======================================================
   * Plantilla: NiceSchool
@@ -112,43 +113,19 @@
       </div>
     </div><!-- End Page Title -->
 
-    <!-- Students Life Section -->
-    <!-- Página en construcción -->
-<section class="section py-5 bg-light text-center" id="en-construccion">
-  <div class="container" data-aos="fade-up">
-    <!-- Icono y círculo decorativo -->
-    <div class="position-relative mb-4" data-aos="zoom-in" data-aos-delay="200">
-      <i class="bi bi-tools display-1 text-primary"></i>
-      <div class="circle circle-1 position-absolute bg-primary-subtle rounded-circle" style="width: 80px; height: 80px; top: -30px; left: 50%; transform: translateX(-50%); z-index: -1;"></div>
-    </div>
-
-    <!-- Título y texto -->
-    <h1 class="fw-bold mb-3" data-aos="fade-up" data-aos-delay="300">¡Ups! Esta sección está en construcción</h1>
-    <p class="lead text-muted mb-4" data-aos="fade-up" data-aos-delay="400">
-      Estamos trabajando con mucho cariño para traerte algo maravilloso. <br>
-      Vuelve pronto… <strong>Todo Por Jesús, por Jesús Solo.</strong>
-    </p>
-
-    <!-- Botón de regreso -->
-    <a href="index.html" class="btn btn-outline-primary rounded-pill px-4 py-2" data-aos="zoom-in" data-aos-delay="600">
-      <i class="bi bi-arrow-left-circle"></i> Volver al inicio
-    </a>
-  </div>
-</section>
-
-<!-- Estilo decorativo opcional -->
-<style>
-  .circle-1 {
-    animation: pulse 3s infinite ease-in-out;
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(0.9); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 0.15; }
-    100% { transform: scale(0.9); opacity: 0.5; }
-  }
-</style>
-
+    <!-- Galería por dimensiones humanas interrelacionadas -->
+    <section class="section students-gallery py-5" data-students-gallery>
+      <div class="container">
+        <div class="students-intro mb-4" data-aos="fade-up">
+          <p class="students-eyebrow mb-2">Modelo pedagógico PIJ</p>
+          <h2 class="display-6 mb-3">Así vivimos nuestras dimensiones</h2>
+          <p class="lead">El ser humano no se fragmenta: cada dimensión se desarrolla en conexión con las demás. Explora momentos de nuestra vida escolar que reflejan esta formación integral.</p>
+        </div>
+        <div class="dimension-filters mb-4" data-dimension-filters aria-label="Filtrar por dimensión"></div>
+        <div class="dimension-grid" data-dimension-grid aria-live="polite"></div>
+        <p class="students-gallery-note">Las fotografías se incorporarán progresivamente. Una misma experiencia podrá reflejar varias dimensiones humanas.</p>
+      </div>
+    </section>
 
   </main>
 
@@ -355,6 +332,7 @@
       });
     }
   </script>
+  <script src="assets/js/students-gallery.js?v=20261027-1" defer></script>
   <script src="assets/js/whatsapp-float.js?v=20261027-2" defer></script>
 </body>
 
