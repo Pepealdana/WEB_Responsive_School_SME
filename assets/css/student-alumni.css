@@ -498,3 +498,12 @@
  .dimension-photo-item { margin-bottom:8px; border-radius:8px; }
  .dimension-gallery-empty { min-height:240px; padding:1.25rem; }
 }
+/* Centrar el grupo de filtros de dimensiones */
+.students-gallery .dimension-filters {
+  justify-content:center !important;
+}
+@media(max-width:575.98px) {
+  .students-gallery .dimension-filters {
+    justify-content:flex-start !important;
+  }
+}
