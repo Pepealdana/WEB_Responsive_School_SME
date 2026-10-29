@@ -49,7 +49,7 @@
   empty.hidden=true;timeline.hidden=false;help.hidden=false;renderRail();renderStage();
   rail.addEventListener("keydown",e=>{if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();selectGeneration(activeIndex+(e.key==="ArrowRight"?1:-1));}});
  }else{
-  timeline.hidden=true;help.hidden=true;empty.hidden=false;
+  timeline.hidden=true;help.hidden=true;empty.hidden=true;
   stage.innerHTML='<div class="alumni-stage-placeholder"><span class="alumni-stage-mark"><i class="bi bi-images" aria-hidden="true"></i></span><h3>Una historia, muchas generaciones</h3><p>La fotografía de cada promoción aparecerá aquí. Cuando incorporemos los años y las imágenes, podrás recorrer las generaciones desde la línea de tiempo inferior.</p><span class="alumni-stage-hint"><i class="bi bi-arrow-down" aria-hidden="true"></i> Archivo fotográfico en preparación</span></div>';
  }
 })();
