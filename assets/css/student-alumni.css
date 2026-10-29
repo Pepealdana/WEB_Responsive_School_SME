@@ -676,3 +676,56 @@
 @media(prefers-reduced-motion:reduce) {
  .alumni-feature-photo::before,.alumni-feature-photo img,.alumni-photo-enlarge,.alumni-stage-arrow,.alumni-generation-item,.alumni-photo-lightbox,.alumni-lightbox-content img { transition:none!important; animation:none!important; scroll-behavior:auto!important; }
 }
+/* Refinamiento móvil: presentación de archivo más compacta y contemporánea */
+@media (max-width:767.98px) {
+ .alumni-archive { background:#f3f7fa!important; }
+ .alumni-archive .students-intro { padding-inline:1rem; }
+ .alumni-archive .students-intro h1,
+ .alumni-archive .students-intro h2 { text-wrap:balance; }
+ .alumni-timeline-experience { margin-top:1.2rem; }
+ .alumni-feature-stage {
+   position:relative; overflow:hidden; padding:.7rem;
+   border:1px solid rgba(12,46,77,.07); border-radius:24px;
+   background:linear-gradient(155deg,#ffffff 0%,#f6fbfd 58%,#eaf7fb 100%);
+   box-shadow:0 16px 38px rgba(12,46,77,.1);
+ }
+ .alumni-feature-stage::before {
+   content:""; position:absolute; width:180px; height:180px; top:-90px; right:-70px;
+   border-radius:50%; background:rgba(79,196,231,.12); pointer-events:none;
+ }
+ .alumni-stage-placeholder { position:relative; z-index:1; min-height:0; padding:2rem 1rem 1.7rem; }
+ .alumni-stage-mark {
+   width:66px; height:66px; margin-bottom:1rem; border:1px solid rgba(22,132,174,.12);
+   border-radius:20px; background:linear-gradient(145deg,#dff6fc,#f2fbfe);
+   box-shadow:0 10px 24px rgba(12,46,77,.09); font-size:1.7rem;
+   animation:alumniMarkFloat 4s ease-in-out infinite;
+ }
+ .alumni-stage-placeholder h3 { max-width:320px; margin-bottom:.65rem; font-size:1.5rem; line-height:1.2; text-wrap:balance; }
+ .alumni-stage-placeholder p { max-width:340px; margin-bottom:.7rem; font-size:1rem; line-height:1.65; }
+ .alumni-stage-hint { margin-top:.6rem; padding:.65rem .85rem; border:1px solid #dceef4; border-radius:999px; background:#f1fbfe; font-size:.78rem; text-align:center; }
+ .alumni-feature-photo-wrap { min-height:190px; padding:0 1.8rem; }
+ .alumni-feature-photo { height:clamp(210px,66vw,360px); }
+ .alumni-feature-photo::before { inset:10px -5px -9px 5px; opacity:.2; }
+ .alumni-feature-photo img { max-width:100%; max-height:100%; }
+ .alumni-photo-enlarge { right:6px; bottom:6px; padding:.45rem .65rem; font-size:.72rem; opacity:1; transform:none; }
+ .alumni-stage-arrow { width:34px; height:34px; background:#fff; box-shadow:0 4px 14px rgba(12,46,77,.14); }
+ .alumni-stage-prev { left:0; } .alumni-stage-next { right:0; }
+ .alumni-feature-caption { position:relative; z-index:1; gap:.65rem; margin-top:1rem; padding:.9rem .35rem .3rem; }
+ .alumni-feature-kicker { font-size:.65rem; }
+ .alumni-feature-title h3 { font-size:1.45rem; line-height:1.2; }
+ .alumni-photo-count { padding:.45rem .7rem; font-size:.78rem; }
+ .alumni-timeline-controls { gap:.35rem; margin:1rem -.25rem .5rem; }
+ .alumni-rail-arrow { width:30px; height:30px; flex-basis:30px; }
+ .alumni-generation-rail { gap:.55rem; padding:.7rem .2rem .9rem; }
+ .alumni-generation-item { flex-basis:100px; min-height:98px; padding:.6rem .4rem; border-radius:13px; }
+ .alumni-generation-item[aria-pressed="true"] { padding:calc(.6rem - 1px) calc(.4rem - 1px); }
+ .alumni-rail-crest-wrap { width:30px; height:30px; }
+ .alumni-rail-crest { width:24px; height:24px; }
+ .alumni-rail-year { font-size:.96rem; }
+ .alumni-rail-title { font-size:.67rem; }
+ .alumni-timeline-help { font-size:.76rem; line-height:1.5; padding-inline:.5rem; }
+}
+@keyframes alumniMarkFloat { 0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)} }
+@media(prefers-reduced-motion:reduce) {
+ .alumni-stage-mark { animation:none!important; }
+}
