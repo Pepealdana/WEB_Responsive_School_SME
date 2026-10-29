@@ -29,7 +29,7 @@
   <!-- Archivo CSS principal -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/whatsapp-float.css?v=20261027-2">
-  <link rel="stylesheet" href="assets/css/student-alumni.css?v=20261028-2">
+  <link rel="stylesheet" href="assets/css/student-alumni.css?v=20261029-1">
 
     <!-- =======================================================
   * Plantilla: NiceSchool
@@ -123,13 +123,27 @@
           <p class="lead">Cada promoción forma parte de la historia del Colegio Santa María de la Esperanza. Estamos preparando un archivo para reencontrarnos con sus recuerdos, sus nombres y sus años de graduación.</p>
         </div>
 
-        <div class="alumni-decade-filters mb-4" data-alumni-filters aria-label="Filtrar promociones por década"></div>
-        <div class="alumni-timeline" data-alumni-grid></div>
-        <div class="alumni-empty-state" data-alumni-empty>
-          <i class="bi bi-hourglass-split" aria-hidden="true"></i>
-          <h3 class="h4 mt-3">Estamos organizando nuestro archivo histórico</h3>
-          <p class="mb-0">Pronto incorporaremos las fotografías y los nombres confirmados de las promociones. Algunas generaciones pueden no contar con registro fotográfico.</p>
-        </div>
+        <section class="alumni-timeline-experience" aria-label="Línea de tiempo de promociones">
+          <div class="alumni-feature-stage" data-alumni-stage>
+            <div class="alumni-stage-placeholder">
+              <span class="alumni-stage-mark"><i class="bi bi-mortarboard" aria-hidden="true"></i></span>
+              <h3>Una historia, muchas generaciones</h3>
+              <p>Selecciona un año en la línea de tiempo para descubrir la fotografía de su promoción.</p>
+              <span class="alumni-stage-hint"><i class="bi bi-arrow-down" aria-hidden="true"></i> Las generaciones aparecerán aquí</span>
+            </div>
+          </div>
+          <div class="alumni-timeline-controls" data-alumni-timeline hidden>
+            <button class="alumni-rail-arrow" type="button" data-rail-scroll="left" aria-label="Desplazar generaciones a la izquierda"><i class="bi bi-chevron-left"></i></button>
+            <div class="alumni-generation-rail" data-alumni-rail tabindex="0" aria-label="Promociones por año"></div>
+            <button class="alumni-rail-arrow" type="button" data-rail-scroll="right" aria-label="Desplazar generaciones a la derecha"><i class="bi bi-chevron-right"></i></button>
+          </div>
+          <p class="alumni-timeline-help" data-alumni-help hidden>Desliza la línea de tiempo o utiliza las flechas para recorrer los años. Selecciona una fotografía para ampliarla.</p>
+          <div class="alumni-empty-state" data-alumni-empty>
+            <i class="bi bi-hourglass-split" aria-hidden="true"></i>
+            <h3 class="h4 mt-3">Estamos organizando nuestro archivo histórico</h3>
+            <p class="mb-0">Las fotografías y los años confirmados aparecerán en esta línea de tiempo a medida que organicemos el archivo.</p>
+          </div>
+        </section>
         <p class="students-gallery-note">Algunas promociones no cuentan con registro fotográfico. Si eres de esa promoción y tienes una foto, la puedes enviar por <a href="mailto:s.mariadelaesperanza@yahoo.com">correo electrónico</a>.</p>
       </div>
     </section>
@@ -339,7 +353,7 @@
       });
     }
   </script>
-  <script src="assets/js/alumni-archive.js?v=20261028-3" defer></script>
+  <script src="assets/js/alumni-archive.js?v=20261029-1" defer></script>
   <script src="assets/js/whatsapp-float.js?v=20261027-2" defer></script>
 </body>
 
