@@ -22,11 +22,10 @@
 
   const promotions = Array.from({length:37}, (_, i) => {
     const year = 2027 - i;
-    const hasPhoto = Boolean(photoByYear[year]);
+    const cover = photoByYear[year] || fallbackPhoto;
     return {
-      year, title:"Luz y Esperanza",
-      cover:photoByYear[year] || fallbackPhoto,
-      hasPhoto,
+      year, title:"Luz y Esperanza", cover,
+      hasPhoto:Boolean(photoByYear[year]),
       crest:year >= 2027 ? currentCrest : historicCrest
     };
   });
@@ -43,26 +42,21 @@
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
   }[char]));
 
+  // Selecciona el año actual si tiene foto; de lo contrario, la promoción
+  // más reciente anterior que sí tenga una fotografía real.
   const currentYear = new Date().getFullYear();
-  const currentYearIndex = promotions.findIndex(item => item.year === currentYear);
-  const initialYear = currentYearIndex >= 0 && promotions[currentYearIndex].hasPhoto
-    ? currentYear
-    : currentYear - 1;
-  const initialIndex = Math.max(0, promotions.findIndex(item => item.year === initialYear));
+  const initialIndex = Math.max(0, promotions.findIndex(item => item.year ===
+    [...promotions].filter(p => p.year <= currentYear && p.hasPhoto)
+      .sort((a,b) => b.year-a.year)[0]?.year));
   let activeIndex = initialIndex;
-  let activeRailCopy = 1;
   let previousFocus = null;
-  let scrollFrame = 0;
-  let scrollSettle = 0;
-  let internalScroll = false;
   const total = promotions.length;
   const titleOf = item => item.title || "Luz y Esperanza";
 
-  function renderRailCopy(copy) {
-    return promotions.map((item, index) =>
+  function renderRail() {
+    rail.innerHTML = promotions.map((item,index) =>
       '<button type="button" class="alumni-generation-item" data-select-generation="' + index +
-      '" data-rail-copy="' + copy + '" aria-pressed="false" aria-label="Promoción ' + item.year +
-      ', ' + escapeHTML(titleOf(item)) + '">' +
+      '" aria-pressed="false" aria-label="Promoción ' + item.year + ', ' + escapeHTML(titleOf(item)) + '">' +
       '<span class="alumni-rail-node"><img class="alumni-rail-crest" src="' + item.crest +
       '" alt="" loading="lazy" decoding="async" width="26" height="26"></span>' +
       '<span class="alumni-rail-year">' + item.year + '</span>' +
@@ -70,16 +64,20 @@
     ).join("");
   }
 
-  function renderRail() {
-    rail.innerHTML = [0,1,2].map(renderRailCopy).join("");
-  }
-
-  function updateRailSelection() {
-    rail.querySelectorAll("[data-select-generation]").forEach(button => {
-      const selected = Number(button.dataset.selectGeneration) === activeIndex &&
-        Number(button.dataset.railCopy) === activeRailCopy;
+  function updateRailSelection(scroll = false) {
+    const buttons = [...rail.querySelectorAll("[data-select-generation]")];
+    buttons.forEach(button => {
+      const selected = Number(button.dataset.selectGeneration) === activeIndex;
       button.setAttribute("aria-pressed", String(selected));
+      button.classList.toggle("is-selected", selected);
     });
+    if (scroll) {
+      const selected = buttons[activeIndex];
+      if (selected) {
+        const left = selected.offsetLeft - (rail.clientWidth - selected.offsetWidth) / 2;
+        rail.scrollTo({left, behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+      }
+    }
   }
 
   function renderStage() {
@@ -88,7 +86,7 @@
       '<div class="alumni-feature-photo-wrap">' +
         '<button type="button" class="alumni-feature-photo" data-enlarge-photo aria-label="Ampliar fotografía de la promoción ' + item.year + '">' +
           '<img src="' + item.cover + '" alt="' + (item.hasPhoto ? "Fotografía de la promoción " : "Imagen provisional del colegio para la promoción ") + item.year +
-          '" decoding="async" fetchpriority="' + (activeIndex === 0 ? "high" : "auto") + '">' +
+          '" decoding="async" fetchpriority="high" width="1200" height="800">' +
           '<span class="alumni-photo-enlarge"><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i><span>Ampliar</span></span>' +
         '</button>' +
         '<button type="button" class="alumni-stage-arrow alumni-stage-prev" data-step="-1" aria-label="Promoción anterior"><i class="bi bi-chevron-left"></i></button>' +
@@ -98,28 +96,15 @@
       caption.innerHTML =
         '<div class="alumni-feature-title"><span class="alumni-feature-kicker">PROMOCIÓN SME</span>' +
         '<h3>' + escapeHTML(titleOf(item)) + '</h3><p><i class="bi bi-calendar3" aria-hidden="true"></i> ' + item.year +
-        (item.hasPhoto ? "" : ' <span class="alumni-provisional-label">· Fotografía del campus</span>') + '</p></div>' +
-        '';
+        (item.hasPhoto ? "" : ' <span class="alumni-provisional-label">· Fotografía del campus</span>') + '</p></div>';
     }
     updateRailSelection();
   }
 
-  function scrollToItem(index, copy = 1, behavior = "smooth") {
-    const button = rail.querySelector('[data-rail-copy="' + copy + '"][data-select-generation="' + index + '"]');
-    if (!button) return;
-    internalScroll = true;
-    activeRailCopy = copy;
-    const left = button.offsetLeft - (rail.clientWidth - button.offsetWidth) / 2;
-    rail.scrollTo({left, behavior});
-    window.clearTimeout(scrollSettle);
-    window.setTimeout(() => { internalScroll = false; }, behavior === "auto" ? 120 : 850);
-  }
-
-  function selectGeneration(index, copy = 1, center = true) {
-    activeIndex = (index + total) % total;
-    activeRailCopy = copy;
+  function selectGeneration(index, shouldScroll = true) {
+    activeIndex = Math.max(0, Math.min(total - 1, index));
     renderStage();
-    if (center) scrollToItem(activeIndex, copy);
+    updateRailSelection(shouldScroll);
   }
 
   const modal = document.createElement("div");
@@ -163,7 +148,7 @@
   });
   rail.addEventListener("click", event => {
     const button = event.target.closest("[data-select-generation]");
-    if (button) selectGeneration(Number(button.dataset.selectGeneration), Number(button.dataset.railCopy));
+    if (button) selectGeneration(Number(button.dataset.selectGeneration));
   });
 
   root.querySelectorAll("[data-rail-scroll]").forEach(button => {
@@ -171,45 +156,6 @@
       selectGeneration(activeIndex + (button.dataset.railScroll === "left" ? -1 : 1));
     });
   });
-
-  function normalizeInfiniteRail() {
-    const copyWidth = rail.scrollWidth / 3;
-    if (!copyWidth) return;
-    const lower = copyWidth * .35;
-    const upper = copyWidth * 1.65;
-    if (rail.scrollLeft < lower) rail.scrollLeft += copyWidth;
-    else if (rail.scrollLeft > upper) rail.scrollLeft -= copyWidth;
-  }
-
-  function syncSelectionFromScroll() {
-    const center = rail.getBoundingClientRect().left + rail.clientWidth / 2;
-    const buttons = [...rail.querySelectorAll("[data-select-generation]")];
-    let nearest = null;
-    let distance = Infinity;
-    buttons.forEach(button => {
-      const rect = button.getBoundingClientRect();
-      const current = Math.abs(rect.left + rect.width / 2 - center);
-      if (current < distance) { distance = current; nearest = button; }
-    });
-    if (!nearest) return;
-    const nextIndex = Number(nearest.dataset.selectGeneration);
-    const nextCopy = Number(nearest.dataset.railCopy);
-    if (nextIndex !== activeIndex || nextCopy !== activeRailCopy) {
-      activeIndex = nextIndex;
-      activeRailCopy = nextCopy;
-      renderStage();
-    }
-  }
-
-  rail.addEventListener("scroll", () => {
-    if (scrollFrame) cancelAnimationFrame(scrollFrame);
-    scrollFrame = requestAnimationFrame(() => {
-      normalizeInfiniteRail();
-      if (internalScroll) return;
-      window.clearTimeout(scrollSettle);
-      scrollSettle = window.setTimeout(syncSelectionFromScroll, 140);
-    });
-  }, {passive:true});
 
   modal.addEventListener("click", event => {
     if (event.target.closest("[data-lightbox-close]")) { closeLightbox(); return; }
@@ -234,9 +180,5 @@
   if (help) help.hidden = false;
   renderRail();
   renderStage();
-  requestAnimationFrame(() => {
-    scrollToItem(initialIndex, 1, "auto");
-    activeRailCopy = 1;
-    updateRailSelection();
-  });
+  requestAnimationFrame(() => updateRailSelection(true));
 })();
