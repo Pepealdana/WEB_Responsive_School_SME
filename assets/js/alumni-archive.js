@@ -43,7 +43,13 @@
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
   }[char]));
 
-  let activeIndex = 0;
+  const currentYear = new Date().getFullYear();
+  const currentYearIndex = promotions.findIndex(item => item.year === currentYear);
+  const initialYear = currentYearIndex >= 0 && promotions[currentYearIndex].hasPhoto
+    ? currentYear
+    : currentYear - 1;
+  const initialIndex = Math.max(0, promotions.findIndex(item => item.year === initialYear));
+  let activeIndex = initialIndex;
   let previousFocus = null;
   let scrollFrame = 0;
   let scrollSettle = 0;
@@ -221,5 +227,5 @@
   if (help) help.hidden = false;
   renderRail();
   renderStage();
-  requestAnimationFrame(() => scrollToItem(0, 1, "auto"));
+  requestAnimationFrame(() => scrollToItem(initialIndex, 1, "auto"));
 })();
