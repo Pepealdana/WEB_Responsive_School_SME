@@ -158,7 +158,7 @@
 
   root.querySelectorAll("[data-rail-scroll]").forEach(button => {
     button.addEventListener("click", () => {
-      rail.scrollBy({left:button.dataset.railScroll === "left" ? -260 : 260, behavior:"smooth"});
+      selectGeneration(activeIndex + (button.dataset.railScroll === "left" ? -1 : 1));
     });
   });
 
