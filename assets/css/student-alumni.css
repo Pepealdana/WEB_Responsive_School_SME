@@ -898,3 +898,18 @@
  .alumni-feature-photo,.alumni-feature-photo img,.alumni-stage-arrow,.alumni-generation-item,.alumni-rail-node { transition:none!important; }
  .alumni-generation-rail { scroll-behavior:auto!important; }
 }
+/* Ajuste solicitado: la ficha de promoción va debajo de la línea de tiempo */
+.alumni-feature-caption {
+  order:3;
+  margin:.25rem auto .1rem;
+  padding:.8rem .2rem .15rem;
+  border-top:1px solid #e4ebf0;
+  border-bottom:0;
+}
+.alumni-timeline-controls { order:2; }
+.alumni-timeline-help { order:4; }
+.alumni-timeline-experience { display:flex; flex-direction:column; }
+.alumni-feature-stage { order:1; }
+@media(max-width:767.98px) {
+  .alumni-feature-caption { margin:.15rem auto 0; padding:.65rem .1rem .1rem; }
+}
