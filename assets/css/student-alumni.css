@@ -913,3 +913,41 @@
 @media(max-width:767.98px) {
   .alumni-feature-caption { margin:.15rem auto 0; padding:.65rem .1rem .1rem; }
 }
+
+
+/* Ajustes de interacción: un solo escudo visible y navegación precisa */
+.alumni-photo-count { display:none !important; }
+.alumni-feature-caption { justify-content:flex-start; }
+.alumni-generation-item .alumni-rail-crest {
+  opacity:0;
+  transform:scale(.55);
+  transition:opacity .22s ease,transform .28s cubic-bezier(.2,.8,.2,1);
+}
+.alumni-generation-item .alumni-rail-node {
+  border-color:transparent;
+  background:transparent;
+  box-shadow:none;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),background .25s ease,box-shadow .25s ease;
+}
+.alumni-generation-item[aria-pressed="true"] .alumni-rail-crest {
+  opacity:1;
+  transform:scale(1);
+}
+.alumni-generation-item[aria-pressed="true"] .alumni-rail-node {
+  transform:translateY(-7px);
+}
+.alumni-generation-item[aria-pressed="true"] {
+  transform:translateY(-3px);
+}
+.alumni-timeline-help {
+  margin:.05rem 0 0;
+  padding-top:.15rem;
+}
+@media(max-width:767.98px) {
+  .alumni-feature-caption { margin:.1rem auto 0; padding:.45rem .1rem .05rem; }
+  .alumni-timeline-help { margin:0; padding-top:.05rem; line-height:1.35; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .alumni-generation-item .alumni-rail-crest,
+  .alumni-generation-item .alumni-rail-node { transition:none!important; }
+}
