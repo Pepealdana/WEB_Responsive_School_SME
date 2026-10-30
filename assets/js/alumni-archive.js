@@ -50,6 +50,7 @@
     : currentYear - 1;
   const initialIndex = Math.max(0, promotions.findIndex(item => item.year === initialYear));
   let activeIndex = initialIndex;
+  let activeRailCopy = 1;
   let previousFocus = null;
   let scrollFrame = 0;
   let scrollSettle = 0;
@@ -75,8 +76,8 @@
 
   function updateRailSelection() {
     rail.querySelectorAll("[data-select-generation]").forEach(button => {
-      const selected = Number(button.dataset.railCopy) === 1 &&
-        Number(button.dataset.selectGeneration) === activeIndex;
+      const selected = Number(button.dataset.selectGeneration) === activeIndex &&
+        Number(button.dataset.railCopy) === activeRailCopy;
       button.setAttribute("aria-pressed", String(selected));
     });
   }
@@ -98,7 +99,7 @@
         '<div class="alumni-feature-title"><span class="alumni-feature-kicker">PROMOCIÓN SME</span>' +
         '<h3>' + escapeHTML(titleOf(item)) + '</h3><p><i class="bi bi-calendar3" aria-hidden="true"></i> ' + item.year +
         (item.hasPhoto ? "" : ' <span class="alumni-provisional-label">· Fotografía del campus</span>') + '</p></div>' +
-        '<span class="alumni-photo-count">' + String(activeIndex + 1).padStart(2,"0") + ' / ' + total + '</span>';
+        '';
     }
     updateRailSelection();
   }
@@ -107,13 +108,16 @@
     const button = rail.querySelector('[data-rail-copy="' + copy + '"][data-select-generation="' + index + '"]');
     if (!button) return;
     internalScroll = true;
+    activeRailCopy = copy;
     const left = button.offsetLeft - (rail.clientWidth - button.offsetWidth) / 2;
     rail.scrollTo({left, behavior});
-    window.setTimeout(() => { internalScroll = false; }, behavior === "auto" ? 40 : 500);
+    window.clearTimeout(scrollSettle);
+    window.setTimeout(() => { internalScroll = false; }, behavior === "auto" ? 120 : 850);
   }
 
   function selectGeneration(index, copy = 1, center = true) {
     activeIndex = (index + total) % total;
+    activeRailCopy = copy;
     renderStage();
     if (center) scrollToItem(activeIndex, copy);
   }
@@ -169,12 +173,31 @@
   });
 
   function normalizeInfiniteRail() {
-    const third = rail.scrollWidth / 3;
-    if (!third) return;
-    if (rail.scrollLeft < third * .45) {
-      rail.scrollLeft += third;
-    } else if (rail.scrollLeft > third * 1.55) {
-      rail.scrollLeft -= third;
+    const copyWidth = rail.scrollWidth / 3;
+    if (!copyWidth) return;
+    const lower = copyWidth * .35;
+    const upper = copyWidth * 1.65;
+    if (rail.scrollLeft < lower) rail.scrollLeft += copyWidth;
+    else if (rail.scrollLeft > upper) rail.scrollLeft -= copyWidth;
+  }
+
+  function syncSelectionFromScroll() {
+    const center = rail.getBoundingClientRect().left + rail.clientWidth / 2;
+    const buttons = [...rail.querySelectorAll("[data-select-generation]")];
+    let nearest = null;
+    let distance = Infinity;
+    buttons.forEach(button => {
+      const rect = button.getBoundingClientRect();
+      const current = Math.abs(rect.left + rect.width / 2 - center);
+      if (current < distance) { distance = current; nearest = button; }
+    });
+    if (!nearest) return;
+    const nextIndex = Number(nearest.dataset.selectGeneration);
+    const nextCopy = Number(nearest.dataset.railCopy);
+    if (nextIndex !== activeIndex || nextCopy !== activeRailCopy) {
+      activeIndex = nextIndex;
+      activeRailCopy = nextCopy;
+      renderStage();
     }
   }
 
@@ -184,23 +207,7 @@
       normalizeInfiniteRail();
       if (internalScroll) return;
       window.clearTimeout(scrollSettle);
-      scrollSettle = window.setTimeout(() => {
-        const center = rail.getBoundingClientRect().left + rail.clientWidth / 2;
-        const buttons = [...rail.querySelectorAll('[data-rail-copy="1"]')];
-        let nearest = null, distance = Infinity;
-        buttons.forEach(button => {
-          const rect = button.getBoundingClientRect();
-          const current = Math.abs(rect.left + rect.width / 2 - center);
-          if (current < distance) { distance = current; nearest = button; }
-        });
-        if (nearest) {
-          const nextIndex = Number(nearest.dataset.selectGeneration);
-          if (nextIndex !== activeIndex) {
-            activeIndex = nextIndex;
-            renderStage();
-          }
-        }
-      }, 90);
+      scrollSettle = window.setTimeout(syncSelectionFromScroll, 140);
     });
   }, {passive:true});
 
@@ -227,5 +234,9 @@
   if (help) help.hidden = false;
   renderRail();
   renderStage();
-  requestAnimationFrame(() => scrollToItem(initialIndex, 1, "auto"));
+  requestAnimationFrame(() => {
+    scrollToItem(initialIndex, 1, "auto");
+    activeRailCopy = 1;
+    updateRailSelection();
+  });
 })();
