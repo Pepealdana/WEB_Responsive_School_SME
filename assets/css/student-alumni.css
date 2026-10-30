@@ -729,3 +729,36 @@
 @media(prefers-reduced-motion:reduce) {
  .alumni-stage-mark { animation:none!important; }
 }
+/* Timeline rail: visual continuity and active-generation motion */
+.alumni-generation-rail { position:relative; isolation:isolate; }
+.alumni-generation-rail::before {
+ content:""; position:absolute; z-index:-1; top:49px; left:0; right:0;
+ height:2px; background:linear-gradient(90deg,transparent,#9bcbd9 8%,#9bcbd9 92%,transparent);
+ pointer-events:none;
+}
+.alumni-generation-item { backdrop-filter:blur(8px); }
+.alumni-generation-item[aria-pressed="true"] {
+ border-color:#1597bd; background:linear-gradient(155deg,#e8f8fc,#fff);
+ box-shadow:0 10px 25px rgba(21,151,189,.18);
+}
+.alumni-generation-item[aria-pressed="true"] .alumni-rail-crest-wrap {
+ background:#fff; box-shadow:0 0 0 4px rgba(21,151,189,.12);
+ animation:alumniCrestPulse 2.8s ease-in-out infinite;
+}
+.alumni-rail-crest { object-fit:contain; }
+.alumni-provisional-label {
+ display:inline-flex; align-items:flex-start; gap:.4rem; margin-top:.55rem;
+ color:#718292; font-size:.78rem; line-height:1.45;
+}
+.alumni-provisional-label i { color:#1597bd; margin-top:.1rem; }
+@keyframes alumniCrestPulse {
+ 0%,100% { box-shadow:0 0 0 3px rgba(21,151,189,.1); }
+ 50% { box-shadow:0 0 0 6px rgba(21,151,189,.04); }
+}
+@media(max-width:767.98px) {
+ .alumni-generation-rail::before { top:45px; }
+ .alumni-generation-item[aria-pressed="true"] { transform:translateY(-4px) scale(1.025); }
+}
+@media(prefers-reduced-motion:reduce) {
+ .alumni-generation-item[aria-pressed="true"] .alumni-rail-crest-wrap { animation:none!important; }
+}
