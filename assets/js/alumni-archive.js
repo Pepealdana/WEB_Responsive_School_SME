@@ -32,6 +32,7 @@
   });
 
   const stage = root.querySelector("[data-alumni-stage]");
+  const caption = root.querySelector("[data-alumni-caption]");
   const rail = root.querySelector("[data-alumni-rail]");
   const timeline = root.querySelector("[data-alumni-timeline]");
   const empty = root.querySelector("[data-alumni-empty]");
@@ -85,13 +86,14 @@
         '</button>' +
         '<button type="button" class="alumni-stage-arrow alumni-stage-prev" data-step="-1" aria-label="Promoción anterior"><i class="bi bi-chevron-left"></i></button>' +
         '<button type="button" class="alumni-stage-arrow alumni-stage-next" data-step="1" aria-label="Promoción siguiente"><i class="bi bi-chevron-right"></i></button>' +
-      '</div>' +
-      '<div class="alumni-feature-caption">' +
+      '</div>';
+    if (caption) {
+      caption.innerHTML =
         '<div class="alumni-feature-title"><span class="alumni-feature-kicker">PROMOCIÓN SME</span>' +
         '<h3>' + escapeHTML(titleOf(item)) + '</h3><p><i class="bi bi-calendar3" aria-hidden="true"></i> ' + item.year +
         (item.hasPhoto ? "" : ' <span class="alumni-provisional-label">· Fotografía del campus</span>') + '</p></div>' +
-        '<span class="alumni-photo-count">' + String(activeIndex + 1).padStart(2,"0") + ' / ' + total + '</span>' +
-      '</div>';
+        '<span class="alumni-photo-count">' + String(activeIndex + 1).padStart(2,"0") + ' / ' + total + '</span>';
+    }
     updateRailSelection();
   }
 
