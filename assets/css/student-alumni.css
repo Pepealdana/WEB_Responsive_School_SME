@@ -951,3 +951,33 @@
   .alumni-generation-item .alumni-rail-crest,
   .alumni-generation-item .alumni-rail-node { transition:none!important; }
 }
+
+
+/* Línea de tiempo determinista: un solo registro por promoción */
+.alumni-generation-rail { scroll-snap-type:x proximity; }
+.alumni-generation-item { scroll-snap-align:center; }
+.alumni-generation-item .alumni-rail-crest {
+  opacity:0;
+  visibility:hidden;
+  transform:scale(.55);
+  transition:opacity .22s ease,transform .28s ease,visibility .22s ease;
+}
+.alumni-generation-item .alumni-rail-node {
+  border-color:transparent;
+  background:transparent;
+  box-shadow:none;
+}
+.alumni-generation-item[aria-pressed="true"] .alumni-rail-crest {
+  opacity:1;
+  visibility:visible;
+  transform:scale(1);
+}
+.alumni-generation-item[aria-pressed="true"] .alumni-rail-node {
+  transform:translateY(-7px);
+}
+.alumni-generation-item[aria-pressed="true"] {
+  transform:translateY(-3px);
+}
+@media(prefers-reduced-motion:reduce) {
+  .alumni-generation-item .alumni-rail-crest { transition:none!important; }
+}
