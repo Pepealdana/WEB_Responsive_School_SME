@@ -981,3 +981,29 @@
 @media(prefers-reduced-motion:reduce) {
   .alumni-generation-item .alumni-rail-crest { transition:none!important; }
 }
+
+
+/* Selección minimalista: sin recuadro ni tarjeta azul */
+.alumni-generation-item,
+.alumni-generation-item[aria-pressed="true"],
+.alumni-generation-item:hover {
+  border:1px solid transparent !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+.alumni-generation-item[aria-pressed="true"] {
+  transform:translateY(-5px) scale(1.025);
+}
+.alumni-generation-item[aria-pressed="true"] .alumni-rail-node {
+  background:transparent;
+  border-color:transparent;
+  box-shadow:none;
+}
+.alumni-generation-item[aria-pressed="true"] .alumni-rail-year {
+  color:#0785ad;
+}
+.alumni-generation-item:focus-visible {
+  outline:2px solid #0785ad;
+  outline-offset:3px;
+  border-radius:8px;
+}
