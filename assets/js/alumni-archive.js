@@ -60,7 +60,7 @@
  const modal=document.createElement("div");modal.className="alumni-photo-lightbox";modal.hidden=true;modal.setAttribute("role","dialog");modal.setAttribute("aria-modal","true");modal.setAttribute("aria-label","Fotografía ampliada de promoción");
  modal.innerHTML='<button type="button" class="alumni-lightbox-close" data-lightbox-close aria-label="Cerrar fotografía"><i class="bi bi-x-lg"></i></button><button type="button" class="alumni-lightbox-arrow alumni-lightbox-prev" data-lightbox-step="-1" aria-label="Fotografía anterior"><i class="bi bi-chevron-left"></i></button><div class="alumni-lightbox-content"><img alt=""><p></p></div><button type="button" class="alumni-lightbox-arrow alumni-lightbox-next" data-lightbox-step="1" aria-label="Fotografía siguiente"><i class="bi bi-chevron-right"></i></button>';
  document.body.appendChild(modal);
- function openLightbox(){previousFocus=document.activeElement;const img=modal.querySelector("img");img.src=photoOf(promotions[activeIndex]);img.alt="Promoción "+promotions[activeIndex].year+" — "+titleOf(promotions[activeIndex]);modal.querySelector("p").textContent=titleOf(promotions[activeIndex])+" · "+promotions[activeIndex].year+(promotions[activeIndex].hasArchivePhoto?"":" · Imagen provisional del colegio");modal.hidden=false;document.body.classList.add("alumni-lightbox-open");modal.querySelector(".alumni-lightbox-close").focus();}
+ function renderLightbox(){const p=promotions[activeIndex],img=modal.querySelector("img");img.src=photoOf(p);img.alt="Promoción "+p.year+" — "+titleOf(p);modal.querySelector("p").textContent=titleOf(p)+" · "+p.year+(p.hasArchivePhoto?"":" · Imagen provisional del colegio");}\n function openLightbox(){previousFocus=document.activeElement;renderLightbox();modal.hidden=false;document.body.classList.add("alumni-lightbox-open");modal.querySelector(".alumni-lightbox-close").focus();}
  function closeLightbox(){modal.hidden=true;document.body.classList.remove("alumni-lightbox-open");previousFocus?.focus();}
  stage.addEventListener("click",e=>{if(e.target.closest("[data-enlarge-photo]")){openLightbox();return;}const step=e.target.closest("[data-step]");if(step)selectGeneration(activeIndex+Number(step.dataset.step));});
  rail.addEventListener("click",e=>{const b=e.target.closest("[data-select-generation]");if(b)selectGeneration(Number(b.dataset.selectGeneration),Number(b.dataset.railCopy));});
@@ -73,8 +73,8 @@
    recentering=true;rail.style.scrollBehavior="auto";rail.scrollLeft=rail.scrollLeft<rail.clientWidth*.35?rail.scrollLeft+rail.scrollWidth/3:rail.scrollLeft-rail.scrollWidth/3;requestAnimationFrame(()=>{rail.style.scrollBehavior="";recentering=false;});
   }
  },{passive:true});
- modal.addEventListener("click",e=>{if(e.target.closest("[data-lightbox-close]"))closeLightbox();const step=e.target.closest("[data-lightbox-step]");if(step)selectGeneration(activeIndex+Number(step.dataset.lightboxStep));});
- document.addEventListener("keydown",e=>{if(modal.hidden)return;if(e.key==="Escape")closeLightbox();if(e.key==="ArrowLeft")selectGeneration(activeIndex-1);if(e.key==="ArrowRight")selectGeneration(activeIndex+1);});
+ modal.addEventListener("click",e=>{if(e.target.closest("[data-lightbox-close]"))closeLightbox();const step=e.target.closest("[data-lightbox-step]");if(step){selectGeneration(activeIndex+Number(step.dataset.lightboxStep));renderLightbox();}});
+ document.addEventListener("keydown",e=>{if(modal.hidden)return;if(e.key==="Escape")closeLightbox();if(e.key==="ArrowLeft"){selectGeneration(activeIndex-1);renderLightbox();}if(e.key==="ArrowRight"){selectGeneration(activeIndex+1);renderLightbox();}});
  rail.addEventListener("keydown",e=>{if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();selectGeneration(activeIndex+(e.key==="ArrowRight"?1:-1));}});
  timeline.hidden=false;empty.hidden=true;help.hidden=false;renderRail();renderStage();
  requestAnimationFrame(()=>centerSelected(1,"auto"));
