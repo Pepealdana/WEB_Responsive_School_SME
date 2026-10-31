@@ -108,9 +108,14 @@
       '</div>';
     if (caption) {
       caption.innerHTML =
-        '<div class="alumni-feature-title"><span class="alumni-feature-kicker">PROMOCIÓN SME</span>' +
-        '<h3>' + escapeHTML(titleOf(item)) + '</h3><p><i class="bi bi-calendar3" aria-hidden="true"></i> ' + item.year +
-        (item.hasPhoto ? "" : ' <span class="alumni-provisional-label">· Fotografía del campus</span>') + '</p></div>';
+        '<div class="alumni-feature-title alumni-feature-title-inline">' +
+          '<p class="alumni-promotion-line">' +
+            '<span class="alumni-feature-kicker">Promoción:</span>' +
+            '<strong class="alumni-promotion-name">' + escapeHTML(titleOf(item)) + '</strong>' +
+            '<span class="alumni-promotion-year">' + item.year + '</span>' +
+          '</p>' +
+          (item.hasPhoto ? "" : '<span class="alumni-provisional-label">Fotografía del campus</span>') +
+        '</div>';
     }
     updateRailSelection();
   }
