@@ -17,14 +17,22 @@
     2018:"assets/img/promociones_sme/2018.webp",2019:"assets/img/promociones_sme/2019.webp",
     2020:"assets/img/promociones_sme/2020.webp",2021:"assets/img/promociones_sme/2021.webp",
     2022:"assets/img/promociones_sme/2022.webp",2023:"assets/img/promociones_sme/2023.webp",
-    2024:"assets/img/promociones_sme/2024.webp",2025:"assets/img/promociones_sme/2025.webp"
+    2024:"assets/img/promociones_sme/2024.webp",2025:"assets/img/promociones_sme/2025.webp",
+    2026:"assets/img/promociones_sme/2026.webp"
+  };
+
+  const titleByYear = {
+    2007:"Grossten",2011:"Förderung",2012:"Veljeys",2013:"Seniors",
+    2015:"Laureati",2016:"Britannien",2017:"Lief",2018:"Vincers",
+    2020:"Vestigium",2021:"Fratelli",2022:"Lithium",2023:"Laarsen",
+    2024:"Olympus",2025:"Legathium",2026:"Fortum"
   };
 
   const promotions = Array.from({length:37}, (_, i) => {
     const year = 2027 - i;
     const cover = photoByYear[year] || fallbackPhoto;
     return {
-      year, title:"Luz y Esperanza", cover,
+      year, title:titleByYear[year] || "Prom SME", cover,
       hasPhoto:Boolean(photoByYear[year]),
       crest:year >= 2027 ? currentCrest : historicCrest
     };
@@ -51,7 +59,7 @@
   let activeIndex = initialIndex;
   let previousFocus = null;
   const total = promotions.length;
-  const titleOf = item => item.title || "Luz y Esperanza";
+  const titleOf = item => item.title || "Prom SME";
 
   function renderRail() {
     rail.innerHTML = promotions.map((item,index) =>
