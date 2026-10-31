@@ -74,8 +74,14 @@
     if (scroll) {
       const selected = buttons[activeIndex];
       if (selected) {
-        const left = selected.offsetLeft - (rail.clientWidth - selected.offsetWidth) / 2;
-        rail.scrollTo({left, behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+        const railRect = rail.getBoundingClientRect();
+        const itemRect = selected.getBoundingClientRect();
+        const left = rail.scrollLeft + itemRect.left - railRect.left -
+          (rail.clientWidth - selected.offsetWidth) / 2;
+        rail.scrollTo({
+          left:Math.max(0, Math.min(rail.scrollWidth - rail.clientWidth, left)),
+          behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+        });
       }
     }
   }
