@@ -23,7 +23,7 @@
 
   const titleByYear = {
     2007:"Grossten",2011:"Förderung",2012:"Veljeys",2013:"Seniors",
-    2015:"Laureati",2016:"Britannien",2017:"Lief",2018:"Vincers",
+    2015:"Laureati",2016:"Britannien",2017:"Lief",2018:"Prom SME",2019:"Vincers",
     2020:"Vestigium",2021:"Fratelli",2022:"Lithium",2023:"Laarsen",
     2024:"Olympus",2025:"Legathium",2026:"Fortum"
   };
