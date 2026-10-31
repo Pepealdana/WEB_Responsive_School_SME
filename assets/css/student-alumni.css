@@ -1101,3 +1101,62 @@
   .alumni-feature-photo img { animation:none!important; }
   .alumni-generation-rail { scroll-behavior:auto!important; }
 }
+
+
+/* Exalumnos: identificación de promoción en una sola línea */
+.alumni-feature-caption {
+  justify-content:center!important;
+  align-items:center!important;
+  text-align:center;
+  padding:.55rem .2rem .35rem!important;
+  margin:.25rem auto .1rem!important;
+}
+.alumni-feature-title-inline { width:100%; }
+.alumni-promotion-line {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  justify-content:center;
+  column-gap:.42em;
+  row-gap:.12em;
+  margin:0!important;
+  line-height:1.35;
+  font-size:clamp(.98rem,2vw,1.2rem);
+}
+.alumni-promotion-line .alumni-feature-kicker {
+  color:#1595bd;
+  font-size:inherit;
+  font-weight:800;
+  letter-spacing:0;
+  text-transform:none;
+}
+.alumni-promotion-name {
+  color:#111820;
+  font-weight:800;
+}
+.alumni-promotion-year {
+  color:#84919b;
+  font-weight:400;
+}
+.alumni-feature-title-inline .alumni-provisional-label {
+  display:block;
+  margin-top:.25rem;
+  text-align:center;
+}
+.alumni-generation-item .alumni-rail-node,
+.alumni-generation-item[aria-pressed="true"] .alumni-rail-node {
+  border:0!important;
+  outline:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.alumni-generation-item .alumni-rail-crest {
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+@media(max-width:767.98px) {
+  .alumni-feature-caption { padding:.45rem .1rem .2rem!important; }
+  .alumni-promotion-line { column-gap:.34em; font-size:.96rem; }
+}
