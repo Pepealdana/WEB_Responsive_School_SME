@@ -1007,3 +1007,97 @@
   outline-offset:3px;
   border-radius:8px;
 }
+
+
+/* Ajuste exclusivo para móvil: escudo centrado y desplazamiento horizontal estable */
+@media (max-width:767.98px) {
+  .alumni-timeline-controls {
+    display:flex;
+    width:100%;
+    min-width:0;
+    gap:.3rem;
+    overflow:visible;
+  }
+  .alumni-rail-arrow {
+    position:relative;
+    z-index:2;
+    flex:0 0 30px;
+    width:30px;
+    height:30px;
+    padding:0;
+  }
+  .alumni-generation-rail {
+    flex:1 1 0;
+    width:0;
+    min-width:0;
+    height:94px;
+    padding:1.25rem .15rem .45rem;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-padding-inline:calc(50% - 34px);
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+    touch-action:pan-x;
+  }
+  .alumni-generation-rail::before { top:25px; }
+  .alumni-generation-item {
+    flex:0 0 68px;
+    min-width:68px;
+    min-height:72px;
+    padding:0 .1rem;
+    transform:none!important;
+    scroll-snap-align:center;
+  }
+  .alumni-generation-item[aria-pressed="true"] {
+    transform:none!important;
+    color:#0785ad;
+  }
+  .alumni-generation-item .alumni-rail-node {
+    flex:0 0 25px;
+    width:25px;
+    height:25px;
+    margin:0;
+    transform:none;
+    overflow:visible;
+  }
+  .alumni-generation-item[aria-pressed="true"] .alumni-rail-node {
+    width:32px;
+    height:32px;
+    margin-top:-3px;
+    transform:translateY(-2px);
+    border:2px solid #fff;
+    background:#e9f9fd;
+    box-shadow:0 0 0 3px #159bc4,0 5px 14px rgba(21,155,196,.2);
+  }
+  .alumni-generation-item .alumni-rail-crest {
+    width:18px;
+    height:18px;
+    max-width:none;
+    opacity:0;
+    visibility:hidden;
+    transform:scale(.55);
+  }
+  .alumni-generation-item[aria-pressed="true"] .alumni-rail-crest {
+    width:23px;
+    height:23px;
+    opacity:1;
+    visibility:visible;
+    transform:scale(1);
+  }
+  .alumni-generation-item .alumni-rail-year {
+    margin-top:.25rem;
+    line-height:1.15;
+  }
+  .alumni-feature-photo img {
+    animation:alumniMobilePhotoIn .32s cubic-bezier(.2,.75,.25,1) both;
+  }
+}
+@keyframes alumniMobilePhotoIn {
+  from { opacity:.65; transform:translateX(9px) scale(.99); }
+  to { opacity:1; transform:translateX(0) scale(1); }
+}
+@media (max-width:767.98px) and (prefers-reduced-motion:reduce) {
+  .alumni-feature-photo img { animation:none!important; }
+  .alumni-generation-rail { scroll-behavior:auto!important; }
+}
