@@ -8,11 +8,14 @@
   const photoByYear = {
     1991:"assets/img/promociones_sme/1991.webp",1994:"assets/img/promociones_sme/1994.webp",
     1995:"assets/img/promociones_sme/1995.webp",1996:"assets/img/promociones_sme/1996.webp",
+    1997:"assets/img/promociones_sme/1997.webp",1998:"assets/img/promociones_sme/1998.webp",
     1999:"assets/img/promociones_sme/1999.webp",2000:"assets/img/promociones_sme/2000.webp",
-    2002:"assets/img/promociones_sme/2002.webp",2006:"assets/img/promociones_sme/2006.webp",
+    2002:"assets/img/promociones_sme/2002.webp",2003:"assets/img/promociones_sme/2003.webp",
+    2004:"assets/img/promociones_sme/2004.webp",2006:"assets/img/promociones_sme/2006.webp",
     2007:"assets/img/promociones_sme/2007.webp",2008:"assets/img/promociones_sme/2008.webp",
-    2009:"assets/img/promociones_sme/2009.webp",2011:"assets/img/promociones_sme/2011.webp",
-    2012:"assets/img/promociones_sme/2012.webp",2013:"assets/img/promociones_sme/2013.webp",
+    2009:"assets/img/promociones_sme/2009.webp",2010:"assets/img/promociones_sme/2010.webp",
+    2011:"assets/img/promociones_sme/2011.webp",
+    2012:"assets/img/promociones_sme/2012.webp",2013:"assets/img/promociones_sme/2013.webp",2014:"assets/img/promociones_sme/2014.webp",
     2015:"assets/img/promociones_sme/2015.webp",2017:"assets/img/promociones_sme/2017.webp",
     2018:"assets/img/promociones_sme/2018.webp",2019:"assets/img/promociones_sme/2019.webp",
     2020:"assets/img/promociones_sme/2020.webp",2021:"assets/img/promociones_sme/2021.webp",
@@ -22,8 +25,8 @@
   };
 
   const titleByYear = {
-    2007:"Grossten",2011:"Förderung",2012:"Veljeys",2013:"Seniors",
-    2015:"Laureati",2016:"Britannien",2017:"Lief",2018:"Prom SME",2019:"Vincers",
+    2007:"Grossten",2010:"Klasse",2011:"Förderung",2012:"Veljeys",2013:"Seniors",
+    2014:"Clase",2015:"Laureati",2016:"Britannien",2017:"Lief",2018:"Prom SME",2019:"Vincers",
     2020:"Vestigium",2021:"Fratelli",2022:"Lithium",2023:"Laarsen",
     2024:"Olympus",2025:"Legathium",2026:"Fortum"
   };
