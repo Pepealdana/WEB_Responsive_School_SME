@@ -11,7 +11,7 @@
     1997:"assets/img/promociones_sme/1997.webp",1998:"assets/img/promociones_sme/1998.webp",
     1999:"assets/img/promociones_sme/1999.webp",2000:"assets/img/promociones_sme/2000.webp",
     2002:"assets/img/promociones_sme/2002.webp",2003:"assets/img/promociones_sme/2003.webp",
-    2004:"assets/img/promociones_sme/2004.webp",2006:"assets/img/promociones_sme/2006.webp",
+    2004:"assets/img/promociones_sme/2004.webp",2005:"assets/img/promociones_sme/2005.webp",2006:"assets/img/promociones_sme/2006.webp",
     2007:"assets/img/promociones_sme/2007.webp",2008:"assets/img/promociones_sme/2008.webp",
     2009:"assets/img/promociones_sme/2009.webp",2010:"assets/img/promociones_sme/2010.webp",
     2011:"assets/img/promociones_sme/2011.webp",
