@@ -16,7 +16,7 @@
     2009:"assets/img/promociones_sme/2009.webp",2010:"assets/img/promociones_sme/2010.webp",
     2011:"assets/img/promociones_sme/2011.webp",
     2012:"assets/img/promociones_sme/2012.webp",2013:"assets/img/promociones_sme/2013.webp",2014:"assets/img/promociones_sme/2014.webp",
-    2015:"assets/img/promociones_sme/2015.webp",2017:"assets/img/promociones_sme/2017.webp",
+    2015:"assets/img/promociones_sme/2015.webp",2016:"assets/img/promociones_sme/2016.webp",2017:"assets/img/promociones_sme/2017.webp",
     2018:"assets/img/promociones_sme/2018.webp",2019:"assets/img/promociones_sme/2019.webp",
     2020:"assets/img/promociones_sme/2020.webp",2021:"assets/img/promociones_sme/2021.webp",
     2022:"assets/img/promociones_sme/2022.webp",2023:"assets/img/promociones_sme/2023.webp",
