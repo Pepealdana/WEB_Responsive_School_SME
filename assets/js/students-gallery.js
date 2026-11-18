@@ -143,7 +143,7 @@
   title.textContent=d.title;
   activeDimension=d;
   content.innerHTML=d.photos.length
-   ? '<div class="dimension-photo-masonry">'+d.photos.map((p,i)=>'<figure class="dimension-photo-item"><button class="dimension-lightbox-trigger" type="button" data-lightbox-index="'+i+'" aria-label="Ampliar fotografía '+(i+1)+' de '+d.photos.length+'"><img src="'+safe(p.src)+'" alt="'+safe(p.alt||d.title+" — fotografía "+(i+1))+'" loading="lazy" decoding="async" fetchpriority="low" width="900" height="700"></button><figcaption>'+safe(p.caption||("Registro "+String(i+1).padStart(2,"0")))+'</figcaption></figure>').join("")+'</div>'
+   ? '<div class="dimension-photo-masonry">'+d.photos.map((p,i)=>'<div class="dimension-photo-item"><button class="dimension-lightbox-trigger" type="button" data-lightbox-index="'+i+'" aria-label="Ampliar fotografía '+(i+1)+' de '+d.photos.length+'"><img src="'+safe(p.src)+'" alt="'+safe(p.alt||d.title+" — fotografía "+(i+1))+'" loading="lazy" decoding="async" fetchpriority="low" width="900" height="700"></button></div>').join("")+'</div>'
    : '<div class="dimension-gallery-empty"><span class="dimension-gallery-empty-icon"><i class="bi bi-images"></i></span><h3>Esta galería se está preparando</h3><p>Aquí aparecerán las fotografías de la '+safe(d.title.toLowerCase())+', organizadas en un mosaico visual. La tarjeta ya está preparada para recibirlas.</p></div>';
   modal.hidden=false;document.body.classList.add("dimension-modal-open");
   modal.querySelector(".dimension-modal-close").focus();
