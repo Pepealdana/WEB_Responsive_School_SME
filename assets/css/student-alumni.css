@@ -1160,3 +1160,48 @@
   .alumni-feature-caption { padding:.45rem .1rem .2rem!important; }
   .alumni-promotion-line { column-gap:.34em; font-size:.96rem; }
 }
+
+
+/* Visor individual de fotografías con navegación */
+.dimension-lightbox[hidden] { display:none!important; }
+.dimension-lightbox {
+ position:fixed; z-index:2100; inset:0; display:flex; align-items:center; justify-content:center;
+ padding:clamp(3.5rem,7vh,5rem) clamp(3rem,7vw,6rem);
+ background:rgba(3,13,24,.94); color:#fff;
+}
+.dimension-lightbox-figure {
+ display:flex; flex-direction:column; align-items:center; justify-content:center;
+ width:100%; height:100%; min-width:0; min-height:0; margin:0; gap:.8rem;
+}
+.dimension-lightbox-image {
+ display:block; max-width:100%; max-height:calc(100% - 2.5rem);
+ width:auto; height:auto; object-fit:contain; border-radius:8px;
+ box-shadow:0 16px 50px rgba(0,0,0,.35);
+}
+.dimension-lightbox-counter { margin:0; color:#fff; font-size:.9rem; text-align:center; }
+.dimension-lightbox-close,.dimension-lightbox-nav {
+ position:absolute; z-index:2; display:grid; place-items:center;
+ width:46px; height:46px; border:1px solid rgba(255,255,255,.35);
+ border-radius:50%; background:rgba(255,255,255,.12); color:#fff;
+ font-size:1.25rem; cursor:pointer;
+}
+.dimension-lightbox-close { top:1rem; right:1rem; }
+.dimension-lightbox-prev { left:1rem; top:50%; transform:translateY(-50%); }
+.dimension-lightbox-next { right:1rem; top:50%; transform:translateY(-50%); }
+.dimension-lightbox-close:hover,.dimension-lightbox-nav:hover { background:rgba(255,255,255,.25); }
+.dimension-lightbox-trigger {
+ display:block; width:100%; padding:0; border:0; background:transparent; cursor:zoom-in;
+}
+.dimension-lightbox-trigger:focus-visible { outline:3px solid #159bc4; outline-offset:3px; border-radius:10px; }
+.dimension-lightbox-trigger img { cursor:zoom-in; }
+@media(max-width:575.98px) {
+ .dimension-lightbox { padding:4rem 2.6rem; }
+ .dimension-lightbox-close { top:.65rem; right:.65rem; width:40px; height:40px; }
+ .dimension-lightbox-nav { width:38px; height:38px; font-size:1rem; }
+ .dimension-lightbox-prev { left:.35rem; }
+ .dimension-lightbox-next { right:.35rem; }
+ .dimension-lightbox-counter { font-size:.78rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .dimension-lightbox-trigger img { transition:none!important; }
+}
