@@ -104,21 +104,74 @@
  modal.innerHTML='<div class="dimension-modal-backdrop" data-close-gallery></div><section class="dimension-modal-panel"><header class="dimension-modal-header"><div><p class="dimension-modal-kicker">Galería de vida escolar</p><h2 id="dimension-gallery-title"></h2></div><button type="button" class="dimension-modal-close" data-close-gallery aria-label="Cerrar galería"><i class="bi bi-x-lg"></i></button></header><div class="dimension-modal-content"></div></section>';
  document.body.appendChild(modal);
  const title=modal.querySelector("#dimension-gallery-title"),content=modal.querySelector(".dimension-modal-content");
+ const lightbox=document.createElement("div");
+ lightbox.className="dimension-lightbox";
+ lightbox.hidden=true;
+ lightbox.setAttribute("role","dialog");
+ lightbox.setAttribute("aria-modal","true");
+ lightbox.setAttribute("aria-label","Visor de fotografías");
+ lightbox.innerHTML='<button type="button" class="dimension-lightbox-close" data-lightbox-close aria-label="Cerrar fotografía"><i class="bi bi-x-lg"></i></button><button type="button" class="dimension-lightbox-nav dimension-lightbox-prev" data-lightbox-prev aria-label="Fotografía anterior"><i class="bi bi-chevron-left"></i></button><figure class="dimension-lightbox-figure"><img class="dimension-lightbox-image" alt=""><figcaption class="dimension-lightbox-counter" aria-live="polite"></figcaption></figure><button type="button" class="dimension-lightbox-nav dimension-lightbox-next" data-lightbox-next aria-label="Fotografía siguiente"><i class="bi bi-chevron-right"></i></button>';
+ document.body.appendChild(lightbox);
+ const lightboxImage=lightbox.querySelector(".dimension-lightbox-image");
+ const lightboxCounter=lightbox.querySelector(".dimension-lightbox-counter");
+ let activeDimension=null,activePhotoIndex=0;
+ function showLightboxImage(index){
+  if(!activeDimension||!activeDimension.photos.length)return;
+  activePhotoIndex=(index+activeDimension.photos.length)%activeDimension.photos.length;
+  const photo=activeDimension.photos[activePhotoIndex];
+  lightboxImage.src=photo.src;
+  lightboxImage.alt=photo.alt||activeDimension.title+" — fotografía "+(activePhotoIndex+1);
+  lightboxCounter.textContent=activeDimension.title+" · "+(activePhotoIndex+1)+" de "+activeDimension.photos.length;
+ }
+ function openLightbox(index){
+  if(!activeDimension)return;
+  showLightboxImage(index);
+  lightbox.hidden=false;
+  lightbox.querySelector(".dimension-lightbox-close").focus();
+ }
+ function closeLightbox(){
+  lightbox.hidden=true;
+  lightboxImage.removeAttribute("src");
+ }
+ function moveLightbox(step){showLightboxImage(activePhotoIndex+step);}
+
  let lastFocus=null;
  function openGallery(id){
   const d=dims.find(x=>x.id===id);if(!d)return;
   lastFocus=document.activeElement;
   modal.style.setProperty("--dimension",d.color);modal.style.setProperty("--dimension-soft",d.soft);
   title.textContent=d.title;
+  activeDimension=d;
   content.innerHTML=d.photos.length
-   ? '<div class="dimension-photo-masonry">'+d.photos.map((p,i)=>'<figure class="dimension-photo-item"><img src="'+safe(p.src)+'" alt="'+safe(p.alt||d.title+" — fotografía "+(i+1))+'" loading="lazy" decoding="async" fetchpriority="low" width="900" height="700"><figcaption>'+safe(p.caption||("Registro "+String(i+1).padStart(2,"0")))+'</figcaption></figure>').join("")+'</div>'
+   ? '<div class="dimension-photo-masonry">'+d.photos.map((p,i)=>'<figure class="dimension-photo-item"><button class="dimension-lightbox-trigger" type="button" data-lightbox-index="'+i+'" aria-label="Ampliar fotografía '+(i+1)+' de '+d.photos.length+'"><img src="'+safe(p.src)+'" alt="'+safe(p.alt||d.title+" — fotografía "+(i+1))+'" loading="lazy" decoding="async" fetchpriority="low" width="900" height="700"></button><figcaption>'+safe(p.caption||("Registro "+String(i+1).padStart(2,"0")))+'</figcaption></figure>').join("")+'</div>'
    : '<div class="dimension-gallery-empty"><span class="dimension-gallery-empty-icon"><i class="bi bi-images"></i></span><h3>Esta galería se está preparando</h3><p>Aquí aparecerán las fotografías de la '+safe(d.title.toLowerCase())+', organizadas en un mosaico visual. La tarjeta ya está preparada para recibirlas.</p></div>';
   modal.hidden=false;document.body.classList.add("dimension-modal-open");
   modal.querySelector(".dimension-modal-close").focus();
  }
- function closeGallery(){modal.hidden=true;document.body.classList.remove("dimension-modal-open");if(lastFocus)lastFocus.focus();}
+ function closeGallery(){closeLightbox();modal.hidden=true;document.body.classList.remove("dimension-modal-open");activeDimension=null;if(lastFocus)lastFocus.focus();}
  root.addEventListener("click",e=>{const b=e.target.closest("[data-open-gallery]");if(b)openGallery(b.dataset.openGallery);});
  filters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;filters.querySelectorAll("[data-filter]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));grid.querySelectorAll("[data-dimension-card]").forEach(card=>card.hidden=b.dataset.filter!=="all"&&card.dataset.dimensionCard!==b.dataset.filter);});
- modal.addEventListener("click",e=>{if(e.target.closest("[data-close-gallery]"))closeGallery();});
- document.addEventListener("keydown",e=>{if(!modal.hidden&&e.key==="Escape")closeGallery();});
+ modal.addEventListener("click",e=>{
+  if(e.target.closest("[data-close-gallery]")){closeGallery();return;}
+  const trigger=e.target.closest("[data-lightbox-index]");
+  if(trigger)openLightbox(Number(trigger.dataset.lightboxIndex));
+ });
+ lightbox.addEventListener("click",e=>{
+  if(e.target.closest("[data-lightbox-close]"))closeLightbox();
+  else if(e.target.closest("[data-lightbox-prev]"))moveLightbox(-1);
+  else if(e.target.closest("[data-lightbox-next]"))moveLightbox(1);
+ });
+ let touchStartX=0;
+ lightbox.addEventListener("touchstart",e=>{touchStartX=e.changedTouches[0].screenX;},{passive:true});
+ lightbox.addEventListener("touchend",e=>{
+  const delta=e.changedTouches[0].screenX-touchStartX;
+  if(Math.abs(delta)>45)moveLightbox(delta<0?1:-1);
+ },{passive:true});
+ document.addEventListener("keydown",e=>{
+  if(!modal.hidden&&lightbox.hidden&&e.key==="Escape"){closeGallery();return;}
+  if(lightbox.hidden)return;
+  if(e.key==="Escape")closeLightbox();
+  else if(e.key==="ArrowRight")moveLightbox(1);
+  else if(e.key==="ArrowLeft")moveLightbox(-1);
+ });
 })();
