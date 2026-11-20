@@ -10218,18 +10218,34 @@ TOUR VIRTUAL
 
 .campus-tour-wrapper{
 
+    width:100%;
     max-width:1200px;
-    margin:auto;
+    margin:0 auto;
     border-radius:22px;
     overflow:hidden;
 
-    box-shadow:
-        0 20px 45px rgba(0,0,0,.12);
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
 
 }
 
-.campus-tour-wrapper iframe{
+/*
+ * iSpring exporta el reproductor en 984 x 614 px.
+ * Se conserva esa proporción para evitar recortes en móviles.
+ */
+.campus-tour-ratio{
 
+    position:relative;
+    width:100%;
+    aspect-ratio:984 / 614;
+    overflow:hidden;
+
+}
+
+.campus-tour-ratio iframe{
+
+    position:absolute;
+    inset:0;
+    display:block;
     width:100%;
     height:100%;
     border:0;
