@@ -39,38 +39,32 @@
   ======================================================== -->
 
   <style>
-  body {
-      margin: 0;
-      background-color: #ffffff; 
-      font-family: 'Poppins', sans-serif;
+    body { margin:0; background:#fff; font-family:'Poppins',sans-serif; }
+    .contact-page .contact-info-grid { align-items:flex-start; margin-bottom:2.5rem !important; }
+    .contact-page .contact-info-grid > [class*="col-"] { display:flex; }
+    .contact-page .contact-info-box { width:100%; height:auto; min-height:0; padding:1.35rem 1.4rem; border:1px solid rgba(12,46,77,.08); border-radius:16px; gap:1rem; align-items:flex-start; }
+    .contact-page .contact-info-box .info-content { min-width:0; flex:1; }
+    .contact-page .contact-info-box .info-content h4 { margin:.15rem 0 .65rem; color:#0c2e4d; font-size:1.05rem; line-height:1.35; }
+    .contact-page .contact-address-card p,.contact-page .contact-phone-card p { margin:0; font-size:.92rem; line-height:1.65; }
+    .contact-page .contact-email-card { background:linear-gradient(145deg,#fff 0%,#f7fafd 100%); }
+    .contact-page .institutional-email-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.55rem 1.15rem; margin:0; padding:0; }
+    .contact-page .institutional-email-list li { display:flex; flex-direction:column; gap:.08rem; min-width:0; padding:.48rem .6rem; border-radius:9px; background:rgba(12,46,77,.045); line-height:1.35; }
+    .contact-page .institutional-email-list strong { color:#526579; font-size:.72rem; font-weight:600; letter-spacing:.035em; text-transform:uppercase; }
+    .contact-page .institutional-email-list a { color:#0c5686; font-size:.82rem; font-weight:500; overflow-wrap:anywhere; text-decoration:none; transition:color .2s ease; }
+    .contact-page .institutional-email-list a:hover,.contact-page .institutional-email-list a:focus-visible { color:#c47b16; text-decoration:underline; text-underline-offset:3px; }
+    .contact-page .contact-info-box .icon-box { width:44px; height:44px; flex:0 0 44px; }
+    .contact-page .contact-phone-card { color:inherit; text-decoration:none; transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease; }
+    .contact-page .contact-phone-card:hover { color:inherit; border-color:rgba(12,86,134,.25); }
+    .contact-page .contact-phone-card:focus-visible { outline:3px solid #0c2e4d; outline-offset:4px; }
+    @media (max-width:991.98px) { .contact-page .institutional-email-list { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:575.98px) {
+      .contact-page .contact-info-grid { row-gap:1rem !important; }
+      .contact-page .contact-info-box { padding:1.1rem; gap:.8rem; border-radius:13px; }
+      .contact-page .institutional-email-list { grid-template-columns:1fr; gap:.45rem; }
+      .contact-page .institutional-email-list li { padding:.55rem .65rem; }
+      .contact-page .institutional-email-list a { font-size:.86rem; }
     }
-
-    .contact-email-link {
-      display: flex;
-      height: 100%;
-      color: inherit;
-      text-decoration: none;
-      border-radius: inherit;
-    }
-    .contact-email-link:hover,
-    .contact-email-link:focus-visible {
-      color: inherit;
-      text-decoration: none;
-    }
-    .contact-email-link:focus-visible {
-      outline: 3px solid #0c2e4d;
-      outline-offset: 4px;
-    }
-    .contact-email-link .info-content p {
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      text-underline-offset: 3px;
-      transition: text-decoration-color .18s ease;
-    }
-    .contact-email-link:hover .info-content p,
-    .contact-email-link:focus-visible .info-content p {
-      text-decoration-color: currentColor;
-    }
+    @media (prefers-reduced-motion:reduce) { .contact-page .institutional-email-list a,.contact-page .contact-phone-card { transition:none; } }
   </style>
 
 
@@ -186,9 +180,9 @@
 <section id="contact" class="contact section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <!-- Tarjetas de Información -->
-    <div class="row gy-4 mb-5">
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="contact-info-box">
+    <div class="row gy-4 contact-info-grid">
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-info-box contact-address-card">
           <div class="icon-box">
             <i class="bi bi-geo-alt"></i>
           </div>
@@ -199,14 +193,14 @@
         </div>
       </div>
 
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="contact-info-box">
+      <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-info-box contact-email-card">
           <div class="icon-box">
             <i class="bi bi-envelope"></i>
           </div>
           <div class="info-content">
             <h4>Correos institucionales</h4>
-            <ul class="list-unstyled mb-0">
+            <ul class="list-unstyled institutional-email-list">
               <li><strong>Rectoría:</strong> <a href="mailto:rectoria@colsme.edu.co">rectoria@colsme.edu.co</a></li>
               <li><strong>Administración:</strong> <a href="mailto:administracion@colsme.edu.co">administracion@colsme.edu.co</a></li>
               <li><strong>Tesorería:</strong> <a href="mailto:tesoreria@colsme.edu.co">tesoreria@colsme.edu.co</a></li>
@@ -218,8 +212,8 @@
         </div>
       </div>
 
-      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-        <a class="contact-info-box contact-phone-link" href="tel:+573132559038" aria-label="Llamar al teléfono institucional 313 255 90 38">
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <a class="contact-info-box contact-phone-link contact-phone-card" href="tel:+573132559038" aria-label="Llamar al teléfono institucional 313 255 90 38">
           <div class="icon-box">
             <i class="bi bi-telephone"></i>
           </div>
