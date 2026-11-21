@@ -11482,3 +11482,77 @@ color:#555;
     line-height:1.35;
   }
 }
+
+/* ==========================================================
+   AJUSTES RESPONSIVE GLOBALES
+   Reglas conservadoras para evitar desbordamientos en móvil.
+   ========================================================== */
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  iframe {
+    display: block;
+  }
+
+  .footer .footer-about > .logo {
+    margin-left: 0;
+    padding-left: 0 !important;
+  }
+
+  .footer .footer-about > .logo img,
+  .footer .footer-about > .logo .footer-logo {
+    max-width: min(210px, 100%);
+  }
+
+  .footer .footer-contact a,
+  .footer .footer-about a {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  pre,
+  .table-responsive {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 359.98px) {
+  .container,
+  .container-fluid {
+    --bs-gutter-x: 1.25rem;
+  }
+
+  .footer .footer-top > .row {
+    column-gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
