@@ -10235,8 +10235,9 @@ TOUR VIRTUAL
 .campus-tour-ratio{
 
     position:relative;
+    display:block;
     width:100%;
-    aspect-ratio:984 / 614;
+    height:clamp(320px, 62.4vw, 748px);
     overflow:hidden;
 
 }
