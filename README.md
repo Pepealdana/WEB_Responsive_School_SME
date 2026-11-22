@@ -1,9 +1,9 @@
 # Colegio Santa María de la Esperanza — Sitio web institucional
 
-Sitio web estático del Colegio Santa María de la Esperanza (COLSME), Facatativá, Cundinamarca, Colombia.
+Sitio web estático desarrollado para el Colegio Santa María de la Esperanza (COLSME), Facatativá, Cundinamarca, Colombia.
 
-- **Producción:** https://colsme.edu.co/
-- **Repositorio:** https://github.com/Pepealdana/WEB_Responsive_School_SME
+- **Demostración en GitHub Pages:** https://pepealdana.github.io/WEB_Responsive_School_SME/
+- **Repositorio de desarrollo:** https://github.com/Pepealdana/WEB_Responsive_School_SME
 - **Tecnologías:** HTML5, CSS3, JavaScript, Bootstrap 5, Bootstrap Icons, AOS, Swiper y GLightbox.
 - **Despliegue:** alojamiento estático/Apache; no requiere Node.js ni compilación.
 
@@ -55,6 +55,8 @@ Publica los archivos en la raíz del sitio (por ejemplo, `public_html`) conserva
 - [Política de seguridad](SECURITY.md)
 - [Términos y privacidad](terminos.html)
 
-## Autoría y licencia
+## Desarrollo y derechos
 
-Desarrollado y mantenido por Peters Aldana Gómez. Proyecto de uso educativo e institucional. Todos los derechos reservados © Colegio Santa María de la Esperanza.
+- **Desarrollo técnico:** Peters Aldana Gómez.
+- **Derechos reservados:** Colegio Santa María de la Esperanza.
+- Las bibliotecas y recursos de terceros conservan sus respectivas licencias y atribuciones.
